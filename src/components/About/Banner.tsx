@@ -1,7 +1,6 @@
 import React from 'react';
 import text from './text.json';
 import {
-  BanerWraper,
   MarqueeContainer,
   MarqueeText,
   MarqueeTextItem,

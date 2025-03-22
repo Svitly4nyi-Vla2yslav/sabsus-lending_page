@@ -5,15 +5,11 @@ import {
   ButtonMenu,
   ContainerMenu,
   ContainerNetworks,
-  Image,
-  Link,
   MenuItem,
   TextButton,
   Wrapper,
 } from './BurgerMenu.styled';
-import discord from '../../assets/icons/discord_logo.svg';
-import ship from '../../assets/icons/ship.svg';
-import x from '../../assets/icons/X.svg';
+
 
 export interface BurgerMenuProps {
   isopen?: boolean;
@@ -64,15 +60,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ isopen, toggleMenu }) => {
         </ButtonMenu>
       </ContainerMenu>
       <ContainerNetworks>
-        <Link href="#" isopen={isopen}>
-          <Image src={discord} alt="📱" />
-        </Link>
-        <Link href="#" isopen={isopen}>
-          <Image src={ship} alt="🚢" />
-        </Link>
-        <Link href="#" isopen={isopen}>
-          <Image src={x} alt="✖️" />
-        </Link>
+      
       </ContainerNetworks>
     </Wrapper>
   );

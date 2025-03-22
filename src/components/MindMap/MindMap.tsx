@@ -8,7 +8,6 @@ import {
   TitleMap,
   TitleMapTablet,
 } from './MindMap.styled';
-import Arrow from '../../assets/icons/arrow.svg';
 import { useMediaQuery } from 'react-responsive';
 
 const MindMap: React.FC = () => {
@@ -43,7 +42,6 @@ const MindMap: React.FC = () => {
         <CardItem style={{ background: '#dc3b5a' }}>
           <TextMessinaMap>
             <a href="https://www.linkedin.com/in/vladyslav-svitlychnyi/">
-              <IconArrow src={Arrow} alt="↗️" />
             </a>
           </TextMessinaMap>
           <TitleMap>

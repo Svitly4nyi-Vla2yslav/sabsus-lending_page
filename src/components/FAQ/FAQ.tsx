@@ -10,10 +10,7 @@ import {
   TitleItem,
   TitleList,
 } from './FAQ.styled';
-import ImageFirst from '../../assets/image/8.png';
-import ImageSecond from '../../assets/image/14.png';
-import ImageThird from '../../assets/image/16.png';
-import ImageFourth from '../../assets/image/11.png';
+
 import { useMediaQuery } from 'react-responsive';
 
 const FAQ: React.FC = () => {
@@ -44,7 +41,7 @@ const FAQ: React.FC = () => {
         <>
           <ItemText>
             {' '}
-            {isMobile || <ImageCollapse src={ImageFirst} alt="manky" />}
+            {isMobile || <p>exit</p>}
             An NFT collection is a group of unique digital assets, each
             represented by a non-fungible token, typically created around a
             specific theme or style.
@@ -65,7 +62,7 @@ const FAQ: React.FC = () => {
       children: (
         <>
           <ItemText>
-            {isMobile || <ImageCollapse src={ImageSecond} alt="manky" />}
+            {isMobile ||<p>exit</p>}
             To purchase nfts from a collection, you typically need to use
             cryptocurrency on a blockchain-based marketplace.
           </ItemText>
@@ -85,7 +82,7 @@ const FAQ: React.FC = () => {
       ),
       children: (
         <ItemText>
-          {isMobile || <ImageCollapse src={ImageThird} alt="manky" />}
+          {isMobile || <p>exit</p>}
           To purchase nfts from a collection, you typically need to use
           cryptocurrency on a blockchain-based marketplace.
         </ItemText>
@@ -104,7 +101,7 @@ const FAQ: React.FC = () => {
       ),
       children: (
         <ItemText>
-          {isMobile || <ImageCollapse src={ImageFourth} alt="manky" />}
+          {isMobile || <p>exit</p>}
           As an NFT owner, you can own, transfer, potentially access exclusive
           content, resell, but don't automatically get copyright or intellectual
           property rights.
