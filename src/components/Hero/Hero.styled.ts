@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { BurgerMenuProps } from "../BurgerMenu/BurgerMenu";
 
 export const HeroContainer = styled.div<{ isopen: boolean }>`
 display: ${({ isopen }) => (isopen ? 'none' : 'flex')};

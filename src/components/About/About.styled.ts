@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import CrossIcon from "../../assets/image/cross.svg"
 
 export const AboutContainer = styled.div`
 max-width: 100%;
@@ -229,7 +228,6 @@ padding-right: 84px;
   position: absolute;
   top: 8px;
   right: 24px;
-  background-image: url(${CrossIcon});
 
   @media screen and (min-width: 1280px) {
     top: 19px;

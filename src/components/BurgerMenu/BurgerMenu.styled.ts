@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { BurgerMenuProps } from './BurgerMenu';
 
 export const ContainerMenu = styled.ul< { isopen: boolean } >`
   display: ${({ isopen }) => (isopen ? 'flex' : 'none')};
