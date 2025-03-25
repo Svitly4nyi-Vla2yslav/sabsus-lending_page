@@ -8,11 +8,12 @@ import FAQ from './components/FAQ/FAQ';
 import Arts from './components/Arts/Arts';
 import ContactUs from './components/ContactUs/ContactUs';
 import Footer from './components/Footer/Footer';
-
+import ParticlesBackground from './components/StarrySky/StarrySky';
 const App = () => {
   return (
     <GlobalContainer>
-      <Global styles={GlobalStyles} />
+      {/* <Global styles={GlobalStyles} /> */}
+      <ParticlesBackground />
       <Header />
       <About />
       <MindMap />
@@ -20,7 +21,6 @@ const App = () => {
       <Arts />
       <ContactUs />
       <Footer />
-      
     </GlobalContainer>
   );
 };
