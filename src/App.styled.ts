@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import { createGlobalStyle } from "styled-components";
 import Grotesk from "./assets/fonts/RightGrotesk-CompactBlack.ttf"
 import BiroScript from "./assets/fonts/BiroScriptPlus-Bold.ttf"
 import Messina from "./assets/fonts/MessinaSansMono-Black.ttf"
@@ -22,7 +23,7 @@ export const GlobalContainer = styled.div`
   }
 `;
 
-const GlobalStyles = css`
+const GlobalStyles = createGlobalStyle`
 
 
 :root {
@@ -72,6 +73,7 @@ const GlobalStyles = css`
     background-color: black;
     color: #efedee;
   transition-duration: 300ms;
+   overflow: hidden;
   }
 
   button {
