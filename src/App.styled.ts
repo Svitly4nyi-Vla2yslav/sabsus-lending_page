@@ -7,7 +7,23 @@ import Roboto from "./assets/fonts/Roboto-Regular.ttf"
 //! src: url(${Roboto}) format('truetype');
 import styled from 'styled-components';
 
+export const GlobalContainer = styled.div`
+  position: relative;
+  z-index: 1;
+  
+  #tsparticles {
+    position: fixed;
+      z-index: 0 !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+`;
+
 const GlobalStyles = css`
+
 
 :root {
   --font-family: "Right Grotesk", sans-serif;
@@ -117,9 +133,5 @@ const GlobalStyles = css`
  
 `;
 
-export const GlobalContainer = styled.div`
-width: 100%;
-
-`;
 
 export default GlobalStyles;

@@ -12,7 +12,7 @@ import ParticlesBackground from './components/StarrySky/StarrySky';
 const App = () => {
   return (
     <GlobalContainer>
-      {/* <Global styles={GlobalStyles} /> */}
+      <Global styles={GlobalStyles} />
       <ParticlesBackground />
       <Header />
       <About />

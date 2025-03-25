@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 import Particles from "@tsparticles/react";
-import type { Engine } from "@tsparticles/engine";
+import { Engine, ISourceOptions } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim";
 import React from "react";
 
@@ -9,69 +9,37 @@ const ParticlesBackground = () => {
     await loadSlim(engine);
   }, []);
 
-  const particlesConfig = {
+  const particlesConfig: ISourceOptions = {
     autoPlay: true,
-    background: {
-      color: {
-        value: '#fff',
-      },
-    },
-    fullScreen: {
-      enable: true,
-      zIndex: -1,
-    },
-    detectRetina: true,
-    fpsLimit: 120,
-    interactivity: {
-      events: {
-        resize: {
-          delay: 0.5,
-          enable: true,
-        },
-      },
-    },
+    background: { color: { value: "#000" } },
+    fullScreen: { enable: true, zIndex: 0 },
     particles: {
-      color: {
-        value: '#fff',
-      },
+      color: { value: "#fff" },
       move: {
-        enable: false,
+        enable: true,
+        speed: { min: 0.3, max: 0.7 },
+        direction: "none",
+        outModes: {
+          default: "bounce",
+          bottom: "destroy",
+          top: "none"
+        }
       },
       number: {
-        density: {
-          enable: true,
-          area: 1920,
-        },
-        value: 200,
+        value: 80,
+        density: { enable: true, width: 1920, height: 1080 }
       },
       opacity: {
-        value: {
-          min: 0.1,
-          max: 1,
-        },
-        animation: {
-          enable: true,
-          speed: 0.25,
-        },
+        value: { min: 0.1, max: 0.5 },
+        animation: { enable: true, speed: 3 }
       },
-      shape: {
-        type: 'circle',
-      },
-      size: {
-        value: 1,
-      },
+      size: { value: { min: 0.5, max: 3 } },
+      shape: { type: "circle" }
     },
-    pauseOnBlur: true,
-    pauseOnOutsideViewport: true,
+    detectRetina: true
   };
 
-  return (
-    <Particles
-      id="tsparticles"
-      init={particlesInit}
-      options={particlesConfig}
-    />
-  );
+  return <Particles id="tsparticles" init={particlesInit} options={particlesConfig} />;
 };
 
 export default ParticlesBackground;

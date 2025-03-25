@@ -6,8 +6,6 @@ import {
   ButtonTextContact,
   ContainerForm,
   ContainerIcon,
-  DiscordIcon,
-  FoxIcon,
   InputDiscord,
   InputFox,
 } from './ContactUs.styled';
