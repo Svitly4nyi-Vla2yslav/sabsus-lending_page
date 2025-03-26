@@ -128,7 +128,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   html {
-    overflow-x: hidden;
+    // overflow-x: hidden;
     scroll-behavior: smooth;
    
     }

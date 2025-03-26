@@ -2,15 +2,10 @@ import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import type { Engine, IShapeDrawer } from "tsparticles-engine";
 import { loadSlim } from "tsparticles-slim";
-import styled from "styled-components";
+// import { GradientWrapper } from "./GradientBackground";
+// import styled from "styled-components";
 
-const BackgroundWrapper = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  background: radial-gradient(ellipse at top, #ed1816 0%, #f84215 30%, rgba(0, 0, 0, 0) 70%);
-  z-index: -1;
-`;
+
 
 const ParticlesBackground = () => {
   const particlesInit = useCallback(async (engine: Engine) => {
@@ -21,8 +16,10 @@ const ParticlesBackground = () => {
   }, []);
 
   return (
-    <BackgroundWrapper>
-    <Particles
+    < >
+    
+    <Particles 
+   
       init={particlesInit}
       options={{
         background: { color: "#000" },
@@ -59,7 +56,7 @@ const ParticlesBackground = () => {
         },
         detectRetina: true,
       }}
-    /></BackgroundWrapper>
+    /></>
   );
 };
 
@@ -79,5 +76,13 @@ class FourPointStarDrawer implements IShapeDrawer {
     return 4;
   }
 }
+
+// const BackgroundWrapper = styled.div`
+//    position: fixed;
+//   width: 100vw;
+//   height: 100vh;
+//   background: radial-gradient(ellipse at top, #ed1816, #f84215, transparent 80%);
+//   // overflow: hidden;
+// `;
 
 export default ParticlesBackground;
