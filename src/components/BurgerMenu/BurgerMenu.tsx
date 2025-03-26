@@ -1,68 +1,88 @@
-import React from 'react';
-
+import { useState } from 'react';
+import styled from 'styled-components';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
-  BurgerMenuButton,
-  ButtonMenu,
-  ContainerMenu,
-  ContainerNetworks,
-  MenuItem,
-  TextButton,
+  BurgerButton,
+  IconsStars,
+  Line,
+  MenuLink,
+  MenuOverlay,
   Wrapper,
 } from './BurgerMenu.styled';
+import MagicButton from '../MagicButton/MagicButton';
+import ExplodingButton from '../MagicButton/MagicButton';
+import Button from '../MagicButton/MagicButton';
 
+// Анімації для бургер-кнопки
+const topLineVariants = {
+  open: { rotate: 45, y: 8 },
+  closed: { rotate: 0, y: 0 },
+};
 
-export interface BurgerMenuProps {
-  isopen?: boolean;
-  toggleMenu?: () => void;
-}
+const middleLineVariants = {
+  open: { opacity: 0 },
+  closed: { opacity: 1 },
+};
 
-const BurgerMenu: React.FC<BurgerMenuProps> = ({ isopen, toggleMenu }) => {
+const bottomLineVariants = {
+  open: { rotate: -45, y: -8 },
+  closed: { rotate: 0, y: 0 },
+};
+
+// Анімація меню
+const menuVariants = {
+  open: { opacity: 1, x: 0 },
+  closed: { opacity: 0, x: '-100%' },
+};
+
+const links = [
+  { href: '#service', label: 'Service' },
+  { href: '#case', label: 'Case Studies' },
+  { href: '#faq', label: 'FAQ' },
+  { href: '#contact', label: 'Contact Us' },
+];
+
+const BurgerMenu = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <Wrapper>
-      {/* <BurgerMenuButton onClick={toggleMenu}>
-        <TextButton> {isopen ? 'CLOSE' : 'MENU'}</TextButton>
-      </BurgerMenuButton> */}
-      <ContainerMenu isopen={false}    //   isopen={isopen}
-      >
-        {/* <ButtonMenu>
-          <MenuItem>
-            <a href="#about" target="_self">
-              ABOUT
-            </a>{' '}
-          </MenuItem>
-        </ButtonMenu>
-        <ButtonMenu>
-          <MenuItem>
-            <a href="#mind-map" target="_self">
-              MIND-MAP
-            </a>{' '}
-          </MenuItem>
-        </ButtonMenu>
-        <ButtonMenu>
-          <MenuItem>
-            <a href="#faq" target="_self">
-              FAQ
-            </a>{' '}
-          </MenuItem>
-        </ButtonMenu>
-        <ButtonMenu>
-          <MenuItem>
-            <a href="#arts" target="_self">
-              ARTS
-            </a>{' '}
-          </MenuItem>
-        </ButtonMenu>
-        <ButtonMenu>
-          <MenuItem>
-            <a href="#mint" target="_self">
-              MINT
-            </a>{' '}
-          </MenuItem>
-        </ButtonMenu> */}
-      </ContainerMenu>
-      <ContainerNetworks>
-      
-      </ContainerNetworks>
+      {/* Бургер-кнопка */}
+      <BurgerButton onClick={() => setIsOpen(!isOpen)}>
+        <Line animate={isOpen ? 'open' : 'closed'} variants={topLineVariants} />
+        <Line
+          animate={isOpen ? 'open' : 'closed'}
+          variants={middleLineVariants}
+        />
+        <Line
+          animate={isOpen ? 'open' : 'closed'}
+          variants={bottomLineVariants}
+        />
+      </BurgerButton>
+
+      {/* Модальне меню */}
+      <AnimatePresence>
+        {isOpen && (
+          <MenuOverlay
+            initial="closed"
+            animate="open"
+            exit="closed"
+            variants={menuVariants}
+            transition={{ duration: 0.3 }}
+          >
+            {links.map((link, index) => (
+              <MenuLink
+                key={index}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+              >
+                {link.label}
+              </MenuLink>
+            ))}
+            <Button href="#contact"><IconsStars/>  Get in Touch</Button>
+          </MenuOverlay>
+        )}
+      </AnimatePresence>
     </Wrapper>
   );
 };

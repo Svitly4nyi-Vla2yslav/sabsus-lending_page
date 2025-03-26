@@ -1,12 +1,8 @@
 import styled from '@emotion/styled';
-import { ContainerProps } from './Header';
 
 export const HeaderContainer = styled.div<{ isopen: boolean }>`
 
-
 `;
-
-
 
 export const Logo = styled.a`
 
@@ -15,6 +11,7 @@ height: 54px;
 `;
 
 export const LogoIcon = styled.img`
+z-index: 7;
 position: fixed;
   width: 152px;
 height: 54px;
@@ -25,4 +22,9 @@ height: 54px;
    
 `;
 
+export const ContainerBar = styled.div`
+display: flex;
+    justify-content: space-between;
+
+`;
 
