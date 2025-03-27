@@ -1,7 +1,7 @@
-// Button.tsx
 import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import ElementSvg from "../../assets/icons/Element.svg"
+
 const generateStarAnimation = () => keyframes`
   0% {
     transform: translate(0, 0) rotate(45deg) scale(1);
@@ -21,7 +21,7 @@ const ButtonContainer = styled.a<{ $isClicked: boolean }>`
   font-size: 18px;
   font-family: 'Arial', sans-serif;
   color: #fff;
-  background: linear-gradient(135deg,rgb(222, 118, 26) 0%, #FE5B14 100%);
+  background: linear-gradient(135deg, rgb(222, 118, 26) 0%, #FE5B14 100%);
   border: 2px solid rgb(247, 159, 26);
   border-radius: 30px;
   cursor: pointer;
@@ -29,10 +29,10 @@ const ButtonContainer = styled.a<{ $isClicked: boolean }>`
   overflow: hidden;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgb(203, 101, 24);
-   z-index: 0;
-       width: 80%;
-    bottom: -27%;
-  
+  z-index: 0;
+  width: 80%;
+  bottom: -27%;
+
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgb(255, 87, 3);
@@ -40,28 +40,26 @@ const ButtonContainer = styled.a<{ $isClicked: boolean }>`
 
   &:active {
     transform: scale(0.95) translateY(0);
-    background: linear-gradient(135deg,rgb(255, 138, 5) 0%, #FE5B14 100%);
+    background: linear-gradient(135deg, rgb(255, 138, 5) 0%, #FE5B14 100%);
   }
 `;
 
-const Star = styled.div<{ $delay: number }>`
+const Star = styled.div`
   position: absolute;
-  width: 53px;  // Ширина з вашого SVG
-  height: 49px; // Висота з вашого SVG
+  width: 53px;
+  height: 49px;
   background: url(${ElementSvg}) no-repeat center center;
   background-size: contain;
-  animation: ${generateStarAnimation} 2.2s ease-out forwards;
+  animation: ${generateStarAnimation} 1s ease-out forwards; // Анімація зірок одразу
   pointer-events: none;
   opacity: 0.9;
-
-
 `;
 
 const ButtonText = styled.span`
   position: relative;
   z-index: 1;
   width: 100%;
-    text-align: center;
+  text-align: center;
   letter-spacing: 1px;
 `;
 
@@ -77,32 +75,26 @@ const Button: React.FC<ButtonProps> = ({ href, children }) => {
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
     setIsClicked(true);
-    
-    // Генерація нових зірок при кожному кліку
+
+    // Генерація нових зірок при кліку
     const newStars = Array.from({ length: 180 }, (_, i) => ({
       id: Date.now() + i,
       key: Date.now() + i,
     }));
     setStars(newStars);
 
-    // Перехід по посиланню через 300ms
+    // Плавне прокручування до якірного посилання через 3 секунди
     setTimeout(() => {
-      window.location.href = href;
-    }, 100);
+      document.getElementById(href.replace("#", ""))?.scrollIntoView({ behavior: "smooth" });
+    }, 300);
   };
 
   return (
-    <ButtonContainer 
-      href={href}
-      onClick={handleClick}
-      $isClicked={isClicked}
-    >
+    <ButtonContainer href={href} onClick={handleClick} $isClicked={isClicked}>
       <ButtonText>{children}</ButtonText>
-      
       {stars.map(star => (
-        <Star 
+        <Star
           key={star.key}
-          $delay={Math.random() * 0.5}
           style={{
             left: `${Math.random() * 100}%`,
             top: `${Math.random() * 100}%`,

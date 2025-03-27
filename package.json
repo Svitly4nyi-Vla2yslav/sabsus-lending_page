@@ -15,8 +15,12 @@
     "@emotion/styled": "^11.11.0",
     "@formspree/react": "^3.0.0",
     "@tsparticles/engine": "^3.8.1",
+    "@tsparticles/move-base": "^3.8.1",
     "@tsparticles/react": "^3.0.0",
+    "@tsparticles/shape-star": "^3.8.1",
     "@tsparticles/slim": "^3.8.1",
+    "@tsparticles/updater-life": "^3.8.1",
+    "@tsparticles/updater-opacity": "^3.8.1",
     "antd": "^5.24.5",
     "framer-motion": "^12.6.1",
     "react": "^18.2.0",
@@ -24,9 +28,9 @@
     "react-particles": "^2.12.2",
     "react-responsive": "^10.0.1",
     "react-tsparticles": "^2.12.2",
+    "rimraf": "^6.0.1",
     "styled-components": "^6.1.8",
     "sweetalert2": "^11.17.2",
-    "tsparticles": "^3.8.1",
     "tsparticles-slim": "^2.12.0"
   },
   "devDependencies": {
