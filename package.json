@@ -25,7 +25,6 @@
     "framer-motion": "^12.6.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-particles": "^2.12.2",
     "react-responsive": "^10.0.1",
     "react-tsparticles": "^2.12.2",
     "rimraf": "^6.0.1",
