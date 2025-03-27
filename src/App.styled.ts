@@ -15,7 +15,7 @@ export const GlobalContainer = styled.div`
   z-index: 1;
   
   #tsparticles {
-    position: fixed;
+    // position: fixed;
       z-index: 0 !important;
     top: 0;
     left: 0;
@@ -26,7 +26,6 @@ export const GlobalContainer = styled.div`
 `;
 
 const GlobalStyles = createGlobalStyle`
-
 
 :root {
 	--white: #fff;
@@ -100,6 +99,7 @@ const GlobalStyles = createGlobalStyle`
     color: #efedee;
   transition-duration: 300ms;
    overflow: hidden;
+
   }
 
   button {
@@ -138,6 +138,7 @@ const GlobalStyles = createGlobalStyle`
   font-family: 'Roboto Flex';
     margin: 0;
     padding: 0;
+    z-index: 0;
   }
 
   ul,

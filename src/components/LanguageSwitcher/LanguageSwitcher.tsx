@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
-import ENG from "../../assets/icons/US.svg"
-import ESP from "../../assets/icons/ES.svg"
-import RUS from "../../assets/icons/RU.svg"
+import { useTranslation } from 'react-i18next';
+import ENG from '../../assets/icons/US.svg';
+import ESP from '../../assets/icons/ES.svg';
+import RUS from '../../assets/icons/RU.svg';
+import Arrow from '../../assets/icons/arrow_down.svg';
 
-import Arrow from "../../assets/icons/arrow_down.svg"
-import { IconsStars } from '../BurgerMenu/BurgerMenu.styled';
 // Дані мов
 const languages = [
   { code: 'en', label: 'ENG', flag: ENG },
@@ -21,7 +21,7 @@ const Wrapper = styled.div`
 `;
 
 const Button = styled.button`
-margin-top: 8px ;
+  margin-top: 8px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -34,7 +34,6 @@ margin-top: 8px ;
   transition: background 0.2s;
   &:hover {
     background: #444;
-
     background-color: rgba(249, 249, 249, 0.28);
   }
 `;
@@ -66,26 +65,27 @@ const DropdownItem = styled(motion.li)`
 `;
 
 const Icons = styled.img`
-width: 20px;
-`;
-const IconsArrow = styled.img`
-width: 10px;
+  width: 20px;
 `;
 
+const IconsArrow = styled.img`
+  width: 10px;
+`;
 
 const LanguageSwitcher = () => {
+  const { i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedLang, setSelectedLang] = useState(languages[0]);
+  const selectedLang =
+    languages.find(lang => lang.code === i18n.language) || languages[0];
 
   const toggleMenu = () => setIsOpen(prev => !prev);
 
   return (
     <Wrapper>
       <Button onClick={toggleMenu}>
-       
         <span>{selectedLang.label}</span>
-         <Icons src={selectedLang.flag} alt={selectedLang.label}/>
-         <IconsArrow src={Arrow}  alt='🔽'/>
+        <Icons src={selectedLang.flag} alt={selectedLang.label} />
+        <IconsArrow src={Arrow} alt="🔽" />
       </Button>
 
       {/* Випадаючий список мов */}
@@ -101,12 +101,12 @@ const LanguageSwitcher = () => {
               <DropdownItem
                 key={lang.code}
                 onClick={() => {
-                  setSelectedLang(lang);
+                  i18n.changeLanguage(lang.code);
                   setIsOpen(false);
                 }}
               >
-                
-                {lang.label}<Icons src={lang.flag}/>
+                {lang.label}
+                <Icons src={lang.flag} />
               </DropdownItem>
             ))}
           </Dropdown>

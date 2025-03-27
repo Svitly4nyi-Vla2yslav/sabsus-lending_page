@@ -20,27 +20,17 @@ export const ButtonContainer = styled.a<{ $isClicked: boolean }>`
   font-size: 18px;
   font-family: 'Arial', sans-serif;
   color: #fff;
-  background: linear-gradient(135deg, rgb(222, 118, 26) 0%, #FE5B14 100%);
-  border: 2px solid rgb(247, 159, 26);
+  background: linear-gradient(135deg, #fe5b14 0%, #FE5B14 100%);
   border-radius: 30px;
   cursor: pointer;
   text-decoration: none;
   overflow: hidden;
   transition: all 0.6s ease;
-  box-shadow: 0 4px 15px rgb(203, 101, 24);
+  box-shadow: 0 0 0 3px rgba(254, 91, 20, 0.17), 0 1px 2px 0 #fe5b14;
   z-index: 0;
   width: 80%;
   bottom: -27%;
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgb(255, 87, 3);
-  }
-
-  &:active {
-    transform: scale(0.95) translateY(0);
-    background: linear-gradient(135deg, rgb(255, 138, 5) 0%, #FE5B14 100%);
-  }
+  
 `;
 
 export const Star = styled.div`
