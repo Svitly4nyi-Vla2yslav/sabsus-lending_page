@@ -5,6 +5,8 @@ import ENG from "../../assets/icons/US.svg"
 import ESP from "../../assets/icons/ES.svg"
 import RUS from "../../assets/icons/RU.svg"
 
+import Arrow from "../../assets/icons/arrow_down.svg"
+import { IconsStars } from '../BurgerMenu/BurgerMenu.styled';
 // Дані мов
 const languages = [
   { code: 'en', label: 'ENG', flag: ENG },
@@ -25,7 +27,7 @@ margin-top: 8px ;
   gap: 8px;
   padding: 10px 16px;
   background: transparent;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(80px);
   color: white;
   border-radius: 28px;
   cursor: pointer;
@@ -65,7 +67,11 @@ const DropdownItem = styled(motion.li)`
 
 const Icons = styled.img`
 width: 20px;
-`
+`;
+const IconsArrow = styled.img`
+width: 10px;
+`;
+
 
 const LanguageSwitcher = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -76,8 +82,10 @@ const LanguageSwitcher = () => {
   return (
     <Wrapper>
       <Button onClick={toggleMenu}>
+       
         <span>{selectedLang.label}</span>
          <Icons src={selectedLang.flag} alt={selectedLang.label}/>
+         <IconsArrow src={Arrow}  alt='🔽'/>
       </Button>
 
       {/* Випадаючий список мов */}

@@ -3,7 +3,8 @@ import styled from "styled-components";
 
 // Styled Components
 export const Wrapper = styled.div`
-  position: relative;
+    display: flex;
+    align-items: center;
 `;
 
 export const BurgerButton = styled.button`
@@ -13,11 +14,11 @@ export const BurgerButton = styled.button`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
   background: transparent;
   border: none;
   cursor: pointer;
-  z-index: 1;
+  z-index: 10;
 `;
 
 export const Line = styled(motion.div)`
@@ -44,6 +45,7 @@ export const MenuOverlay = styled(motion.div)`
 
 export const MenuLink = styled(motion.a)`
   color: white;
+    font-family: 'Roboto Flex';
   font-size: 24px;
   margin: 12px 0;
   text-decoration: none;
@@ -55,5 +57,6 @@ export const MenuLink = styled(motion.a)`
 `;
 
 export const IconsStars =  styled.img`
+width: 20px;
 
 `;

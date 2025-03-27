@@ -40,10 +40,12 @@ const Header: React.FC = () => {
           <Logo href="#header">
             <LogoIcon src={LogoSabsus} alt="logo-sabsus" />
           </Logo>
-          <LanguageSwitcher /><BurgerMenu />
+          <ContainerBar>
+            <LanguageSwitcher />
+            <BurgerMenu />
+          </ContainerBar>
         </ContainerBar>
         <Hero />
-        
       </HeaderContainer>{' '}
     </>
   );

@@ -77,12 +77,5 @@ class FourPointStarDrawer implements IShapeDrawer {
   }
 }
 
-// const BackgroundWrapper = styled.div`
-//    position: fixed;
-//   width: 100vw;
-//   height: 100vh;
-//   background: radial-gradient(ellipse at top, #ed1816, #f84215, transparent 80%);
-//   // overflow: hidden;
-// `;
 
 export default ParticlesBackground;

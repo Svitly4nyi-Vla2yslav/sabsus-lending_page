@@ -1,10 +1,12 @@
 import { css } from '@emotion/react';
 import { createGlobalStyle } from "styled-components";
-import Grotesk from "./assets/fonts/RightGrotesk-CompactBlack.ttf"
-import BiroScript from "./assets/fonts/BiroScriptPlus-Bold.ttf"
-import Messina from "./assets/fonts/MessinaSansMono-Black.ttf"
-import Formular from "./assets/fonts/Formular-Medium.ttf"
-import Roboto from "./assets/fonts/Roboto-Regular.ttf"
+import MulishBold from "./assets/fonts/Mulish-Bold.ttf"
+import MulishMedium from "./assets/fonts/Mulish-Medium.ttf"
+import PoppinsMedium from "./assets/fonts/Poppins-Medium.ttf"
+import PoppinsRegular from "./assets/fonts/Poppins-Regular.ttf"
+import Helvetica from "./assets/fonts/Helvetica.ttf"
+import Inter from "./assets/fonts/Inter_18pt-Regular.ttf"
+import Roboto from "./assets/fonts/RobotoFlex-VariableFont_GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght.ttf"
 //! src: url(${Roboto}) format('truetype');
 import styled from 'styled-components';
 
@@ -27,35 +29,59 @@ const GlobalStyles = createGlobalStyle`
 
 
 :root {
-  --font-family: "Right Grotesk", sans-serif;
-  --second-family: "Messina Sans Mono", sans-serif;
-  --third-family: "Biro Script Plus", sans-serif;
-  --font3: "Formular", sans-serif;
-  --font4: "Roboto", sans-serif;
+	--white: #fff;
+	--substrate: #0e0e0e;
+	--line: #212121;
+	--black-500: #0a0a0a;
+	--black-400: #141414;
+	--black-350: rgba(0, 0, 0, 0.35);
+	--black-350: #1e1e1e;
+	--black-500: rgba(24, 24, 27, 0.5);
+	--orange-500: #fe5b14;
+	--gray-500: rgba(161, 161, 170, 0.8);
+	--white-0.2: rgba(255, 255, 255, 0);
+	--blue-200: rgba(212, 228, 254, 0.2);
+	--red-50: rgba(255, 94, 94, 0.05);
+	--red-500: #f00;
+	--gray-800: rgba(132, 132, 139, 0.8);
+  // ! fonts 
+    --font-family: "Roboto Flex", sans-serif;
+  --second-family: "Mulish", sans-serif;
+  --third-family: "Helvetica", sans-serif;
+  --font3: "Poppins", sans-serif;
+  --font4: "Inter", sans-serif;
 }
 @font-face {
-  font-family: 'Roboto';
+  font-family: 'Roboto Flex';
   // src: url(${Roboto}) format('truetype');
 }
 
 @font-face {
-  font-family: 'Right Grotesk';
-  src: url(${Grotesk}) format('truetype');
+  font-family: 'MulishBold';
+  src: url(${MulishBold}) format('truetype');
+}
+  @font-face {
+  font-family: 'MulishMedium';
+  src: url(${MulishMedium}) format('truetype');
 }
 
 @font-face {
-  font-family: 'Messina Sans Mono';
-  src: url(${Messina}) format('truetype');
+  font-family: 'Helvetica';
+  src: url(${Helvetica}) format('truetype');
 }
 
 @font-face {
-  font-family: 'Biro Script Plus';
-  src: url(${BiroScript}) format('truetype');
+  font-family: 'PoppinsMedium';
+  src: url(${PoppinsMedium}) format('truetype');
+}
+  @font-face {
+  font-family: 'PoppinsRegular';
+  src: url(${PoppinsRegular}) format('truetype');
 }
 
 @font-face {
-  font-family: 'Formular';
-  src: url(${Formular}) format('truetype');
+  font-family: 'Inter';
+  src: url(${Inter}) format('truetype');
 }
 
 @keyframes move {
@@ -69,7 +95,7 @@ const GlobalStyles = createGlobalStyle`
 }
   
   body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Flex', sans-serif;
     background-color: black;
     color: #efedee;
   transition-duration: 300ms;
@@ -109,7 +135,7 @@ const GlobalStyles = createGlobalStyle`
   h6,
   p,
  {
-  font-family: 'Messina Sans Mono';
+  font-family: 'Roboto Flex';
     margin: 0;
     padding: 0;
   }

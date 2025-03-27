@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   BurgerButton,
@@ -9,9 +9,8 @@ import {
   MenuOverlay,
   Wrapper,
 } from './BurgerMenu.styled';
-import MagicButton from '../MagicButton/MagicButton';
-import ExplodingButton from '../MagicButton/MagicButton';
 import Button from '../MagicButton/MagicButton';
+import IconStars from '../../assets/icons/Icon-stars.svg';
 
 // Анімації для бургер-кнопки
 const topLineVariants = {
@@ -79,7 +78,9 @@ const BurgerMenu = () => {
                 {link.label}
               </MenuLink>
             ))}
-            <Button href="#contact"><IconsStars/>  Get in Touch</Button>
+            <Button href="#">
+              <IconsStars src={IconStars} alt="Stars" /> Get in Touch
+            </Button>
           </MenuOverlay>
         )}
       </AnimatePresence>
