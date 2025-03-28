@@ -11,6 +11,7 @@ import {
 } from './BurgerMenu.styled';
 import Button from '../MagicButton/MagicButton';
 import IconStars from '../../assets/icons/Icon-stars.svg';
+import { useTranslation } from 'react-i18next';
 
 // Анімації для бургер-кнопки
 const topLineVariants = {
@@ -34,16 +35,16 @@ const menuVariants = {
   closed: { opacity: 0, x: '-100%' },
 };
 
-const links = [
-  { href: '#service', label: 'Service' },
-  { href: '#case', label: 'Case Studies' },
-  { href: '#faq', label: 'FAQ' },
-  { href: '#contact', label: 'Contact Us' },
-];
-
 const BurgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { t } = useTranslation(); // Отримуємо функцію перекладу
 
+  const links = [
+    { href: '#service', label: t('menu.services') }, // Використовуємо переклад
+    { href: '#case', label: t('menu.caseStudies') },
+    { href: '#faq', label: t('menu.faq') },
+    { href: '#contact', label: t('menu.contact') },
+  ];
   return (
     <Wrapper>
       {/* Бургер-кнопка */}
@@ -79,7 +80,7 @@ const BurgerMenu = () => {
               </MenuLink>
             ))}
             <Button href="#">
-              <IconsStars src={IconStars} alt="Stars" /> Get in Touch
+              <IconsStars src={IconStars} alt="Stars" /> {t('buttons.getInTouch')} 
             </Button>
           </MenuOverlay>
         )}

@@ -1,0 +1,23 @@
+{
+    "hero": {
+      "developmentAgency": "Development agency",
+      "title": "Modern IT solutions for your business",
+      "description": "We develop powerful CRM systems, mobile applications, and unique IT products that help you grow and automate business processes.",
+      "expertiseTitle": "Our Expertise"
+    },
+    "expertise": {
+      "tailored": "Tailored Solutions",
+      "scalable": "Scalable Technologies",
+      "proven": "Proven Expertise"
+    },
+    "menu": {
+      "services": "Service",
+      "caseStudies": "Case Studies",
+      "faq": "FAQ",
+      "contact": "Contact Us"
+    },
+    "buttons": {
+      "contact": "Contact Us",
+      "getInTouch": "Get in Touch"
+    }
+  }

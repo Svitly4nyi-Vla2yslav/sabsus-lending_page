@@ -1,0 +1,23 @@
+{
+    "hero": {
+      "developmentAgency": "Agencia de desarrollo",
+      "title": "Soluciones IT modernas para tu negocio",
+      "description": "Desarrollamos potentes sistemas CRM, aplicaciones móviles y productos IT únicos que te ayudan a crecer y automatizar procesos empresariales.",
+      "expertiseTitle": "Nuestra experiencia"
+    },
+    "expertise": {
+      "tailored": "Soluciones a medida",
+      "scalable": "Tecnologías escalables",
+      "proven": "Experiencia comprobada"
+    },
+    "menu": {
+      "services": "Servicios",
+      "caseStudies": "Casos de estudio",
+      "faq": "Preguntas frecuentes",
+      "contact": "Contacto"
+    },
+    "buttons": {
+      "contact": "Contáctenos",
+      "getInTouch": "Contactar"
+    }
+  }

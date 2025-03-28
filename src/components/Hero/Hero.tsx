@@ -21,35 +21,35 @@ const Hero: React.FC = ({}) => {
   const { t } = useTranslation();
 
   return (
-    <>
-      <HeroWrapper>
-        <TextDevelopment>Development agency</TextDevelopment>
-        <TitleModern>Modern IT solutions for your business</TitleModern>
-        <TextDescription>
-          We develop powerful CRM systems, mobile applications, and unique IT
-          products that help you grow and automate business processes.
-        </TextDescription>
-        <ContainerButton>
-          <Button href="#">
-            <IconsStars src={IconStars} alt="Stars" /> Contact Us
-          </Button>
-        </ContainerButton>
+    <HeroWrapper>
+      <TextDevelopment>{t('hero.developmentAgency')}</TextDevelopment>
+      <TitleModern>{t('hero.title')}</TitleModern>
+      <TextDescription>{t('hero.description')}</TextDescription>
 
-        <TextDevelopment>Our Expertise</TextDevelopment>
-        <ContainerExperience>
-          <IconsExperience src={Tailored} alt="⚙️" />{' '}
-          <TextExperience>Tailored Solutions</TextExperience>
-        </ContainerExperience>
-        <ContainerExperience>
-          <IconsExperience src={Scalable} alt="🎢" />{' '}
-          <TextExperience>Scalable Technologies</TextExperience>
-        </ContainerExperience>
-        <ContainerExperience>
-          <IconsExperience src={Proven} alt="🤯" />{' '}
-          <TextExperience>Proven Expertise</TextExperience>
-        </ContainerExperience>
-      </HeroWrapper>
-    </>
+      <ContainerButton>
+        <Button href="#">
+          <IconsStars src={IconStars} alt="Stars" />
+          {t('buttons.contact')}
+        </Button>
+      </ContainerButton>
+
+      <TextDevelopment>{t('hero.expertiseTitle')}</TextDevelopment>
+
+      <ContainerExperience>
+        <IconsExperience src={Tailored} alt="⚙️" />
+        <TextExperience>{t('expertise.tailored')}</TextExperience>
+      </ContainerExperience>
+
+      <ContainerExperience>
+        <IconsExperience src={Scalable} alt="🎢" />
+        <TextExperience>{t('expertise.scalable')}</TextExperience>
+      </ContainerExperience>
+
+      <ContainerExperience>
+        <IconsExperience src={Proven} alt="🤯" />
+        <TextExperience>{t('expertise.proven')}</TextExperience>
+      </ContainerExperience>
+    </HeroWrapper>
   );
 };
 

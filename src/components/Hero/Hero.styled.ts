@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const HeroWrapper = styled.div`
  position: absolute;
- top: 25vw;
+ top: 100px;
     display: flex;
     width: 343px;
     align-items: flex-start;
