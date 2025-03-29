@@ -3,7 +3,6 @@ import { ContainerBar, HeaderContainer, Logo, LogoIcon } from './Header.styled';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
 import LogoSabsus from '../../assets/icons/logo-sabsus.svg';
 
-import Hero from '../Hero/Hero';
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 
 export interface ContainerProps {
@@ -35,7 +34,7 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <HeaderContainer id="header" isopen={isopen}>
+      <HeaderContainer isopen={isopen} $isScrolled={isScrolled}>
         <ContainerBar>
           <Logo href="#header">
             <LogoIcon src={LogoSabsus} alt="logo-sabsus" />
@@ -45,7 +44,6 @@ const Header: React.FC = () => {
             <BurgerMenu />
           </ContainerBar>
         </ContainerBar>
-        <Hero />
       </HeaderContainer>{' '}
     </>
   );

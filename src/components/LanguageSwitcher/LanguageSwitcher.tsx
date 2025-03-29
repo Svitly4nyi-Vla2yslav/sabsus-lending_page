@@ -17,7 +17,9 @@ const languages = [
 // Styled Components
 const Wrapper = styled.div`
   position: relative;
-  z-index: 10;
+left: 70px;
+display: flex;
+  z-index: 100;
 `;
 
 const Button = styled.button`
@@ -50,6 +52,7 @@ const Dropdown = styled(motion.ul)`
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 11;
 `;
 
 const DropdownItem = styled(motion.li)`
@@ -81,7 +84,7 @@ const LanguageSwitcher = () => {
   const toggleMenu = () => setIsOpen(prev => !prev);
 
   return (
-    <Wrapper>
+    <Wrapper >
       <Button onClick={toggleMenu}>
         <span>{selectedLang.label}</span>
         <Icons src={selectedLang.flag} alt={selectedLang.label} />

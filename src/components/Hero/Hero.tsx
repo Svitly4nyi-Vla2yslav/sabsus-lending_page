@@ -21,7 +21,7 @@ const Hero: React.FC = ({}) => {
   const { t } = useTranslation();
 
   return (
-    <HeroWrapper>
+    <HeroWrapper  id="header">
       <TextDevelopment>{t('hero.developmentAgency')}</TextDevelopment>
       <TitleModern>{t('hero.title')}</TitleModern>
       <TextDescription>{t('hero.description')}</TextDescription>

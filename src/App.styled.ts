@@ -11,7 +11,7 @@ import Roboto from "./assets/fonts/RobotoFlex-VariableFont_GRAD,XOPQ,XTRA,YOPQ,Y
 import styled from 'styled-components';
 
 export const GlobalContainer = styled.div`
-  position: relative;
+  // position: relative;
   z-index: 1;
   
   #tsparticles {
@@ -98,7 +98,7 @@ const GlobalStyles = createGlobalStyle`
     background-color: black;
     color: #efedee;
   transition-duration: 300ms;
-   overflow: hidden;
+  //  overflow: hidden;
 
   }
 

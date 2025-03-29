@@ -2,6 +2,7 @@ import { useCallback } from 'react';
 import Particles from 'react-tsparticles';
 import type { Engine, IShapeDrawer } from 'tsparticles-engine';
 import { loadSlim } from 'tsparticles-slim';
+import { GradientWrapper } from './GradientBackground';
 
 const ParticlesBackground = () => {
   const particlesInit = useCallback(async (engine: Engine) => {
@@ -13,6 +14,7 @@ const ParticlesBackground = () => {
 
   return (
     <>
+    
       <Particles
         init={particlesInit}
         options={{

@@ -9,7 +9,7 @@ export const GradientWrapper = styled.div`
   height: 300px;
   background: radial-gradient(circle, #fe5b14 0%, rgba(0, 0, 0, 0) 70%);
   border-radius: 50%;
-  z-index: 10;
+  z-index: 1;
   filter: blur(80px);
 `;
 
