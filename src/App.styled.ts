@@ -98,7 +98,6 @@ const GlobalStyles = createGlobalStyle`
     background-color: black;
     color: #efedee;
   transition-duration: 300ms;
-  //  overflow: hidden;
 
   }
 

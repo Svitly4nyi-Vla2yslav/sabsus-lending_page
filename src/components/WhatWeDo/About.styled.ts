@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const AboutWrapper = styled.div`
  display: flex;
@@ -89,9 +89,12 @@ margin: 20px;
 // ! TotalDepositContainer
 
 export const ContainerTabl = styled.div`
+display: flex;
+gap: 6px;
 width: 301px;
 height: 155px; 
 margin: 20px 20px 4px 20px;
+
 `;
 
 
@@ -140,6 +143,7 @@ color: var(--white);
 export const DollarSpan = styled.button`
 border-radius: 2px;
 width: 9px;
+border: none;
 height: 9px;
 padding: 0;
 margin: 5px;
@@ -147,12 +151,13 @@ display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    
 background: linear-gradient(90deg, #ed1816 0%, #f84215 63.35%, #fe5b14 100%);
 `;
 
 export const DollarIcon = styled.img`
-width: 2px;
-height: 4px;
+width: 3px;
+height: 5px;
 
 `;
 
@@ -171,6 +176,18 @@ stroke: #ff5e5e;
 
 // ! AllProjectsTitle 
 
+export const ContainerProjects = styled.div`
+border: 0.25px solid #444;
+border-radius: 3px;
+width: 70px;
+height: 31px;
+box-shadow: 0 0 0 0 var(--white), 0 0 0 0px rgba(244, 244, 245, 0.1), 0 0 0 0 rgba(0, 0, 0, 0), 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 30%, rgba(255, 255, 255, 0.02) 100%);
+display: flex;
+align-items: center;
+    justify-content: center;
+`;
+
 export const AllProjectsTitle = styled.p`
 font-family: var(--font-family);
 font-weight: 500;
@@ -187,16 +204,69 @@ line-height: 150%;
 color: var(--gray-500);
 `;
 
-export const AllProjectsSpann = styled.span`
+export const AllProjectsSpann = styled.button`
+border-radius: 2px;
+border: none;
+margin-left: 2px;
+padding: 0;
 width: 2px;
 height: 2px;
 background: linear-gradient(90deg, #ed1816 0%, #f84215 63.35%, #fe5b14 100%);
 
 `;
 
+export const AllProjectsSpannGray = styled.button`
+border-radius: 2px;
+border: none;
+margin-left: 2px;
+margin-right: 1px;
+padding: 0;
+width: 2px;
+height: 2px;
+background: linear-gradient(90deg,rgb(0, 0, 0) 0%,rgb(23, 20, 20) 63.35%,rgb(0, 0, 0) 100%);
+
+`;
+
+export const ProzentIconContainer = styled.div`
+width: 21px;
+height: 21px;
+`;
+
+export const ProzentText = styled.div`
+width: 12px;
+height: 8px;
+    position: absolute;
+
+p {
+font-family: var(--font-family);
+font-weight: 400;
+font-size: 5px;
+text-align: center;
+color: var(--gray-500);
+    position: absolute;
+    top: 6px;
+    left:10px;
+}
+
+span{
+font-family: var(--font-family);
+font-weight: 400;
+font-size: 2px;
+text-align: center;
+color: var(--gray-500);
+    position: absolute;
+    top: 12px;
+    left: 9px;
+}
+
+`;
+
+
 export const ProzentIcon = styled.img`
 width: 21px;
 height: 21px;
+    position: absolute;
+
 `;
 
 // ! Expenses
@@ -204,7 +274,58 @@ height: 21px;
 export const GrafikIconRed = styled.img`
 stroke-width: 0.50px;
 stroke: #ff5e5e;
+
 `;
+
+// ! task not finished
+
+export const ListIcon = styled.img`
+width: 4px;
+height: 4px;
+
+`;
+
+export const TaskText = styled.p`
+font-family: var(--font-family);
+font-weight: 300;
+font-size: 3px;
+line-height: 180%;
+color: var(--gray-500);
+position: relative;
+bottom: 5px;
+left: 5px;
+`;
+
+const moveGradient = keyframes`
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(30px);
+  }
+`;
+
+export const ProgressBarContainer = styled.div`
+  position: relative;
+  width: 60px;
+      left: 5px;
+    bottom: 4px;
+  height: 1px;
+  background: #e6eaee;
+  border-radius: 3px;
+  overflow: hidden;
+`;
+
+export const ProgressBar = styled.div`
+  position: absolute;
+  width: 30px;
+  height: 1px;
+  border-radius: 1px;
+  background: linear-gradient(90deg, #ed1816 0%, #f84215 63.35%, #fe5b14 100%);
+  animation: ${moveGradient} 1.5s infinite alternate ease-in-out;
+`;;
+
+
 // ! projects overview 
 
 export const ProjectsOverviewContainer = styled.div`
