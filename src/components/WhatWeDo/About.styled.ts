@@ -37,13 +37,14 @@ export const ComprehensiveContainer = styled.div`
 border: 1px solid var(--line);
 border-radius: 16px;
 width: 100%;
-height: 397px;
+height: 409px;
 box-shadow: 0 0 0 0 var(--white), 
 0 0 0 1px rgba(244, 244, 245, 0.1),
  0 0 0 0 rgba(0, 0, 0, 0), 
  0 6px 9px 0 rgba(0, 0, 0, 0.25);
 background: var(--substrate);
-    z-index: 1;
+    z-index: 0;
+    margin-bottom: 12px;
 `;
 
 export const IconContainer = styled.div`

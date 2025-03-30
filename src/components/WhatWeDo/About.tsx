@@ -72,6 +72,7 @@ import Warn from '../../assets/icons/about/WarningIcon.svg';
 import Point from '../../assets/icons/about/pointIcon.svg';
 import Delete from '../../assets/icons/about/delete.svg';
 import Editor from '../../assets/icons/about/editor.svg';
+import Card from './Card';
 
 const About: React.FC = () => {
   return (
@@ -278,6 +279,7 @@ const About: React.FC = () => {
             </DivProjects>
           </ShadowContainer>
         </ComprehensiveContainer>
+        <Card/>
       </AboutWrapper>
     </>
   );
