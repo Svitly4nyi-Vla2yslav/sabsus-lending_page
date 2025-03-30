@@ -45,6 +45,9 @@ box-shadow: 0 0 0 0 var(--white),
 background: var(--substrate);
     z-index: 0;
     margin-bottom: 12px;
+     overflow: hidden;
+
+     
 `;
 
 export const IconContainer = styled.div`
