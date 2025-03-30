@@ -25,10 +25,6 @@ export const BackgroundIconContainer = styled.div`
   
 `;
 
-export const ShadowContainerCard = styled.div`
- 
- 
-`;
 
 export const BackgroundIcon = styled.img`
 z-index: 0;

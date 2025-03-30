@@ -17,7 +17,6 @@ import {
   PhoneIcon,
   PhoneIcon1,
   PhoneIcon2,
-  ShadowContainerCard,
 } from './Card.styled';
 
 import BackgroundImage from '../../assets/icons/about/rainbow.svg';
