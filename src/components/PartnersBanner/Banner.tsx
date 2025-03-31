@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/pagination';
 import { Autoplay, Pagination } from 'swiper/modules';
 import {
+  Border,
   Image,
   SwiperContainer
 } from './Partners.styled';
@@ -68,6 +69,7 @@ const Partners: React.FC = () => {
   const slidesPerView = isMobile ? 2 : isTablet ? 4 : isDesktop ? 7 : 7;
   return (
     <SwiperContainer>
+      <Border/>
       <Swiper
         loop={true}
         slidesPerView={slidesPerView}
@@ -91,9 +93,9 @@ const Partners: React.FC = () => {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                height: '20vh',
+                height: '29px',
                 fontSize: 36,
-                paddingBottom: 50,
+                paddingTop: 10,
               }}
             >
               <Image
@@ -130,9 +132,9 @@ const Partners: React.FC = () => {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                height: '20vh',
+                height: '10vh',
                 fontSize: 36,
-                paddingBottom: 50,
+                paddingBottom: 10,
               }}
             >
               <Image
