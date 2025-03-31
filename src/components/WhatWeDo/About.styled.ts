@@ -83,7 +83,7 @@ margin:  8px 20px;
 export const ComprehensiveText = styled.p`
 font-family: var(--font-family);
 font-weight: 400;
-font-size: 17px;
+font-size: 16px;
 line-height: 137%;
 color: var(--gray-500);
 margin: 10px 20px;

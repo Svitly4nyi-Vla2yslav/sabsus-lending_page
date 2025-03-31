@@ -90,3 +90,24 @@ z-index: 0;
 width: 79px;
 height: 184px;
 `;
+
+export const IconContainerCardCode = styled.div`
+     position: absolute;
+    bottom: 63px;
+    left: 8px;
+ width: 343px;
+height: 232px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+ 
+`;
+
+export const PhoneIconCode = styled.img`
+position: relative;
+z-index: 0;
+width: 320px;
+height: 291px;
+opacity: 0.7;
+`; 
