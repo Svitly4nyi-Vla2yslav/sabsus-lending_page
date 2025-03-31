@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 export const HeroWrapper = styled.div`
- position: absolute;
- top: 100px;
+//  position: absolute;
+//  top: 100px;
     display: flex;
     width: 343px;
     align-items: flex-start;
     flex-direction: column;
     justify-content: center;
-    margin: 0 1vh ;
+    margin: 80px 1vh ;
    
 `;
 
@@ -56,6 +56,7 @@ padding-bottom: 24px;
 export const IconsExperience = styled.img`
 width: 20px;
 margin: 4px;
+    position: relative;
 `;
 export const ContainerExperience = styled.div`
 display: flex;

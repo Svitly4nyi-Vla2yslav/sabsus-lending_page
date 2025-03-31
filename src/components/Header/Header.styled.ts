@@ -15,6 +15,7 @@ export const HeaderContainer = styled.header<{ isopen: boolean; $isScrolled: boo
       border: 1px solid var(--line);
       border-radius: 16px;
        width: 95%;
+       top: 7px;
       height: 80px;
       box-shadow: 0 6px 9px 0 rgba(0, 0, 0, 0.25);
       background: var(--substrate);

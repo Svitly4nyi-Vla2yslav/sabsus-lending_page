@@ -35,12 +35,13 @@ export const MenuOverlay = styled(motion.div)`
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.96);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   z-index: 1;
+  overflow-y: auto;
 `;
 
 export const MenuLink = styled(motion.a)`

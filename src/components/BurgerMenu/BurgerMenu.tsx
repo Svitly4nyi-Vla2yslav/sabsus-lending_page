@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 // import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
@@ -38,6 +38,16 @@ const menuVariants = {
 const BurgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { t } = useTranslation(); // Отримуємо функцію перекладу
+
+  useEffect(() => {
+    if (isOpen) {
+      // Вимкнути прокрутку при відкритті модального вікна
+      document.body.style.overflow = 'hidden';
+    } else {
+      // Включити прокрутку, коли модальне вікно закрите
+      document.body.style.overflow = 'auto';
+    }
+  }, [isOpen]);
 
   const links = [
     { href: '#service', label: t('menu.services') }, // Використовуємо переклад

@@ -7,7 +7,7 @@ export const AboutWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     margin: 0 1vh ;
-    margin-top: 630px;
+    // margin-top: 630px;
 `;
 
 export const TextAboutUs = styled.h3`

@@ -92,6 +92,25 @@ const GlobalStyles = createGlobalStyle`
     transform: translateX(-100%);
   }
 }
+
+  * {
+    // margin: 0;
+    // padding: 0;
+    // box-sizing: border-box;
+    // --v1: calc(max(9vw, 11vh));
+    scrollbar-width: none;
+     word-wrap: break-word;
+  }
+    html, body {
+  height: -webkit-fill-available;
+  font-smoothing: antialiased;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
   
   body {
     font-family: 'Roboto Flex', sans-serif;
