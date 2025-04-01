@@ -8,6 +8,7 @@ import { GradientWrapper } from './components/StarrySky/GradientBackground';
 import Hero from './components/Hero/Hero';
 import About from './components/WhatWeDo/About';
 import Partners from './components/PartnersBanner/Banner';
+import Services from './components/OurServices/Services';
 const App = () => {
   return (
     <GlobalContainer>
@@ -19,6 +20,7 @@ const App = () => {
       <Hero />
       <About />
       <Partners/>
+      <Services/>
     </GlobalContainer>
   );
 };

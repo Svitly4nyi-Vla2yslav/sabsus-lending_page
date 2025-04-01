@@ -1,0 +1,156 @@
+import styled from "styled-components";
+import Card from '../WhatWeDo/Card';
+
+export const ServicesWrapper = styled.div`
+ display: flex;
+    width: 343px;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 1vh ;
+`;
+
+export const TextServices = styled.h3`
+font-family: var(--font-family);
+font-weight: 500;
+font-size: 18px;
+line-height: 135%;
+background: linear-gradient(168deg, #fff 0%, #fe5b14 100%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+padding-bottom: 10px;
+`;
+
+export const ServicesTitle = styled.h2`
+font-family: "Mulish", sans-serif;
+font-weight: 700;
+font-size: 28px;
+line-height: 115%;
+letter-spacing: -0.04em;
+color: var(--white);
+padding-bottom: 20px;
+`;
+
+export const CardContainer = styled.div`
+border: 1px solid var(--line);
+border-radius: 16px;
+width: 100%;
+height: 409px;
+box-shadow: 0 0 0 0 var(--white), 
+0 0 0 1px rgba(244, 244, 245, 0.1),
+ 0 0 0 0 rgba(0, 0, 0, 0), 
+ 0 6px 9px 0 rgba(0, 0, 0, 0.25);
+background: var(--substrate);
+    z-index: 0;
+    margin-bottom: 12px;
+     overflow: hidden;
+ 
+`;
+
+export const BackgroundIconContainer = styled.div`
+  position: relative;
+      bottom: 125px;
+  left: 0;
+  width: 343px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+
+ &::after {
+      content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(0deg, #101010 40%, rgba(16, 16, 16, 0) 100%);
+    pointer-events: none;
+}
+  }
+  
+`;
+
+export const IconContainerCreditServices = styled.div`
+     position: absolute;
+  bottom: 40px;
+    left: 20px;
+width: 304px;
+height: 281px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+ 
+`;
+
+export const PhoneIconCreditServices = styled.img`
+position: relative;
+z-index: 0;
+width: 303px;
+height: 280px;
+`;
+
+export const IconCreditServices = styled.div`
+     position: absolute;
+  bottom: 40px;
+    left: 20px;
+width: 304px;
+height: 281px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+ 
+`;
+
+export const PhoneCreditServices = styled.img`
+position: relative;
+z-index: 0;
+width: 337px;
+height: 280px;
+`;
+
+export const IconContainerCardCode = styled.div`
+     position: absolute;
+    bottom: -17px;
+    left: 19px;
+border-radius: 18px 18px 0 0;
+width: 676px;
+height: 296px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+ box-shadow: inset 0 1px 2px 0 #525154, 0 0 18px -4px rgba(0, 0, 0, 0.5);
+background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 30%, rgba(255, 255, 255, 0.02) 100%);
+`;
+
+export const PhoneIconCode = styled.img`
+position: relative;
+z-index: 0;
+width: 320px;
+height: 291px;
+opacity: 0.7;
+`; 
+
+export const WrapperCardKey = styled.div`
+position: relative;
+right: 305px;
+bottom: 115px;
+border: none;
+border-radius: 5px;
+background: linear-gradient(90deg, #ed1816 0%, #f84215 63.35%, #fe5b14 100%);
+
+`;
+
+export const GradientKey = styled.img`
+width: 28px;
+height: 28px;
+
+border-radius: 5px;
+background: linear-gradient(90deg, #ed1816 0%, #f84215 63.35%, #fe5b14 100%);
+border: none;
+`;
