@@ -134,16 +134,22 @@ z-index: 0;
 width: 320px;
 height: 291px;
 opacity: 0.7;
-`; 
+`;
 
-export const WrapperCardKey = styled.div`
+export const WrapperCardKey = styled.button`
 position: relative;
 right: 305px;
 bottom: 115px;
+width: 34px;
+height:34px;
+padding: 0px;
 border: none;
 border-radius: 5px;
 background: linear-gradient(90deg, #ed1816 0%, #f84215 63.35%, #fe5b14 100%);
-
+display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 `;
 
 export const GradientKey = styled.img`
@@ -151,6 +157,70 @@ width: 28px;
 height: 28px;
 
 border-radius: 5px;
-background: linear-gradient(90deg, #ed1816 0%, #f84215 63.35%, #fe5b14 100%);
-border: none;
+`;
+
+export const KeyTextIconContainer = styled.div`
+    margin-left: 222px;
+    height: 19%;
+margin-bottom: 26px;
+
+`;
+
+export const KeyTitel = styled.p`
+font-family: var(--font-family);
+font-weight: 400;
+font-size: 16px;
+line-height: 137%;
+color: var(--gray-500);
+    margin-bottom: 20px;
+    margin-left: -20px;
+`;
+
+export const KeyText = styled.p`
+font-family: var(--font-family);
+font-weight: 400;
+font-size: 13px;
+line-height: 137%;
+color: var(--gray-500);
+  overflow: hidden;
+      width: 138%;
+      margin-left: -17%;
+       margin-bottom: 20px;
+`;
+
+export const KeySpanContainer = styled.div`
+width: 366px;
+// height: 25px;
+  overflow: hidden;
+  display: flex;
+gap: 2px;
+ flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+  margin-left: -17%;
+`;
+
+export const KeySpan = styled.span`
+display: flex;
+gap: 2px;
+    border-radius: 46px;
+    padding: 4px 8px;
+    width: 100%;
+    height: 25px;
+    box-shadow: 0 0 18px -4px rgba(0, 0, 0, 0.5), inset 0 1px 2px 0 #525154;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 30%, rgba(255, 255, 255, 0.02) 100%);
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+`;
+
+export const KeySpanText = styled.p`
+font-family: var(--font-family);
+font-weight: 400;
+font-size: 12px;
+line-height: 137%;
+color: var(--gray-500);
+width: 100%;
 `;

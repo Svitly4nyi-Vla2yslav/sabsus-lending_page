@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-// import styled from 'styled-components';
-import { motion, AnimatePresence } from 'framer-motion';
+import {  AnimatePresence } from 'framer-motion';
+import { Link } from 'react-scroll';
 import {
   BurgerButton,
   IconsStars,
@@ -37,27 +37,25 @@ const menuVariants = {
 
 const BurgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { t } = useTranslation(); // Отримуємо функцію перекладу
+  const { t } = useTranslation();
 
   useEffect(() => {
-    if (isOpen) {
-      // Вимкнути прокрутку при відкритті модального вікна
-      document.body.style.overflow = 'hidden';
-    } else {
-      // Включити прокрутку, коли модальне вікно закрите
-      document.body.style.overflow = 'auto';
-    }
+    document.body.style.overflow = isOpen ? 'hidden' : 'auto';
   }, [isOpen]);
 
   const links = [
-    { href: '#service', label: t('menu.services') }, // Використовуємо переклад
-    { href: '#case', label: t('menu.caseStudies') },
-    { href: '#faq', label: t('menu.faq') },
-    { href: '#contact', label: t('menu.contact') },
+    { href: 'service', label: t('menu.services') },
+    { href: 'case', label: t('menu.caseStudies') },
+    { href: 'faq', label: t('menu.faq') },
+    { href: 'contact', label: t('menu.contact') },
   ];
+
+  const handleScroll = () => {
+    setIsOpen(false);
+  };
+
   return (
     <Wrapper>
-      {/* Бургер-кнопка */}
       <BurgerButton onClick={() => setIsOpen(!isOpen)}>
         <Line animate={isOpen ? 'open' : 'closed'} variants={topLineVariants} />
         <Line
@@ -70,7 +68,6 @@ const BurgerMenu = () => {
         />
       </BurgerButton>
 
-      {/* Модальне меню */}
       <AnimatePresence>
         {isOpen && (
           <MenuOverlay
@@ -83,14 +80,20 @@ const BurgerMenu = () => {
             {links.map((link, index) => (
               <MenuLink
                 key={index}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
+                as={Link}
+                to={link.href}
+                spy={true}
+                smooth={true}
+                offset={-90}
+                duration={800}
+                onClick={handleScroll}
               >
                 {link.label}
               </MenuLink>
             ))}
             <Button href="#">
-              <IconsStars src={IconStars} alt="Stars" /> {t('buttons.getInTouch')} 
+              <IconsStars src={IconStars} alt="Stars" />
+              {t('buttons.getInTouch')}
             </Button>
           </MenuOverlay>
         )}

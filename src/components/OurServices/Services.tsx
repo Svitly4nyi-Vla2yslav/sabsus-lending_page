@@ -6,6 +6,12 @@ import {
   IconContainerCardCode,
   IconContainerCreditServices,
   IconCreditServices,
+  KeySpan,
+  KeySpanContainer,
+  KeySpanText,
+  KeyText,
+  KeyTextIconContainer,
+  KeyTitel,
   PhoneCreditServices,
   PhoneIconCode,
   PhoneIconCreditServices,
@@ -28,12 +34,13 @@ import phone from '../../assets/icons/services/phone-01.svg';
 import kredit from '../../assets/icons/services/ServiceKredit.svg';
 import key from '../../assets/icons/services/key.svg';
 import keyGradient from '../../assets/icons/services/key-gradient.svg';
+import { Element } from 'react-scroll';
 
 const Services: React.FC = () => {
   return (
-    <>
+    <Element name='service'>
       <ServicesWrapper>
-        <TextServices>Our Services</TextServices>
+        <TextServices id='service'>Our Services</TextServices>
         <ServicesTitle>
           Comprehensive IT solutions tailored to meet your business needs.
         </ServicesTitle>
@@ -81,13 +88,33 @@ const Services: React.FC = () => {
           <BackgroundIconContainer>
             <IconContainerCardCode>
               <WrapperCardKey>
-                <GradientKey />
+                <GradientKey src={keyGradient} />
               </WrapperCardKey>
-            </IconContainerCardCode>{' '}
+            </IconContainerCardCode>
+            <KeyTextIconContainer>
+              <KeyTitel>Custom Solution</KeyTitel>
+              <KeyText>
+                Tailored software development to address unique business
+                challenges and improve operational efficiency
+              </KeyText>
+              <KeySpanContainer>
+                <KeySpan>
+                  <KeySpanText>Full Development</KeySpanText>
+                 
+                </KeySpan>
+                <KeySpan>
+                  <KeySpanText>Custom Features</KeySpanText>
+                 
+                </KeySpan> <KeySpan>
+                  <KeySpanText>Integration </KeySpanText>
+                 
+                </KeySpan>
+              </KeySpanContainer>
+            </KeyTextIconContainer>
           </BackgroundIconContainer>
         </CardContainer>
       </ServicesWrapper>
-    </>
+    </Element>
   );
 };
 
