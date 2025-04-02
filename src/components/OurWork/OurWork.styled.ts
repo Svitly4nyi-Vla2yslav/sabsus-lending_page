@@ -48,7 +48,7 @@ background: var(--substrate);
 
 
 
-export const ComprehensiveTitle = styled.h4`
+export const WorkCardTitle = styled.h4`
 font-family: var(--second-family);
 font-weight: 500;
 font-size: 18px;
@@ -58,7 +58,7 @@ margin:  8px 20px;
 
 `;
 
-export const ComprehensiveText = styled.p`
+export const WorkCardText = styled.p`
 font-family: var(--font-family);
 font-weight: 400;
 font-size: 16px;
@@ -68,7 +68,7 @@ margin: 10px 20px;
 
 `;
 
-export const BackgroundIconContainer = styled.div`
+export const WorkShadowContainer = styled.div`
   position: relative;
       bottom: 125px;
   left: 0;
@@ -78,6 +78,8 @@ export const BackgroundIconContainer = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 1;
+
+  // margin-top: 20px;
 
  &::after {
       content: "";
@@ -93,10 +95,6 @@ export const BackgroundIconContainer = styled.div`
   
 `;
 
-export const BackgroundIcon = styled.img`
-z-index: 0;
-
-`;
 
 export const IconContainerCard = styled.div`
      position: absolute;
@@ -111,7 +109,7 @@ export const IconContainerCard = styled.div`
  
 `;
 
-export const PhoneIcon = styled.img`
+export const IconOne = styled.img`
 position: relative;
 z-index: 0;
  width: 79px;
@@ -131,7 +129,7 @@ export const IconContainerCard1 = styled.div`
  
 `;
 
-export const PhoneIcon1 = styled.img`
+export const IconSecond = styled.img`
 position: relative;
 z-index: 0;
  width: 122px;
@@ -139,19 +137,19 @@ z-index: 0;
 `; 
 
 export const IconContainerCard2 = styled.div`
-        position: absolute;
-    bottom: 64px;
-    left: 248px;
- width: 79px;
-  height: 184px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+position: absolute;
+bottom: 64px;
+left: 248px;
+width: 79px;
+height: 184px;
+display: flex;
+justify-content: center;
+align-items: center;
   z-index: 0;
  
 `;
 
-export const PhoneIcon2 = styled.img`
+export const IconThierd = styled.img`
 position: relative;
 z-index: 0;
 width: 79px;
