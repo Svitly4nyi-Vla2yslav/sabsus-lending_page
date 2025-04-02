@@ -9,6 +9,7 @@ export const BackgroundIconContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+    margin: 0 auto ;
   z-index: 1;
 
  &::after {

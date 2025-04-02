@@ -9,6 +9,7 @@ import Hero from './components/Hero/Hero';
 import About from './components/WhatWeDo/About';
 import Partners from './components/PartnersBanner/Banner';
 import Services from './components/OurServices/Services';
+import OurWork from './components/OurWork/OurWork';
 const App = () => {
   return (
     <GlobalContainer>
@@ -21,6 +22,7 @@ const App = () => {
       <About />
       <Partners/>
       <Services/>
+      <OurWork/>
     </GlobalContainer>
   );
 };

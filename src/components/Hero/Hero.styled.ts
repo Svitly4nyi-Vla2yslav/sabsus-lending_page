@@ -8,8 +8,8 @@ export const HeroWrapper = styled.div`
     align-items: flex-start;
     flex-direction: column;
     justify-content: center;
-    margin: 80px 1vh ;
-   
+    // margin: 80px 1vh ;
+     margin: 80px auto ;
 `;
 
 export const TextDevelopment = styled.h3`

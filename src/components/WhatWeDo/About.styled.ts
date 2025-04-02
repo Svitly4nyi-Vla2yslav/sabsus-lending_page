@@ -6,7 +6,7 @@ export const AboutWrapper = styled.div`
     align-items: flex-start;
     flex-direction: column;
     justify-content: center;
-    margin: 0 1vh ;
+    margin: 0 auto ;
     // margin-top: 630px;
 `;
 
