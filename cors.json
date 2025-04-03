@@ -1,6 +1,6 @@
 [
   {
-    "origin": ["http://localhost:5173", "http://localhost:3000", "https://sabsus-landing-page.netlify.app", "https://sabsusweb.web.app"],
+    "origin": ["http://localhost:5173", "http://localhost:3000", "https://sabsus-landing-page.netlify.app/", "https://sabsusweb.web.app"],
     "method": ["GET"],
     "responseHeader": ["Content-Type"],
     "maxAgeSeconds": 3600
