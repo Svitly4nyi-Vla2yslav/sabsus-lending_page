@@ -54,7 +54,7 @@ font-weight: 500;
 font-size: 18px;
 line-height: 125%;
 color: var(--white);
-margin:  8px 20px;
+margin:  15px 20px;
 
 `;
 
@@ -106,7 +106,7 @@ export const IconContainerCard = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 0;
- 
+ margin-left:10px;
 `;
 
 export const IconOne = styled.img`

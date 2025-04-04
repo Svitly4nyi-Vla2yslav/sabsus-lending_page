@@ -63,8 +63,8 @@ margin: 20px;
 `;
 
 export const ComputerIcon = styled.img`
-width: 32px;
-height: 32px;
+// width: 32px;
+// height: 32px;
 padding: 15px;
 `;
 
@@ -563,7 +563,7 @@ width: 2px;
 height: 3px;
 `;
 
-export const MyToDoListBoxCheck  = styled.p`
+export const MyToDoListBoxCheck = styled.p`
 border: 0.25px solid #444;
 border-radius: 1px;
 width: 4px;

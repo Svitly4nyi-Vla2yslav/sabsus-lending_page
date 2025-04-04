@@ -52,6 +52,6 @@ export const ContainerBar = styled.div`
     flex-wrap: nowrap;
     align-items: center;
     width: 100%;
-     padding: 8px 10px;
+     padding: 8px 5px;
 `;
 

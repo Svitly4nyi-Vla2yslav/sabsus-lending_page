@@ -210,16 +210,16 @@ const About: React.FC = () => {
                         </MyToDoBoxContainer>
                       </DataContainer>
                       <DataContainerText>
-                        <DataText>
-                          2023-12-26 07:15:00{' '}
-                        </DataText>
+                        <DataText>2023-12-26 07:15:00 </DataText>
                       </DataContainerText>
                     </CompleteContainer>
                   </ToDoContainer>
                   <ToDoContainer>
-                  <WarningOrangContainer>
+                    <WarningOrangContainer>
                       <IconWarning src={Warn} alt="⚠️" />
-                      <WarningOrangText>Latest finished to do's</WarningOrangText>
+                      <WarningOrangText>
+                        Latest finished to do's
+                      </WarningOrangText>
                     </WarningOrangContainer>
                     <CompleteContainer>
                       {' '}
@@ -239,14 +239,12 @@ const About: React.FC = () => {
                         </MyToDoBoxContainer>
                       </DataContainer>
                       <DataContainerText>
-                        <DataText>
-                          2023-12-26 07:15:00{' '}
-                        </DataText>
+                        <DataText>2023-12-26 07:15:00 </DataText>
                       </DataContainerText>
                     </CompleteContainer>
                   </ToDoContainer>
                   <ToDoContainer>
-                  <WarningOrangContainer>
+                    <WarningOrangContainer>
                       <IconWarning src={Warn} alt="⚠️" />
                       <WarningOrangText>Latest to do's</WarningOrangText>
                     </WarningOrangContainer>
@@ -268,9 +266,7 @@ const About: React.FC = () => {
                         </MyToDoBoxContainer>
                       </DataContainer>
                       <DataContainerText>
-                        <DataText>
-                          2023-12-26 07:15:00{' '}
-                        </DataText>
+                        <DataText>2023-12-26 07:15:00 </DataText>
                       </DataContainerText>
                     </CompleteContainer>
                   </ToDoContainer>
@@ -279,7 +275,7 @@ const About: React.FC = () => {
             </DivProjects>
           </ShadowContainer>
         </ComprehensiveContainer>
-        <Card/>
+        <Card />
       </AboutWrapper>
     </>
   );

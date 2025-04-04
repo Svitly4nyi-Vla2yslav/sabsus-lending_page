@@ -9,7 +9,7 @@ export const HeroWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     // margin: 80px 1vh ;
-     margin: 80px auto ;
+     margin: 110px auto ;
 `;
 
 export const TextDevelopment = styled.h3`
@@ -73,7 +73,7 @@ color: #f2f2f2;
 export const ContainerButton = styled.div`
 padding: 0 auto;
 padding-bottom: 24px;
-width: 166px;
+width: 70%;
 height: 44px;
 
 `;

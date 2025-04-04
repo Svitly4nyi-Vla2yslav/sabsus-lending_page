@@ -23,7 +23,7 @@ display: flex;
 `;
 
 const Button = styled.button`
-  margin-top: 8px;
+  margin-top: 0px;
   display: flex;
   align-items: center;
   gap: 8px;
