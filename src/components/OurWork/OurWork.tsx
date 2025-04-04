@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import {
   IconContainerCard,
+  IconContainerCard1,
+  IconContainerCard2,
   IconOne,
+  IconSecond,
+  IconThierd,
+  IconCreditServices,
+  PhoneCreditServices,
   OurWorkText,
   OurWorkTitel,
   WorkCardText,
@@ -29,9 +35,7 @@ const OurWork: React.FC = () => {
     const loadCaseStudy = async () => {
       try {
         const caseStudyData = await getCaseStudy();
-        if (caseStudyData) {
-          setCaseStudy(caseStudyData);
-        }
+        if (caseStudyData) setCaseStudy(caseStudyData);
       } catch (error) {
         console.error('Error loading case study:', error);
       }
@@ -48,28 +52,45 @@ const OurWork: React.FC = () => {
         Discover our projects showcasing expertise in custom IT solutions.
       </OurWorkTitel>
 
-      {projects.map(project => (
+      {projects.map((project) => (
         <WorkCardWrapper key={project.id}>
           <WorkCardTitle>{project.title || 'No title'}</WorkCardTitle>
-          {project.client && (
-            <WorkCardText>Client: {project.client}</WorkCardText>
-          )}
+          {project.client && <WorkCardText>Client: {project.client}</WorkCardText>}
           <WorkCardText>{project.description || 'No description'}</WorkCardText>
-          {project.imageUrl ? (
+
+          {project.imageUrl && project.imageUrl.length === 1 && (
             <WorkShadowContainer>
-              <IconContainerCard>
-                <IconOne
-                  src={project.imageUrl}
+              <IconCreditServices>
+                <PhoneCreditServices
+                  src={project.imageUrl[0]}
                   alt="Project image"
-                  onError={e => {
-                    console.error('Failed to load image:', project.imageUrl);
+                  onError={(e) => {
+                    console.error('Failed to load image:', project.imageUrl?.[0]);
                     (e.target as HTMLImageElement).style.display = 'none';
                   }}
                 />
-              </IconContainerCard>
+              </IconCreditServices>
             </WorkShadowContainer>
-          ) : (
-            <div>Image not available</div>
+          )}
+
+          {project.imageUrl && project.imageUrl.length > 1 && (
+            <WorkShadowContainer>
+              {project.imageUrl[0] && (
+                <IconContainerCard>
+                  <IconOne src={project.imageUrl[0]} alt="img1" />
+                </IconContainerCard>
+              )}
+              {project.imageUrl[1] && (
+                <IconContainerCard1>
+                  <IconSecond src={project.imageUrl[1]} alt="img2" />
+                </IconContainerCard1>
+              )}
+              {project.imageUrl[2] && (
+                <IconContainerCard2>
+                  <IconThierd src={project.imageUrl[2]} alt="img3" />
+                </IconContainerCard2>
+              )}
+            </WorkShadowContainer>
           )}
         </WorkCardWrapper>
       ))}
@@ -77,9 +98,7 @@ const OurWork: React.FC = () => {
       {caseStudy && (
         <WorkCardWrapper>
           <WorkCardTitle>{caseStudy.title || 'Case Study'}</WorkCardTitle>
-          <WorkCardText>
-            {caseStudy.description || 'No description'}
-          </WorkCardText>
+          <WorkCardText>{caseStudy.content || 'No description'}</WorkCardText>
         </WorkCardWrapper>
       )}
     </WorkWrapper>

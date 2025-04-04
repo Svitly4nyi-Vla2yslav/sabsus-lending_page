@@ -88,7 +88,7 @@ export const WorkShadowContainer = styled.div`
     left: 0;
     width: 100%;
     height: 40%;
-    background: linear-gradient(0deg, #101010 40%, rgba(16, 16, 16, 0) 100%);
+  background: linear-gradient(0deg, #101010 0%, rgba(16, 16, 16, 0) 100%), linear-gradient(0deg, #101010 0%, rgba(16, 16, 16, 0) 100%), linear-gradient(0deg, #101010 0%, rgba(16, 16, 16, 0) 100%);
     pointer-events: none;
 }
 }
@@ -112,16 +112,16 @@ export const IconContainerCard = styled.div`
 export const IconOne = styled.img`
 position: relative;
 z-index: 0;
- width: 79px;
-  height: 184px;
+    width: 96px;
+    height: 209px;
 `;
 
 export const IconContainerCard1 = styled.div`
      position: absolute;
-    bottom: 53px;
-    left: 108px;
-  width: 122px;
-  height: 250px;
+       top: 134px;
+    left: 123px;
+    width: 96px;
+    height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -132,14 +132,14 @@ export const IconContainerCard1 = styled.div`
 export const IconSecond = styled.img`
 position: relative;
 z-index: 0;
- width: 122px;
-  height: 250px;
+width: 96px;
+height: auto;
 `; 
 
 export const IconContainerCard2 = styled.div`
 position: absolute;
-bottom: 64px;
-left: 248px;
+ bottom: 55px;
+left: 240px;
 width: 79px;
 height: 184px;
 display: flex;
@@ -152,6 +152,28 @@ align-items: center;
 export const IconThierd = styled.img`
 position: relative;
 z-index: 0;
-width: 79px;
-height: 184px;
+width: 96px;
+height: auto;
 `;
+
+export const IconCreditServices = styled.div`
+     position: absolute;
+  top: 110px;
+    left: 20px;
+width: 304px;
+height: 281px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+ 
+`;  
+
+export const PhoneCreditServices = styled.img`
+position: relative;
+z-index: 0;
+width: 303px;
+    height: auto;
+`;  
+  
+

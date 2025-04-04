@@ -19,31 +19,36 @@ export interface Project {
   id: string;
   title: string;
   description: string;
-  imageUrl?: string;
+  imageUrl?: string[]; // Тепер масив
   client?: string;
 }
 
-// ✅ Функція отримання URL зображення (без `null`)
-export const fetchImageURL = async (path?: string): Promise<string | undefined> => {
-  if (!path) return undefined;
-  
-  try {
-    // Додаємо перевірку та корекцію шляху
-    const correctedPath = path.startsWith('gs://') 
-      ? path.replace('gs://sabsusweb.appspot.com/', '')
-      : path;
-    
-    const imageRef = ref(storage, correctedPath);
-    const url = await getDownloadURL(imageRef);
-    console.log('Successfully fetched image URL:', url);
-    return url;
-  } catch (error) {
-    console.error("Error fetching image URL for path:", path, error);
-    return undefined;
-  }
+export interface CaseStudy {
+  title: string;
+  content: string;
+  imageUrl?: string;
+}
+
+// ✅ Масова обробка зображень
+const fetchImageURLs = async (paths: string[] = []): Promise<string[]> => {
+  return await Promise.all(
+    paths.map(async (path) => {
+      try {
+        const correctedPath = path.startsWith("gs://")
+          ? path.replace("gs://sabsusweb.appspot.com/", "")
+          : path;
+        const imageRef = ref(storage, correctedPath);
+        const url = await getDownloadURL(imageRef);
+        return url;
+      } catch (error) {
+        console.error("Error fetching image:", path, error);
+        return "";
+      }
+    })
+  );
 };
 
-// ✅ Отримуємо список проектів
+// ✅ Отримуємо проєкти
 export const getProjects = async (): Promise<Project[]> => {
   try {
     const projectsCollection = collection(db, "projects");
@@ -57,17 +62,17 @@ export const getProjects = async (): Promise<Project[]> => {
     const projects = await Promise.all(
       projectSnapshot.docs.map(async (doc) => {
         const data = doc.data();
+        const imageUrls = await fetchImageURLs(data.imageUrl || []);
         return {
           id: doc.id,
           title: data.title || "Untitled Project",
           description: data.description || "",
-          imageUrl: await fetchImageURL(data.imageUrl), // Використовуємо оновлену функцію
+          imageUrl: imageUrls.filter(Boolean),
           client: data.client || undefined,
         };
       })
     );
 
-    console.log("Fetched projects:", projects);
     return projects;
   } catch (error) {
     console.error("Error fetching projects:", error);
@@ -75,13 +80,7 @@ export const getProjects = async (): Promise<Project[]> => {
   }
 };
 
-// ✅ Отримуємо дані про кейс-стаді
-export interface CaseStudy {
-  title: string;
-  content: string;
-  imageUrl?: string;
-}
-
+// ✅ Отримуємо кейс-стаді
 export const getCaseStudy = async (): Promise<CaseStudy | null> => {
   try {
     const docRef = doc(db, "caseStudies", "caseStudies");
@@ -93,10 +92,14 @@ export const getCaseStudy = async (): Promise<CaseStudy | null> => {
     }
 
     const data = docSnap.data();
+    const url = data.imageUrl
+      ? await fetchImageURLs([data.imageUrl])
+      : [];
+
     return {
       title: data.title || "",
       content: data.content || "",
-      imageUrl: await fetchImageURL(data.imageUrl), // Використовуємо оновлену функцію
+      imageUrl: url[0],
     };
   } catch (error) {
     console.error("Error fetching case study:", error);
