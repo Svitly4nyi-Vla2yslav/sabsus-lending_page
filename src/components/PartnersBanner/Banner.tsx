@@ -93,7 +93,7 @@ const Partners: React.FC = () => {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                height: '29px',
+                height: 'auto',
                 fontSize: 36,
                 paddingTop: 10,
               }}

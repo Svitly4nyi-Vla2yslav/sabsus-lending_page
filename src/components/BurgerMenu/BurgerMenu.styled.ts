@@ -51,7 +51,7 @@ export const MenuLink = styled(motion.a)`
   margin: 12px 0;
   text-decoration: none;
   cursor: pointer;
-  transition: color 0.2s;
+  transition: color 0.8s;
   &:hover {
     color: #fe5b14;
   }

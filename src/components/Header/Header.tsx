@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ContainerBar, HeaderContainer, Logo, LogoIcon } from './Header.styled';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
 import LogoSabsus from '../../assets/icons/logo-sabsus.svg';
-
+import { Element } from 'react-scroll';
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 
 export interface ContainerProps {
@@ -33,7 +33,7 @@ const Header: React.FC = () => {
   }, []);
 
   return (
-    <>
+    <Element name="header">
       <HeaderContainer isopen={isopen} $isScrolled={isScrolled}>
         <ContainerBar>
           <Logo href="#header">
@@ -45,7 +45,7 @@ const Header: React.FC = () => {
           </ContainerBar>
         </ContainerBar>
       </HeaderContainer>{' '}
-    </>
+    </Element>
   );
 };
 

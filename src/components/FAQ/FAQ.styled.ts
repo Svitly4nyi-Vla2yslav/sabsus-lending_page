@@ -1,206 +1,134 @@
-// import styled from "styled-components";
+import styled from 'styled-components';
 
-// export const ImageCollapse = styled.img`
-// position: absolute;
-// width: 148px;
-// height: 183px;
-// transform: rotate(-16deg);
-// object-fit: cover;
-// border-radius: 16px;
-// bottom: -20%;
-//     left: -63%;
+export const FAQSection = styled.section`
+  display: flex;
+    width: 343px;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    margin: 80px auto;
+`;
 
-// @media screen and (min-width: 1440px){
-// width: 248px;
-// height: 306px;
-// }
-    
-// `;
+export const FAQText = styled.h3`
+font-family: var(--font-family);
+font-weight: 500;
+font-size: 18px;
+line-height: 135%;
+background: linear-gradient(168deg, #fff 0%, #fe5b14 100%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+padding-bottom: 10px;
+`;
 
-// export const ContainerColection = styled.div`
-// :where(.css-dev-only-do-not-override-1kuana8).ant-collapse>.ant-collapse-item {
-//     border: none !important;
+export const FAQTitle = styled.h2`
+ font-family: "Mulish", sans-serif;
+font-weight: 700;
+font-size: 28px;
+line-height: 115%;
+letter-spacing: -0.04em;
+color: var(--white);
+padding-bottom: 20px;
+`;
 
-//    max-width: 100%;
-// margin: 0px 72px;
-// transition-duration: 300ms;
-// @media screen and (min-width: 768px){
-// display: grid;
-//     justify-content: center;
-//     justify-items: center;
-// }
-// @media screen and (min-width: 1440px){
-// display: flex;
-//         justify-items: end;
-//         flex-direction: column;
-//         flex-wrap: wrap;
-//         align-content: flex-end;
-//         align-items: flex-end;
-// }
-// }
-// :where(.css-dev-only-do-not-override-1kuana8).ant-collapse-borderless >.ant-collapse-item:last-child,
-//  :where(.css-dev-only-do-not-override-1kuana8).ant-collapse-borderless >.ant-collapse-item:last-child,
-//   .ant-collapse-header {
-//     border-radius: 12px;
-// }
+export const QuestionItem = styled.div`
+    position: relative;
+ border: 1px solid var(--line);
+border-radius: 16px;
+padding: 16px;
+width: 343px;
+// height: 271px;
+ overflow: hidden;
+box-shadow: 0 0 0 0 var(--white), 0 0 0 1px rgba(244, 244, 245, 0.1), 0 0 0 0 rgba(0, 0, 0, 0), 0 6px 9px 0 rgba(0, 0, 0, 0.25);
+background: var(--substrate);
+margin-bottom: 12px;
+  transition: box-shadow 0.4s ease, border 0.4s ease;
+  
+  &:hover {
+    border: 1px solid #fff;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+  }
+`;
 
+export const QuestionButton = styled.button`
+display : flex;
+flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+       justify-content: space-between;
 
-//  .ant-collapse-item-active{
-//     border-radius: 12px;
-//     background: #1e1e1e;
-//     padding: 8px 8px;
-//  }
+border: none;
+border-radius: 16px;
+padding: 14px;
+width: 100%;
+height: auto;
+ont-family: var(--second-family);
+font-weight: 500;
+font-size: 20px;
+line-height: 125%;
+color: var(--white);
+text-align: left;
+background: transparent;
 
-//  .a-DMjG :where(.css-dev-only-do-not-override-1kuana8).ant-collapse>.ant-collapse-item {
-   
-//     border-radius: 12px;
-// }
+   transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+  }
+`;
 
-// :where(.css-1kuana8).ant-collapse-ghost {
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-// }
+interface AnswerTextProps {
+    $isOpen: boolean;
+}
 
-// .bikQaF .ant-collapse-item-active {
-//     border-radius: 12px;
-//     background: rgb(30, 30, 30);
-//     padding: 8px;
-//     width: 65%;
+export const AnswerText = styled.div<AnswerTextProps>`
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 137%;
+  color: var(--gray-500);
+  transform: scaleY(${({ $isOpen }) => ($isOpen ? 1 : 0)});
+  transform-origin: top;
+  height: auto;
+  max-height: ${({ $isOpen }) => ($isOpen ? '1000px' : '0')};
+  opacity: ${({ $isOpen }) => ($isOpen ? 1 : 0)};
+  overflow: hidden;
+  transition: 
+    transform 0.4s ease,
+    opacity 0.3s ease,
+    max-height 0.4s ease;
+  margin-top: ${({ $isOpen }) => ($isOpen ? '12px' : '0')};
+  will-change: transform, opacity, max-height;
+`;
 
+export const StarIcon = styled.img`
+width: 12px;
+height: 13px;
+`;
 
-// &:active{
-//     border-radius: 12px;
-//     background: #1e1e1e;  
-// }
+interface XIconStyledProps {
+    $rotate?: boolean;
+}
 
-// :where(.css-1kuana8).ant-collapse-borderless >.ant-collapse-item:last-child {
-//     border-radius: 12px;
-//     margin-bottom: 60px;
-// }
+export const XIcon = styled.img.attrs<XIconStyledProps>(() => ({})) <XIconStyledProps>`
+    width: 14px;
+    height: 15px;
+    transition: transform 0.6s ease;
+  
+    ${({ $rotate }) =>
+        $rotate &&
+        `
+        transform: rotate(136deg);
+      `}
+  `;
 
-// :where(.css-1kuana8).ant-collapse-borderless >.ant-collapse-item:last-child, :where(.css-1kuana8).ant-collapse-borderless >.ant-collapse-item:last-child .ant-collapse-header {
-//     border-radius: 12px;
-// }
+export const QuestionWrapper = styled.div`
+display : flex;
+flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
 
-// &:active{
-//     border-radius: 12px;
-//     background: #1e1e1e;  
-// }
-// margin-bottom: 60px;
-
-// :where(.css-dev-only-do-not-override-1kuana8).ant-collapse>.ant-collapse-item >.ant-collapse-header {
-   
-//     padding: 12px 10px !important;
-// }
-// `;
-
-// export const TitleList = styled.ul`
-// width: 100%;
-// display: flex;
-// @media screen and (min-width: 768px){
-
-// }
-
-// `;
-
-// export const Title = styled.h2`
-// font-family: 'Right Grotesk';
-// font-weight: 900;
-// font-size: 44px;
-// line-height: 0.90909;
-// text-transform: uppercase;
-// color: #fff;
-// text-align: center;
-// padding-top: 60px;
-// padding-bottom: 24px;
-// @media screen and (min-width: 768px){
-// font-weight: 900;
-// font-size: 80px;
-// line-height: 100%;
-// }
-
-// @media screen and (min-width: 1440px){
-// font-size: 160px;
-// padding-bottom: 80px;
-// padding-top: 120px;
-// }
-// `;
-
-// export const TitleItem = styled.li`
-// font-family: 'Right Grotesk';
-// font-weight: 900;
-// font-size: 20px; 
-// line-height: 1;
-// text-transform: uppercase;
-// color: #fff;
-// // text-align: ;
-// width: 160px;
-
-// &:hover,
-// &:active{
-//     color: #dc3b5a;
-//     background: #1e1e1e;
-//     border-radius: 12px;
-// }
-
-// @media screen and (min-width: 1440px){
-// font-size: 64px;
-// width: 700px;
-// }
-// `;
-
-
-
-// export const ItemText = styled.p`
-// font-family: 'Messina Sans Mono';
-// font-weight: 400;
-// font-size: 12px;
-// line-height: 1.16667;
-// text-transform: uppercase;
-// color: #fff;
-// background: #1e1e1e;
-// width: 100%;
-// padding: 8px 6px;
-// padding-top: 10px
-// border-radius: 12px;
-
-// @media screen and (min-width: 768px){
-//     position: relative;
-//     text-align: left;
-//     margin-left: 38%;
-//     width: 65%;
-// }
-
-// @media screen and (min-width: 1440px){
-// font-size: 16px;
-// line-height: 119%;
-// width: 56%;
-// }
-// `;
-
-// export const NumberTitle = styled.span`
-// font-family: "Biro Script Plus";
-// font-weight: 400;
-// font-size: 12px; 
-// line-height: 1.66667;
-// color: #dc3b5a;
-// padding: 8px 10px 8px 0;
-
-// &:hover,
-// &:active{
-//     color: #fff;
-
-// }
-
-// @media screen and (min-width: 1440px){
-// font-size: 24px;
-// line-height: 167%;
-// }
-// `;
-
-
-
-// export const NumberTitleText = styled.span`
-
-// `;
+`;

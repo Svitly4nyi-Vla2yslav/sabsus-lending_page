@@ -31,7 +31,7 @@ export const Border = styled.p`
 `;
 
 export const ImageContainer = styled.div`
-height : 29px;
+height : auto;
 width: 100%;
 padding: 0 auto;
 margin: 0 auto;

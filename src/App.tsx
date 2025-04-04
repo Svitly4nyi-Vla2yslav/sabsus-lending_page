@@ -10,6 +10,7 @@ import About from './components/WhatWeDo/About';
 import Partners from './components/PartnersBanner/Banner';
 import Services from './components/OurServices/Services';
 import OurWork from './components/OurWork/OurWork';
+import FAQ from './components/FAQ/FAQ';
 const App = () => {
   return (
     <GlobalContainer>
@@ -23,6 +24,7 @@ const App = () => {
       <Partners/>
       <Services/>
       <OurWork/>
+      <FAQ/>
     </GlobalContainer>
   );
 };

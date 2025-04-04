@@ -17,6 +17,7 @@ import {
   WorkWrapper,
 } from './OurWork.styled';
 import { getProjects, Project, getCaseStudy } from '../../firabase';
+import { Element } from 'react-scroll';
 
 const OurWork: React.FC = () => {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -46,6 +47,7 @@ const OurWork: React.FC = () => {
   }, []);
 
   return (
+     <Element name='case'>
     <WorkWrapper>
       <OurWorkText>Our Work</OurWorkText>
       <OurWorkTitel>
@@ -101,7 +103,7 @@ const OurWork: React.FC = () => {
           <WorkCardText>{caseStudy.content || 'No description'}</WorkCardText>
         </WorkCardWrapper>
       )}
-    </WorkWrapper>
+    </WorkWrapper></Element>
   );
 };
 

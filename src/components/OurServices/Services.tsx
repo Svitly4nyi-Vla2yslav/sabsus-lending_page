@@ -37,10 +37,13 @@ import keyGradient from '../../assets/icons/services/key-gradient.svg';
 import { Element } from 'react-scroll';
 
 const Services: React.FC = () => {
+
+
+
   return (
     <Element name='service'>
       <ServicesWrapper>
-        <TextServices id='service'>Our Services</TextServices>
+        <TextServices>Our Services</TextServices>
         <ServicesTitle>
           Comprehensive IT solutions tailored to meet your business needs.
         </ServicesTitle>

@@ -85,7 +85,7 @@ const BurgerMenu = () => {
                 spy={true}
                 smooth={true}
                 offset={-90}
-                duration={800}
+                duration={2000}
                 onClick={handleScroll}
               >
                 {link.label}
