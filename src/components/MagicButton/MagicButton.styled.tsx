@@ -1,18 +1,40 @@
-import styled, { keyframes } from 'styled-components';
-import ElementSvg from "../../assets/icons/Element.svg"
+import styled, { keyframes, css } from 'styled-components';
+import ElementSvg from '../../assets/icons/Element.svg'; // або твій новий SVG
 
-export const generateStarAnimation = () => keyframes`
+const float = keyframes`
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+  50% { transform: translate(3px, -3px) rotate(20deg); opacity: 0.6; }
+  100% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+`;
+
+const burst = keyframes`
   0% {
-    transform: translate(0, 0) rotate(45deg) scale(1);
-    opacity: 0.9;
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 1;
   }
   100% {
-    transform: translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px) rotate(45deg) scale(0.7);
-    opacity: 0.1;
+    transform: translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px)
+      rotate(90deg) scale(0.5);
+    opacity: 0;
   }
 `;
 
-export const ButtonContainer = styled.a<{ $isClicked: boolean }>`
+const burstEpic = keyframes`
+  0% {
+    transform: scale(1) translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2) translate(${Math.random() * 400 - 200}px, ${Math.random() * 400 - 200}px) rotate(${Math.random() * 720}deg);
+    opacity: 0;
+  }
+`;
+
+export const ButtonContainer = styled.a.attrs<{ $isClicked: boolean }>(({ $isClicked }) => ({
+  style: {
+    transform: $isClicked ? 'scale(0.98)' : 'scale(1)',
+  },
+}))<{ $isClicked: boolean }>`
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -30,25 +52,74 @@ export const ButtonContainer = styled.a<{ $isClicked: boolean }>`
   z-index: 0;
   width: 80%;
   bottom: -27%;
-  
+  border: none;
+
+  &:active {
+    transition: transform 0.1s ease-out;
+  }
 `;
 
-export const Star = styled.div`
+export const Star = styled.div.attrs<{ $burst?: boolean; $opacity?: number }>(
+  ({ $burst, $opacity }) => ({
+    style: {
+      left: `${Math.random() * 100}%`,
+      top: `${Math.random() * 100}%`,
+      opacity: $opacity ?? 1,
+    },
+  })
+)<{ $burst?: boolean; $opacity?: number }>`
   position: absolute;
-  width: 53px;
-  height: 49px;
+  width: 10px;
+  height: 10px;
   background: url(${ElementSvg}) no-repeat center center;
   background-size: contain;
-  animation: ${generateStarAnimation} 4s ease-out forwards; // Анімація зірок одразу
   pointer-events: none;
-  opacity: 1.9;
+  animation: ${({ $burst }) =>
+    $burst
+      ? css`${burstEpic} 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards`
+      : css`${float} ${3 + Math.random() * 3}s ease-in-out infinite`};
 `;
 
+
 export const ButtonText = styled.span`
-    display: flex;
-    z-index: 1;
-    width: 100%;
-    text-align: center;
-    letter-spacing: 1px;
-    justify-content: center;
+  display: flex;
+  z-index: 1;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 1px;
+  justify-content: center;
+`;
+
+
+export const Wave = styled.span.attrs({
+  style: {
+    background: `rgba(255, 255, 255, ${Math.random() * 0.4 + 0.3})`,
+  },
+})`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: waveAnimation 0.6s ease-out forwards;
+  pointer-events: none;
+  z-index: 0;
+
+  @keyframes waveAnimation {
+    0% {
+      width: 0px;
+      height: 0px;
+      opacity: 0.7;
+    }
+    50% {
+      opacity: 0.3;
+    }
+    100% {
+      width: 400px;
+      height: 400px;
+      opacity: 0;
+    }
+  }
 `;

@@ -1,23 +1,22 @@
-// import React from 'react';
-// import {
-//   ContactContainer,
-//   ContactText,
-//   IconX,
-//   TitleContact,
-// } from './ContactUs.styled';
-// import { ContactForm } from './ContactForm';
+import React from 'react';
+import {
+  ContactUsText,
+  ContactUsTitle,
+  ContactUsWrapper,
+} from './ContactUs.styled';
+import ContactForm from './ContactForm';
+import { Element } from 'react-scroll';
 
-// const ContactUs: React.FC = () => {
-//   return (
-//     <ContactContainer>
-//       <TitleContact>Are you in?</TitleContact>
-//       <ContactText>
-//         Join the YACHT APE community to be one of the first to receive our
-//         limited edition NFT
-//       </ContactText>
-//       <ContactForm />
-//     </ContactContainer>
-//   );
-// };
+const ContactUs: React.FC = () => {
+  return (
+    <Element name="contact">
+      <ContactUsWrapper id='contact'>
+        <ContactUsText>Contact US</ContactUsText>
+        <ContactUsTitle>Let’s Start Building Your Next Big Idea</ContactUsTitle>
+        <ContactForm/>
+      </ContactUsWrapper>
+    </Element>
+  );
+};
 
-// export default ContactUs;
+export default ContactUs;

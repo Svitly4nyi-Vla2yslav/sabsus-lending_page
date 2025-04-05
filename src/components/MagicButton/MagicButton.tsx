@@ -1,46 +1,53 @@
-import React, { useState } from 'react';
-import { ButtonContainer, ButtonText, Star } from './MagicButton.styled';
-
+import React, { useEffect, useState } from 'react';
+import { ButtonContainer, ButtonText, Star, Wave } from './MagicButton.styled';
 
 interface ButtonProps {
-  href: string;
   children: React.ReactNode;
+  onClick?: () => void;
 }
 
-const Button: React.FC<ButtonProps> = ({ href, children }) => {
+const Button: React.FC<ButtonProps> = ({ children, onClick }) => {
+  const [burstStars, setBurstStars] = useState<Array<{ id: number }>>([]);
+  const [floatingStars, setFloatingStars] = useState<
+    Array<{ id: number; opacity: number }>
+  >([]);
   const [isClicked, setIsClicked] = useState(false);
-  const [stars, setStars] = useState<Array<{ id: number; key: number }>>([]);
+
+  useEffect(() => {
+    const stars = Array.from({ length: 70 }, (_, i) => ({
+      id: i,
+      opacity: Math.random() < 0.4 ? Math.random() * 0.9 + 0.1 : 1,
+    }));
+    setFloatingStars(stars);
+  }, []);
 
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
+    onClick?.();
     setIsClicked(true);
 
-    // Генерація нових зірок при кліку
-    const newStars = Array.from({ length: 180 }, (_, i) => ({
+    const newStars = Array.from({ length: 30 }, (_, i) => ({
       id: Date.now() + i,
-      key: Date.now() + i,
     }));
-    setStars(newStars);
+    setBurstStars(newStars);
 
-    // Плавне прокручування до якірного посилання через 3 секунди
     setTimeout(() => {
-      document.getElementById(href.replace("#", ""))?.scrollIntoView({ behavior: "smooth" });
-    }, 300);
+      setBurstStars([]);
+      setIsClicked(false);
+    }, 800);
   };
 
   return (
-    <ButtonContainer href={href} onClick={handleClick} $isClicked={isClicked}>
+    <ButtonContainer as="button" onClick={handleClick} $isClicked={isClicked}>
+      {isClicked && <Wave key={Date.now()} />}
       <ButtonText>{children}</ButtonText>
-      {stars.map(star => (
-        <Star
-          key={star.key}
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            bottom: `${Math.random() * 100}%`,
-            right: `${Math.random() * 100}%`,
-          }}
-        />
+
+      {floatingStars.map(star => (
+        <Star key={`float-${star.id}`} $opacity={star.opacity} $burst={false} />
+      ))}
+
+      {burstStars.map(star => (
+        <Star key={`burst-${star.id}`} $burst={true} />
       ))}
     </ButtonContainer>
   );

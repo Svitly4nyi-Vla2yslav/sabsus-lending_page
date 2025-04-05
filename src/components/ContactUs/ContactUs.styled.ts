@@ -1,213 +1,264 @@
-// import styled from "styled-components";
-
-// export const ContactContainer = styled.div`
-// display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     width: 216px;
-//     margin : 0 auto;
-// @media screen and (min-width: 768px){
-//     width: 397px;
-//     // margin: 0 185px;
-// }
-//     @media screen and (min-width: 1440px){
-//     margin: 0 auto;
-//     }
-// `;
-
-// export const TitleContact = styled.h3`
-// font-family: "Right Grotesk";
-// font-weight: 900;
-// font-size: 44px;
-// line-height: 0.90909;
-// text-transform: uppercase;
-// color: #fff;
-// text-align: center;
-// @media screen and (min-width: 768px){
-//     font-size: 80px;
-//     line-height: 100%;
-// }
-
-//  @media screen and (min-width: 1440px){
-//  font-size: 160px;
-//         width: 745px;
-//         margin: 0 0;
-//  }
-
-// `;
-
-// export const ContactText = styled.p`
-// font-family:"Messina Sans Mono";
-// font-weight: 400;
-// font-size: 16px;
-
-// // line-height: 19px; 
-// line-height: 1.1875;
-// text-transform: uppercase;
-// text-align: center;
-// color: #fff;
-// margin: 16px 0;
-// @media screen and (min-width: 768px){
-
-// }
-
-//  @media screen and (min-width: 1440px){
-//  font-size: 24px;
-// line-height: 121%;
-// width: 581px;
-// padding-bottom: 40px;
-// // margin: 0 0;
-//  }
-// `;
+import styled from "styled-components";
+import { Wrapper } from '../BurgerMenu/BurgerMenu.styled';
 
 
-// export const IconX = styled.img`
-// width: 36px;
-// height: 36px;
-// margin-top: 24px;
-// `;
+export const ContactUsWrapper = styled.section`
+  display: flex;
+    width: 343px;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    margin: 80px auto;
+`;
+
+export const ContactUsText = styled.h3`
+font-family: var(--font-family);
+font-weight: 500;
+font-size: 18px;
+line-height: 135%;
+background: linear-gradient(168deg, #fff 0%, #fe5b14 100%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+padding-bottom: 10px;
+`;
+
+export const ContactUsTitle = styled.h2`
+ font-family: "Mulish", sans-serif;
+font-weight: 700;
+font-size: 28px;
+line-height: 115%;
+letter-spacing: -0.04em;
+color: var(--white);
+padding-bottom: 20px;
+`;
+
+export const FormWrapper = styled.form`
+position: relative;
+border: 1px solid var(--line);
+border-radius: 16px;
+width: 100%;
+height: auto;
+box-shadow: 0 0 0 0 var(--white), 
+0 0 0 1px rgba(244, 244, 245, 0.1),
+ 0 0 0 0 rgba(0, 0, 0, 0), 
+ 0 6px 9px 0 rgba(0, 0, 0, 0.25);
+background: var(--substrate);
+    z-index: 0;
+    margin-bottom: 12px;
+    padding: 16px;
+     overflow: hidden;
+`;
+
+export const FormTitle = styled.h3`
+ font-family: var(--font-family);
+font-weight: 500;
+font-size: 20px;
+color: var(--white);
+  margin-bottom: 12px;
+`;
+
+export const FormGroup = styled.div`
+  margin-bottom: 8px;
+`;
+
+export const FormLabel = styled.label`
+  display: block;
+  font-family: var(--font-family);
+  font-size: 14px;
+  color: var(--gray-500);
+  margin-bottom: 8px;
+`;
+
+export const FormInput = styled.input`
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--white);
+  font-family: var(--font-family);
+font-weight: 500;
+font-size: 20px;
+color: var(--gray-500);
+  transition: border 0.3s ease;
+  box-shadow: 0 0 18px -5px rgba(0, 0, 0, 0.5), inset 0 1px 2px 0 #525154;
+background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 30%, rgba(255, 255, 255, 0.02) 100%);
+
+  &:focus {
+    border-color: var(--primary);
+    outline: none;
+  }
+`;
+
+export const FormSelect = styled.select`
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--white);
+  font-family: var(--font-family);
+  appearance: none;
+  transition: border 0.3s ease;
+
+  &:focus {
+    border-color: var(--primary);
+    outline: none;
+  }
+`;
+
+export const OptionContainer = styled.div`
+
+`;
 
 
-// export const ContainerForm = styled.form`
-// margin: 16px 72px;
-// // width: 100%;
-// @media screen and (min-width: 768px){
-//     max-width: 100%;
-// }
+export const FormTextarea = styled.textarea`
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--white);
+font-family: var(--font-family);
+font-weight: 500;
+font-size: 20px;
+color: var(--gray-500);
+  min-height: 120px;
+  resize: vertical;
+  transition: border 0.3s ease;
+  height: 90px;
+box-shadow: 0 0 18px -5px rgba(0, 0, 0, 0.5), inset 0 1px 2px 0 #525154;
+background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 30%, rgba(255, 255, 255, 0.02) 100%);
+  &:focus {
+    border-color: var(--primary);
+    outline: none;
+  }
+`;
 
-//  @media screen and (min-width: 1440px){
-//  margin-bottom: 120px;
-//  }
+export const FormRadioGroup = styled.div`
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  width: 100%;
+      justify-content: space-between;
+`;
 
-// `;
+export const FormRadioLabel = styled.label`
+  display: flex;
+  align-items: center;
+font-family: var(--font-family);
+font-weight: 400;
+font-size: 16px;
+line-height: 175%;
+text-align: center;
+`;
 
-// export const InputDiscord = styled.input`
-// border: 1px solid #1e1e1e;
-// border-radius: 0 8px 8px 0;
-// padding: 22px 24px;
-// background: #000000;
-// width: 168px;
-// color:  #fff;
-// @media screen and (min-width: 768px){
-// width: 200px;
-// }
+export const FormRadioInput = styled.input`
+  opacity: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 
-//  @media screen and (min-width: 1440px){
-//  width: 333px;
-//  border-radius: 0 12px 12px 0;
-//  height: 64px;
-//  }
-// `;
+  &:checked + span {
+    /* Стилі для вибраного стану */
+    background: var(--primary);
+    color: var(--dark);
+  }
 
-// export const InputFox = styled.input`
-// border: 1px solid #1e1e1e;
-// border-radius: 0 8px 8px 0;
-// padding: 22px 24px;
-// background: #000000;
-// width: 168px;
-// color:  #fff;
-// @media screen and (min-width: 768px){
-//     width: 200px;
-// }
+  &:focus + span {
+    /* Стилі для фокусу */
+    box-shadow: 0 0 0 2px var(--primary);
+  }
+`;
 
-//  @media screen and (min-width: 1440px){
-//  width: 333px;
-//  border-radius: 0 12px 12px 0;
-//  height: 64px;
-//  }
-// `;
+export const RadioCustom = styled.span`
+  display: inline-block;
+  padding: 6px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  color: var(--white);
+  cursor: pointer;
+  border-radius: 6px;
+width: 95px;
+height: 44px;
 
-// export const IconInput = styled.svg`
-// @media screen and (min-width: 768px){
+box-shadow: 0 0 18px -5px rgba(0, 0, 0, 0.5), inset 0 1px 2px 0 #525154;
+background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 30%, rgba(255, 255, 255, 0.02) 100%);
+`;
 
-// }
-// `;
 
-// export const ButtonSubmit = styled.button`
-// border: none;
-// border-radius: 8px;
-// width: 216px;
-// height: 48px;
-// backdrop-filter: blur(12px);
-// background: #dc3b5a;
-// @media screen and (min-width: 768px){
-//     width: 248px;
-    
-// }
+export const FormFileUpload = styled.div`
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 50px 32px;
+  text-align: center;
+  cursor: pointer;
+  transition: border 0.3s ease;
+  box-shadow: 0 0 18px -5px rgba(0, 0, 0, 0.5), inset 0 1px 2px 0 #525154;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 30%, rgba(255, 255, 255, 0.02) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
 
-//  @media screen and (min-width: 1440px){
-//  border-radius: 12px;
-// padding: 16px 140px 20px 140px;
-// width: 397px;
-// height: 70px;
-//  }
-// `;
+  &:hover {
+    border-color: var(--primary);
+  }
 
-// export const ButtonTextContact = styled.p`
-// font-family: "Right Grotesk";
-// font-weight: 900;
-// font-size: 16px;
-// line-height: 1.1875;
-// color: #fff;
-// @media screen and (min-width: 768px){
+  input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
 
-// }
+  span {
+    font-family: var(--font-family);
+    color: var(--gray-500);
+  }
+`;
 
-//  @media screen and (min-width: 1440px){
-//  font-size: 28px;
-// line-height: 121%;
-//  }
-// `;
+export const CloudIcon = styled.img`
+  width: 28px;
+  height: 28px;
+  
+ 
+  }
+`;
 
-// export const DiscordIcon = styled.img`
-// backdrop-filter: blur(12px);
-// background: #1e1e1e;
-// border: 1px solid #1e1e1e;
-// border-radius: 8px 0 0 8px;
-// background: #1E1E1E;
-// width: 48px;
-// height: 48px;
-// padding: 10px;
-// @media screen and (min-width: 768px){
+export const CloudWrapper = styled.div`
+border-radius: 8px;
+padding: 8px 36px;
+box-shadow: 0 0 18px -5px rgba(0, 0, 0, 0.5), inset 0 1px 2px 0 #525154;
+background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 30%, rgba(255, 255, 255, 0.02) 100%);
+`
 
-// }
+export const FormSubmitButton = styled.button`
+  width: 100%;
+  padding: 14px 24px;
+  background: linear-gradient(168deg, #fff 0%, #fe5b14 100%);
+  color: var(--dark);
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font-family);
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-//  @media screen and (min-width: 1440px){
-//  height: 64px;
-//  width: 64px;
-//  }
-
-// `;
-
-// export const FoxIcon = styled.img`
-// backdrop-filter: blur(12px);
-// background: #1e1e1e;
-// border: 1px solid #1e1e1e;
-// border-radius: 8px 0 0 8px;
-// background: #1E1E1E;
-// width: 48px;
-// height: 48px;
-// padding: 10px;
-// @media screen and (min-width: 768px){
-
-// }
-
-//  @media screen and (min-width: 1440px){
-//  height: 64px;
-//   width: 64px;
-//  }
-// `;
-
-// export const ContainerIcon = styled.div`
-// height: 48px;
-// display: flex;
-// margin-bottom: 16px;
-// width: auto;
-// @media screen and (min-width: 768px){
-
-// }
-
-//  @media screen and (min-width: 1440px){
-//  margin-bottom: 40px;
-//  }
-// `;
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(254, 91, 20, 0.3);
+  }
+`;

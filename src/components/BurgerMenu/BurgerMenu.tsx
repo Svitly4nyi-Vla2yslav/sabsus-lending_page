@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import {  AnimatePresence } from 'framer-motion';
-import { Link } from 'react-scroll';
+import { AnimatePresence } from 'framer-motion';
+import { scroller } from 'react-scroll';
 import {
   BurgerButton,
   IconsStars,
@@ -29,7 +29,6 @@ const bottomLineVariants = {
   closed: { rotate: 0, y: 0 },
 };
 
-// Анімація меню
 const menuVariants = {
   open: { opacity: 1, x: 0 },
   closed: { opacity: 0, x: '-100%' },
@@ -50,7 +49,12 @@ const BurgerMenu = () => {
     { href: 'contact', label: t('menu.contact') },
   ];
 
-  const handleScroll = () => {
+  const handleScroll = (to: string) => {
+    scroller.scrollTo(to, {
+      smooth: true,
+      duration: 2000,
+      offset: -90,
+    });
     setIsOpen(false);
   };
 
@@ -58,14 +62,8 @@ const BurgerMenu = () => {
     <Wrapper>
       <BurgerButton onClick={() => setIsOpen(!isOpen)}>
         <Line animate={isOpen ? 'open' : 'closed'} variants={topLineVariants} />
-        <Line
-          animate={isOpen ? 'open' : 'closed'}
-          variants={middleLineVariants}
-        />
-        <Line
-          animate={isOpen ? 'open' : 'closed'}
-          variants={bottomLineVariants}
-        />
+        <Line animate={isOpen ? 'open' : 'closed'} variants={middleLineVariants} />
+        <Line animate={isOpen ? 'open' : 'closed'} variants={bottomLineVariants} />
       </BurgerButton>
 
       <AnimatePresence>
@@ -80,18 +78,13 @@ const BurgerMenu = () => {
             {links.map((link, index) => (
               <MenuLink
                 key={index}
-                as={Link}
-                to={link.href}
-                spy={true}
-                smooth={true}
-                offset={-90}
-                duration={2000}
-                onClick={handleScroll}
+                onClick={() => handleScroll(link.href)}
               >
                 {link.label}
               </MenuLink>
             ))}
-            <Button href="#">
+
+            <Button onClick={() => handleScroll('contact')}>
               <IconsStars src={IconStars} alt="Stars" />
               {t('buttons.getInTouch')}
             </Button>
