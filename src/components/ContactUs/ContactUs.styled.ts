@@ -262,3 +262,70 @@ export const FormSubmitButton = styled.button`
     box-shadow: 0 4px 12px rgba(254, 91, 20, 0.3);
   }
 `;
+
+// !-------------------------------_________________
+
+export const FilePreviewContainer = styled.div`
+  border-radius: 8px;
+  padding: 11px 16px;
+  width: 100%;
+  height: 48px;
+  box-shadow: 0 0 18px -5px rgba(0, 0, 0, 0.5), inset 0 1px 2px 0 #525154;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 30%, rgba(255, 255, 255, 0.02) 100%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+`;
+
+export const FileIcon = styled.div`
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+`;
+
+export const FileInfo = styled.div`
+  flex-grow: 1;
+  overflow: hidden;
+`;
+
+export const FileName = styled.div`
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--gray-800);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`;
+
+export const FileSize = styled.div`
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 10px;
+  color: var(--gray-800);
+`;
+
+export const FilePreviewLink = styled.a`
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--orange-500);
+  cursor: pointer;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+export const RemoveFileButton = styled.button`
+  background: none;
+  border: none;
+  color: var(--gray-500);
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0 8px;
+  &:hover {
+    color: var(--primary);
+  }
+`;
