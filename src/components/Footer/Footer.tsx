@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
       <FooterTitle>Terms of Service</FooterTitle>{' '}
       <FooterTitle>Cookie Policy</FooterTitle>
       <BackgroundIconContainer>
-        <FooterIcon src={FooterIcon1} />
+        <FooterIcon src={FooterIcon1} alt='footer icon'/>
       </BackgroundIconContainer>
     </FooterContainer>
   );
