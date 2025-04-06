@@ -46,11 +46,10 @@ export const MenuOverlay = styled(motion.div)`
 
 export const ButtonWrapp = styled.div`
 position: absolute;
-width: 100%;
-    position: absolute;
-    width: 90%;
-    bottom: 50px;
-    left: 8px;
+    width: 300px;
+ left: 50%;
+ transform: translateX(-50%);
+ bottom: 10%;
 `;
 
 export const MenuLink = styled(motion.a)`

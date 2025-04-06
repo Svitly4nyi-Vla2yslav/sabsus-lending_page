@@ -63,8 +63,14 @@ const BurgerMenu = () => {
     <Wrapper>
       <BurgerButton onClick={() => setIsOpen(!isOpen)}>
         <Line animate={isOpen ? 'open' : 'closed'} variants={topLineVariants} />
-        <Line animate={isOpen ? 'open' : 'closed'} variants={middleLineVariants} />
-        <Line animate={isOpen ? 'open' : 'closed'} variants={bottomLineVariants} />
+        <Line
+          animate={isOpen ? 'open' : 'closed'}
+          variants={middleLineVariants}
+        />
+        <Line
+          animate={isOpen ? 'open' : 'closed'}
+          variants={bottomLineVariants}
+        />
       </BurgerButton>
 
       <AnimatePresence>
@@ -77,18 +83,16 @@ const BurgerMenu = () => {
             transition={{ duration: 0.3 }}
           >
             {links.map((link, index) => (
-              <MenuLink
-                key={index}
-                onClick={() => handleScroll(link.href)}
-              >
+              <MenuLink key={index} onClick={() => handleScroll(link.href)}>
                 {link.label}
               </MenuLink>
             ))}
-<ButtonWrapp>
-            <MagicButton onClick={() => handleScroll('contact')}>
-              <IconsStars src={IconStars} alt="Stars" />
-              {t('buttons.getInTouch')}
-            </MagicButton></ButtonWrapp>
+            <ButtonWrapp>
+              <MagicButton onClick={() => handleScroll('contact')}>
+                <IconsStars src={IconStars} alt="Stars" />
+                {t('buttons.getInTouch')}
+              </MagicButton>
+            </ButtonWrapp>
           </MenuOverlay>
         )}
       </AnimatePresence>
