@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const FooterContainer = styled.div`
-display: flex
-;
+display: flex;
     width: 100%;
     align-items: center;
     flex-direction: row;
@@ -17,6 +16,24 @@ display: flex
   
 }
 `;
+
+export const FooterTitelContainer = styled.div`
+display: flex;
+    width: 343px;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    height: 92px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+    align-content: flex-start;
+
+    &::after {
+  
+}
+
+`
 
 export const FooterTitle = styled.h3`
 font-family: var(--font-family);
@@ -43,23 +60,22 @@ export const BackgroundIconContainer = styled.div`
       bottom: 50px;
   left: 0;
       width: 100%;
-
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1;
 
- &::after {
-      content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 40%;
-       background: linear-gradient(184deg, #101010 -420%, rgba(16, 16, 16, 0) 100%);
-    pointer-events: none;
-}
-  }
+//  &::after {
+//       content: "";
+//     position: absolute;
+//     bottom: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 40%;
+//        background: linear-gradient(184deg, #101010 -420%, rgba(16, 16, 16, 0) 100%);
+//     pointer-events: none;
+// }
+
   
 `;

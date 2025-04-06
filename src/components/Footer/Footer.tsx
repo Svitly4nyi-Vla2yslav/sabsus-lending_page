@@ -1,18 +1,26 @@
 import React from 'react';
-import { BackgroundIconContainer, FooterContainer, FooterIcon, FooterTitle } from './Footer.styled';
+import {
+  BackgroundIconContainer,
+  FooterContainer,
+  FooterIcon,
+  FooterTitelContainer,
+  FooterTitle,
+} from './Footer.styled';
 import { Border } from '../PartnersBanner/Partners.styled';
-import FooterIcon1 from "../../assets/icons/footerIcon.svg"
+import FooterIcon1 from '../../assets/icons/footerIcon.svg';
 
 const Footer: React.FC = () => {
   return (
     <FooterContainer>
-        <Border/>
-      <FooterTitle>© 2024 SABSUS</FooterTitle>
-      <FooterTitle>Privacy Policy</FooterTitle>
-      <FooterTitle>Terms of Service</FooterTitle>{' '}
-      <FooterTitle>Cookie Policy</FooterTitle>
+      <Border />
+      <FooterTitelContainer>
+        <FooterTitle>© 2024 SABSUS</FooterTitle>
+        <FooterTitle>Privacy Policy</FooterTitle>
+        <FooterTitle>Terms of Service</FooterTitle>{' '}
+        <FooterTitle>Cookie Policy</FooterTitle>
+      </FooterTitelContainer>
       <BackgroundIconContainer>
-        <FooterIcon src={FooterIcon1} alt='footer icon'/>
+        <FooterIcon src={FooterIcon1} alt="footer icon" />
       </BackgroundIconContainer>
     </FooterContainer>
   );
