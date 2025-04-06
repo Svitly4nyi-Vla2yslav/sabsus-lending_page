@@ -44,6 +44,15 @@ export const MenuOverlay = styled(motion.div)`
   overflow-y: auto;
 `;
 
+export const ButtonWrapp = styled.div`
+position: absolute;
+width: 100%;
+    position: absolute;
+    width: 90%;
+    bottom: 50px;
+    left: 8px;
+`;
+
 export const MenuLink = styled(motion.a)`
   color: white;
     font-family: 'Roboto Flex';

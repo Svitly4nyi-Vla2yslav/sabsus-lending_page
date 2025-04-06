@@ -33,6 +33,7 @@
     "react-i18next": "^15.4.1",
     "react-responsive": "^10.0.1",
     "react-scroll": "^1.9.3",
+    "react-toastify": "^11.0.5",
     "react-tsparticles": "^2.12.2",
     "rimraf": "^6.0.1",
     "styled-components": "^6.1.8",

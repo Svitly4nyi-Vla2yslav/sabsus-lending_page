@@ -12,6 +12,7 @@ import Services from './components/OurServices/Services';
 import OurWork from './components/OurWork/OurWork';
 import FAQ from './components/FAQ/FAQ';
 import ContactUs from './components/ContactUs/ContactUs';
+import Footer from './components/Footer/Footer';
 const App = () => {
   return (
     <GlobalContainer>
@@ -27,6 +28,7 @@ const App = () => {
       <OurWork/>
       <FAQ/>
       <ContactUs/>
+      <Footer/>
     </GlobalContainer>
   );
 };

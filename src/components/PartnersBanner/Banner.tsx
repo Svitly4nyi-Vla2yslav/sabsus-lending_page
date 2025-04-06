@@ -69,7 +69,7 @@ const Partners: React.FC = () => {
   const slidesPerView = isMobile ? 2 : isTablet ? 4 : isDesktop ? 7 : 7;
   return (
     <SwiperContainer>
-      <Border/>
+     
       <Swiper
         loop={true}
         slidesPerView={slidesPerView}

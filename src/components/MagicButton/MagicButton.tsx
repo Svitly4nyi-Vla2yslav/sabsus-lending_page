@@ -1,56 +1,87 @@
-import React, { useEffect, useState } from 'react';
-import { ButtonContainer, ButtonText, Star, Wave } from './MagicButton.styled';
+import React, { useEffect, useState, useMemo, useCallback } from 'react';
+import styles from './MagicButton.module.css';
 
-interface ButtonProps {
+interface MagicButtonProps {
   children: React.ReactNode;
-  onClick?: () => void;
+  type?: 'button' | 'submit' | 'reset';
+  disabled?: boolean;
+  onClick?: (e: React.MouseEvent) => void;
 }
 
-const Button: React.FC<ButtonProps> = ({ children, onClick }) => {
-  const [burstStars, setBurstStars] = useState<Array<{ id: number }>>([]);
-  const [floatingStars, setFloatingStars] = useState<
-    Array<{ id: number; opacity: number }>
-  >([]);
+export const MagicButton: React.FC<MagicButtonProps> = ({ 
+  children, 
+  type = 'button', 
+  disabled = false, 
+  onClick 
+}) => {
   const [isClicked, setIsClicked] = useState(false);
-
-  useEffect(() => {
-    const stars = Array.from({ length: 70 }, (_, i) => ({
+  
+  // Оптимізовано створення зірок за допомогою useMemo
+  const floatingStars = useMemo(() => 
+    Array.from({ length: 100 }, (_, i) => ({
       id: i,
       opacity: Math.random() < 0.4 ? Math.random() * 0.9 + 0.1 : 1,
-    }));
-    setFloatingStars(stars);
-  }, []);
+      style: {
+        '--star-left': `${Math.random() * 100}%`,
+        '--star-top': `${Math.random() * 100}%`,
+        '--star-opacity': Math.random() < 0.4 ? Math.random() * 0.9 + 0.1 : 1,
+        '--star-delay': `${Math.random() * 3}s`,
+      } as React.CSSProperties
+    })), 
+  []);
 
-  const handleClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    onClick?.();
+  const [burstStars, setBurstStars] = useState<Array<{id: number, style: React.CSSProperties}>>([]);
+
+  // Оптимізований обробник кліку
+  const handleClick = useCallback((e: React.MouseEvent) => {
+    if (disabled) return;
+    
+    onClick?.(e);
     setIsClicked(true);
 
-    const newStars = Array.from({ length: 30 }, (_, i) => ({
+    // Генеруємо зірки з використанням CSS custom properties
+    const newStars = Array.from({ length: 50 }, (_, i) => ({
       id: Date.now() + i,
+      style: {
+        '--burst-x': `${Math.random() * 400 - 200}px`,
+        '--burst-y': `${Math.random() * 400 - 200}px`,
+        '--burst-rotate': `${Math.random() * 720}deg`,
+      } as React.CSSProperties
     }));
+    
     setBurstStars(newStars);
 
     setTimeout(() => {
       setBurstStars([]);
       setIsClicked(false);
-    }, 800);
-  };
+    }, 1800);
+  }, [disabled, onClick]);
 
   return (
-    <ButtonContainer as="button" onClick={handleClick} $isClicked={isClicked}>
-      {isClicked && <Wave key={Date.now()} />}
-      <ButtonText>{children}</ButtonText>
+    <button
+      type={type}
+      onClick={handleClick}
+      disabled={disabled}
+      className={`${styles.button} ${isClicked ? styles.clicked : ''}`}
+    >
+      {isClicked && <span className={styles.wave} />}
+      <span className={styles.buttonText}>{children}</span>
 
       {floatingStars.map(star => (
-        <Star key={`float-${star.id}`} $opacity={star.opacity} $burst={false} />
+        <span 
+          key={`float-${star.id}`}
+          className={styles.star}
+          style={star.style}
+        />
       ))}
 
       {burstStars.map(star => (
-        <Star key={`burst-${star.id}`} $burst={true} />
+        <span
+          key={`burst-${star.id}`}
+          className={styles.starBurst}
+          style={star.style}
+        />
       ))}
-    </ButtonContainer>
+    </button>
   );
 };
-
-export default Button;

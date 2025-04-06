@@ -129,25 +129,29 @@ const SelectOption = styled.div<{ $isSelected: boolean }>`
 export const ErrorText = styled.span`
 border: 1px solid var(--red-500);
 border-radius: 16px;
-padding: 20px 16px;
-// width: 150px;
-height: 80px;
-position: relative;
-bottom: 50px ;
-right: 200px;
-box-shadow: 0 0 0 0 var(--white), 0 0 0 1px rgba(244, 244, 245, 0.1), 0 0 0 0 rgba(0, 0, 0, 0), 0 6px 9px 0 rgba(0, 0, 0, 0.25);
-background: var(--substrate);
-z-index: 9000 ;
+  padding: 9px 10px;
+    height: 52px;
+    position: absolute;
+    bottom: 42px;
+    text-align: center;
+    width: 100%;
+    right: 0px;
+    box-shadow: 0 0 0 0 var(--white), 0 0 0 1px rgba(244, 244, 245, 0.1), 0 0 0 0 rgba(0, 0, 0, 0), 0 6px 9px 0 rgba(0, 0, 0, 0.25);
+    background: var(--substrate);
+    z-index: 1;
 `;
 
 export const ErrorInput = styled(FormInput)<{ $hasError?: boolean }>`
   border-color: ${({ $hasError }) => $hasError && '#ff4d4f !important'};
+  z-index: 2;
 `;
 
 export const ErrorTextarea = styled(FormTextarea)<{ $hasError?: boolean }>`
   border-color: ${({ $hasError }) => $hasError && '#ff4d4f !important'};
+  z-index: 2;
 `;
 
 export const ErrorSelect = styled(SelectHeader)<{ $hasError?: boolean }>`
   border-color: ${({ $hasError }) => $hasError && '#ff4d4f !important'};
+  z-index: 2;
 `;

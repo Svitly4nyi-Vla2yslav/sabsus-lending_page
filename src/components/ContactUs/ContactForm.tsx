@@ -11,21 +11,18 @@ import {
   RadioCustom,
   RemoveFileButton,
 } from './ContactUs.styled';
+import { toast } from 'react-toastify';
+
 import React, { useState } from 'react';
 import { addDoc, collection } from 'firebase/firestore';
 import { db, storage } from '../../firabase';
 import {
   FormTitle,
   FormGroup,
-  FormLabel,
-  FormInput,
-  FormSelect,
-  FormTextarea,
   FormRadioGroup,
   FormRadioLabel,
   FormRadioInput,
   FormFileUpload,
-  FormSubmitButton,
 } from './ContactUs.styled';
 import {
   CustomSelect,
@@ -36,6 +33,10 @@ import {
 
 import Cloud from '../../assets/icons/cloud🌥.svg';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { MagicButton } from '../MagicButton/MagicButton';
+import { IconsStars } from '../BurgerMenu/BurgerMenu.styled';
+import { SuccessModal } from './SuccessMessage';
+import IconStars from '../../assets/icons/Icon-stars.svg';
 
 interface FormErrors {
   firstName?: string;
@@ -65,6 +66,7 @@ interface FormData {
 }
 
 const ContactForm: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     firstName: '',
     lastName: '',
@@ -154,13 +156,14 @@ const ContactForm: React.FC = () => {
     }));
   };
 
-  const uploadFiles = async (files: FileList): Promise<string[]> => {
-    const urls: string[] = [];
+  const uploadFiles = async (
+    files: FileList
+  ): Promise<Record<string, string>> => {
+    const urls: Record<string, string> = {};
 
     try {
       for (let i = 0; i < files.length; i++) {
         const file = files[i];
-        // Додаємо перевірку на розмір файлу (наприклад, до 10MB)
         if (file.size > 10 * 1024 * 1024) {
           throw new Error(`File ${file.name} is too large (max 10MB)`);
         }
@@ -168,29 +171,41 @@ const ContactForm: React.FC = () => {
         const storageRef = ref(storage, `uploads/${Date.now()}_${file.name}`);
         await uploadBytes(storageRef, file);
         const url = await getDownloadURL(storageRef);
-        urls.push(url);
+        urls[file.name] = url; // Зберігаємо URL за ім'ям файлу
       }
       return urls;
     } catch (error) {
       console.error('Upload error:', error);
-      throw error; // Передаємо помилку далі для обробки у handleSubmit
+      throw error;
     }
   };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
+  
     const isValid = validateForm();
     if (!isValid) return;
-
+  
     try {
       setIsUploading(true);
-
+  
       // Завантажуємо файли, якщо вони є
       let fileUrls: string[] = [];
       if (formData.files) {
-        fileUrls = await uploadFiles(formData.files);
+        const fileUrls = await uploadFiles(formData.files);
+        
+        // Оновлюємо filePreviews з URL
+        const updatedPreviews = formData.filePreviews.map((file, index) => ({
+          ...file,
+          url: fileUrls[index] // Додаємо URL до відповідного файлу
+        }));
+        
+        setFormData(prev => ({
+          ...prev,
+          filePreviews: updatedPreviews
+        }));
       }
-
+  
       // Відправляємо дані у Firestore
       const docRef = await addDoc(collection(db, 'contactSubmissions'), {
         firstName: formData.firstName,
@@ -202,10 +217,10 @@ const ContactForm: React.FC = () => {
         fileUrls,
         createdAt: new Date(),
       });
-
+  
       console.log('Document written with ID: ', docRef.id);
-      alert('Form submitted successfully!');
-
+      setIsModalOpen(true);
+  
       // Скидаємо форму
       setFormData({
         firstName: '',
@@ -227,7 +242,15 @@ const ContactForm: React.FC = () => {
           errorMessage = error.message;
         }
       }
-      alert(errorMessage);
+      toast.error(errorMessage, {
+        position: 'top-center',
+        style: {
+          border: '1px solid #ff4d4f',
+          padding: '16px',
+          color: '#ff4d4f',
+          background: 'var(--substrate)'
+        }
+      });
     } finally {
       setIsUploading(false);
     }
@@ -238,7 +261,17 @@ const ContactForm: React.FC = () => {
       window.open(file.url, '_blank');
     } else {
       // Якщо файл ще не завантажено на сервер
-      alert('File is not uploaded yet. Please submit the form first.');
+   
+      toast.error('File is not uploaded yet. Please submit the form first.', {
+        position: 'top-center',
+        style: {
+          border: '1px solid #ff4d4f',
+          padding: '16px',
+          color: '#ff4d4f',
+          background: 'var(--substrate)',
+          zIndex: 3,
+        }
+      });
     }
   };
   return (
@@ -399,7 +432,13 @@ const ContactForm: React.FC = () => {
         )}
       </FormGroup>
 
-      <FormSubmitButton type="submit">Submit</FormSubmitButton>
+      <FormGroup>
+        <MagicButton type="submit" disabled={isUploading}>
+          <IconsStars src={IconStars} alt="Stars" />{' '}
+          {isUploading ? 'Uploading...' : 'Submit'}
+        </MagicButton>
+      </FormGroup>
+      {isModalOpen && <SuccessModal onClose={() => setIsModalOpen(false)} />}
     </FormWrapper>
   );
 };

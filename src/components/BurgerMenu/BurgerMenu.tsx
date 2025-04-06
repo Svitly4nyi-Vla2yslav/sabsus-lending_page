@@ -3,15 +3,16 @@ import { AnimatePresence } from 'framer-motion';
 import { scroller } from 'react-scroll';
 import {
   BurgerButton,
+  ButtonWrapp,
   IconsStars,
   Line,
   MenuLink,
   MenuOverlay,
   Wrapper,
 } from './BurgerMenu.styled';
-import Button from '../MagicButton/MagicButton';
 import IconStars from '../../assets/icons/Icon-stars.svg';
 import { useTranslation } from 'react-i18next';
+import { MagicButton } from '../MagicButton/MagicButton';
 
 // Анімації для бургер-кнопки
 const topLineVariants = {
@@ -83,11 +84,11 @@ const BurgerMenu = () => {
                 {link.label}
               </MenuLink>
             ))}
-
-            <Button onClick={() => handleScroll('contact')}>
+<ButtonWrapp>
+            <MagicButton onClick={() => handleScroll('contact')}>
               <IconsStars src={IconStars} alt="Stars" />
               {t('buttons.getInTouch')}
-            </Button>
+            </MagicButton></ButtonWrapp>
           </MenuOverlay>
         )}
       </AnimatePresence>

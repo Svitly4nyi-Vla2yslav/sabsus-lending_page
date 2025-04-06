@@ -10,13 +10,13 @@ import {
   TitleModern,
 } from './Hero.styled';
 import { useTranslation } from 'react-i18next';
-import Button from '../MagicButton/MagicButton';
 import IconStars from '../../assets/icons/Icon-stars.svg';
 import { IconsStars } from '../BurgerMenu/BurgerMenu.styled';
 import Tailored from '../../assets/icons/Tailored Solutions.svg';
 import Scalable from '../../assets/icons/Scalable Technologies.svg';
 import Proven from '../../assets/icons/Proven Expertise.svg';
 import { scroller } from 'react-scroll';
+import { MagicButton } from '../MagicButton/MagicButton';
 
 const Hero: React.FC = ({}) => {
    const [isOpen, setIsOpen] = useState(false);
@@ -38,10 +38,10 @@ const Hero: React.FC = ({}) => {
       <TextDescription>{t('hero.description')}</TextDescription>
 
       <ContainerButton>
-        <Button onClick={() => handleScroll('contact')}>
+        <MagicButton onClick={() => handleScroll('contact')}>
           <IconsStars src={IconStars} alt="Stars" />
           {t('buttons.contact')}
-        </Button>
+        </MagicButton>
       </ContainerButton>
 
       <TextDevelopment>{t('hero.expertiseTitle')}</TextDevelopment>

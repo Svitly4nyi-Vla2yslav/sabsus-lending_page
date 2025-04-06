@@ -88,7 +88,7 @@ export const getCaseStudy = async (): Promise<CaseStudy | null> => {
     const docSnap = await getDoc(docRef);
 
     if (!docSnap.exists()) {
-      console.warn("Case study not found!");
+      // console.warn("Case study not found!");
       return null;
     }
 

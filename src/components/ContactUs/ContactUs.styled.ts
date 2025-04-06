@@ -8,7 +8,7 @@ export const ContactUsWrapper = styled.section`
     align-items: flex-start;
     flex-direction: column;
     justify-content: center;
-    margin: 80px auto;
+    margin: 80px auto 0px auto;
 `;
 
 export const ContactUsText = styled.h3`
@@ -45,7 +45,7 @@ box-shadow: 0 0 0 0 var(--white),
  0 6px 9px 0 rgba(0, 0, 0, 0.25);
 background: var(--substrate);
     z-index: 0;
-    margin-bottom: 12px;
+    margin-bottom: 60px;
     padding: 16px;
      overflow: hidden;
 `;
@@ -137,6 +137,7 @@ background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255,
 `;
 
 export const FormRadioGroup = styled.div`
+position: relative;
   display: flex;
   gap: 8px;
   margin-bottom: 20px;

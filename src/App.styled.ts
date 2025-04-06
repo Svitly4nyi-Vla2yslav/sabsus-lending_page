@@ -44,6 +44,9 @@ const GlobalStyles = createGlobalStyle`
 	--red-50: rgba(255, 94, 94, 0.05);
 	--red-500: #f00;
 	--gray-800: rgba(132, 132, 139, 0.8);
+    --toastify-color-success: #FE5B14;
+  --toastify-color-error: #ff4d4f;
+  --toastify-font-family: var(--font-family);
   // ! fonts 
     --font-family: "Roboto Flex", sans-serif;
   --second-family: "Mulish", sans-serif;
