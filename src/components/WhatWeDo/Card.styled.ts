@@ -22,7 +22,7 @@ export const BackgroundIconContainer = styled.div`
     background: linear-gradient(0deg, #101010 40%, rgba(16, 16, 16, 0) 100%);
     pointer-events: none;
 }
-  }
+
   
 `;
 

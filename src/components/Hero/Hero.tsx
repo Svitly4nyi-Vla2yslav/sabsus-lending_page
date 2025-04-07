@@ -17,6 +17,7 @@ import Scalable from '../../assets/icons/Scalable Technologies.svg';
 import Proven from '../../assets/icons/Proven Expertise.svg';
 import { scroller } from 'react-scroll';
 import { MagicButton } from '../MagicButton/MagicButton';
+import BackgroundImage from './BackgroundImage';
 
 const Hero: React.FC = ({}) => {
    const [isOpen, setIsOpen] = useState(false);

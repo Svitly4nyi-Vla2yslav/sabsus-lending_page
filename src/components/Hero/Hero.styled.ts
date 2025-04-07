@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const HeroWrapper = styled.div`
-//  position: absolute;
+ position: relative;
 //  top: 100px;
     display: flex;
     width: 343px;
@@ -9,6 +9,7 @@ export const HeroWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     // margin: 80px 1vh ;
+        z-index: 0;
      margin: 110px auto ;
 `;
 

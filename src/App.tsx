@@ -13,22 +13,23 @@ import OurWork from './components/OurWork/OurWork';
 import FAQ from './components/FAQ/FAQ';
 import ContactUs from './components/ContactUs/ContactUs';
 import Footer from './components/Footer/Footer';
+import BackgroundImage from './components/Hero/BackgroundImage';
 const App = () => {
   return (
     <GlobalContainer>
       <GradientWrapper />
-
       <ParticlesBackground />
       <GlobalStyles />
       <Header />
+      <BackgroundImage />
       <Hero />
       <About />
-      <Partners/>
-      <Services/>
-      <OurWork/>
-      <FAQ/>
-      <ContactUs/>
-      <Footer/>
+      <Partners />
+      <Services />
+      <OurWork />
+      <FAQ />
+      <ContactUs />
+      <Footer />
     </GlobalContainer>
   );
 };

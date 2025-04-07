@@ -64,7 +64,8 @@ export const BackgroundIconContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1;
+  z-index: 0;
+      opacity: 0.8;
 
 //  &::after {
 //       content: "";
@@ -73,9 +74,78 @@ export const BackgroundIconContainer = styled.div`
 //     left: 0;
 //     width: 100%;
 //     height: 40%;
-//        background: linear-gradient(184deg, #101010 -420%, rgba(16, 16, 16, 0) 100%);
+//        background: linear-gradient(184deg, #101010 42%, rgba(16, 16, 16, 0) 100%);
 //     pointer-events: none;
-// }
+}
 
   
 `;
+
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+export const PoliciesContainer = styled.div`
+  width: 100%;
+ margin: 80px auto 80px auto;
+background:rgba(0, 0, 0, 0.86);
+// opacity: 0.2;/
+  color: #fff;
+  position: relative;
+`;
+
+export const PolicySection = styled.section`
+  max-width: 800px;
+  margin: 0 auto 60px;
+  padding: 20px;
+`;
+
+export const LockIconContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+`;
+
+
+
+export const PolicyTitle = styled.h2`
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 115%;
+  letter-spacing: -0.04em;
+  color: var(--white);
+  margin-bottom: 20px;
+  text-align: center;
+      display: flex
+;
+    align-items: center;
+    justify-content: center;
+`;
+
+export const PolicyText = styled.div`
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 137%;
+  color: var(--white);
+
+  h3 {
+  font-family: var(--font-family);
+font-weight: 400;
+font-size: 17px;
+line-height: 137%;
+color: var(--white);
+  }
+
+  p {
+  font-family: var(--font-family);
+font-weight: 400;
+font-size: 17px;
+line-height: 137%;
+color: var(--white);
+  }
+`;
+
+export const LockIcon = styled.img`
+  width: 56px;
+  height: 56px;
+`

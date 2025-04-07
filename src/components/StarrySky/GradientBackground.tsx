@@ -13,7 +13,7 @@ export const GradientWrapper = styled.div`
   filter: blur(80px);
 `;
 
-const GradientBackground = () => {
+export const GradientBackground = () => {
   return <GradientWrapper />;
 };
 
