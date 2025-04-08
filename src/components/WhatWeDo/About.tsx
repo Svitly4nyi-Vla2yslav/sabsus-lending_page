@@ -65,7 +65,7 @@ import { PriseContainer } from './About.styled';
 import $ from '../../assets/icons/about/$-icon.svg';
 import Graf from '../../assets/icons/about/depositGrafik.svg';
 import Prozent from '../../assets/icons/about/prozent-icon.svg';
-import Grafik from '../../assets/icons/about/TotalExpensesIcon.svg';
+import Grafik from '../../assets/icons/about/grafik1.svg';
 import List from '../../assets/icons/about/listIcon.svg';
 import Tabl from '../../assets/icons/about/projects-tabl.svg';
 import Warn from '../../assets/icons/about/WarningIcon.svg';

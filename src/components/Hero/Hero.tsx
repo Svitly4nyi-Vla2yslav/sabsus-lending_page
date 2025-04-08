@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {
   ContainerButton,
   ContainerExperience,
+  ContainerTextExperience,
   HeroWrapper,
   IconsExperience,
   TextDescription,
@@ -46,7 +47,7 @@ const Hero: React.FC = ({}) => {
       </ContainerButton>
 
       <TextDevelopment>{t('hero.expertiseTitle')}</TextDevelopment>
-
+<ContainerTextExperience>
       <ContainerExperience>
         <IconsExperience src={Tailored} alt="⚙️" />
         <TextExperience>{t('expertise.tailored')}</TextExperience>
@@ -60,7 +61,7 @@ const Hero: React.FC = ({}) => {
       <ContainerExperience>
         <IconsExperience src={Proven} alt="🤯" />
         <TextExperience>{t('expertise.proven')}</TextExperience>
-      </ContainerExperience>
+      </ContainerExperience></ContainerTextExperience>
     </HeroWrapper>
   );
 };

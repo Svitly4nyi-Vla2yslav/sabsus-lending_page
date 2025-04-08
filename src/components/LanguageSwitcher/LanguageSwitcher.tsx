@@ -20,6 +20,17 @@ const Wrapper = styled.div`
   left: 70px;
   display: flex;
   z-index: 100;
+
+  @media screen and (min-width: 744px){
+margin-right: 20px;
+left: 0;
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
+
 `;
 
 const Button = styled.button`

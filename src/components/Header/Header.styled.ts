@@ -8,6 +8,16 @@ export const HeaderContainer = styled.header<{ isopen: boolean; $isScrolled: boo
   transform: translateX(-50%);
   transition: all 0.3s ease-in-out;
    z-index: 1;
+
+@media screen and (min-width: 744px){
+  left: 50%;
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
   
   ${({ $isScrolled }) =>
     $isScrolled && `
@@ -28,6 +38,16 @@ export const Logo = styled.a`
 z-index: 260;
 width: 152px;
 height: 54px;
+
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 
 `;
 
@@ -53,5 +73,18 @@ export const ContainerBar = styled.div`
     align-items: center;
     width: 100%;
      padding: 8px 5px;
+
+     @media screen and (min-width: 744px){
+justify-content: flex-end;
+// margin-left: 10px;
+left: 53%;
+    width: 100%;
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 

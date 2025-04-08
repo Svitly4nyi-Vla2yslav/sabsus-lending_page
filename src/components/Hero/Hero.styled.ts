@@ -11,6 +11,20 @@ export const HeroWrapper = styled.div`
     // margin: 80px 1vh ;
         z-index: 0;
      margin: 110px auto ;
+ @media screen and (min-width: 744px){
+display: flex;
+        width: 90%;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        text-align: center;
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const TextDevelopment = styled.h3`
@@ -25,6 +39,22 @@ background: linear-gradient(180deg,
 background-clip: text;
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
+
+ @media screen and (min-width: 744px){
+font-family: var(--font-family);
+font-weight: 500;
+font-size: 22px;
+background: linear-gradient(180deg, #eaeaea 0%, rgba(234, 234, 234, 0) 100%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const TitleModern = styled.h1`
@@ -41,6 +71,16 @@ background-clip: text;
 
  text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.51), 
                0px 0px 12px rgba(255, 178, 150, 0.06);
+
+ @media screen and (min-width: 744px){
+font-size: 66px;
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 
@@ -52,15 +92,47 @@ line-height: 135%;
 color: var(--white);
 padding-bottom: 24px;
 
+@media screen and (min-width: 744px){
+font-family: var(--font-family);
+font-weight: 500;
+font-size: 22px;
+text-align: center;
+color: var(--white);
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const IconsExperience = styled.img`
 width: 20px;
 margin: 4px;
-    position: relative;
+position: relative;
+
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 export const ContainerExperience = styled.div`
 display: flex;
+@media screen and (min-width: 744px){
+align-items: flex-end;
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const TextExperience = styled.p`
@@ -69,6 +141,29 @@ font-weight: 400;
 font-size: 15px;
 line-height: 187%;
 color: #f2f2f2;
+ @media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
+`;
+
+export const ContainerTextExperience = styled.div`
+
+@media screen and (min-width: 744px){
+display: flex;
+gap: 40px;
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const ContainerButton = styled.div`
@@ -76,5 +171,13 @@ padding: 0 auto;
 padding-bottom: 24px;
 width: 70%;
 height: 44px;
+ @media screen and (min-width: 744px){
+    width: 35%;
 
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;

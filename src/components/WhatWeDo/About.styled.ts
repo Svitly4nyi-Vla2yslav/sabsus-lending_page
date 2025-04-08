@@ -7,7 +7,15 @@ export const AboutWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     margin: 0 auto ;
-    // margin-top: 630px;
+@media screen and (min-width: 744px){
+width: 696px;
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const TextAboutUs = styled.h3`
@@ -20,6 +28,21 @@ background-clip: text;
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 padding-bottom: 10px;
+@media screen and (min-width: 744px){
+
+font-family: var(--font-family);
+font-weight: 500;
+font-size: 22px;
+background: linear-gradient(168deg, #fff 0%, #fe5b14 100%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const AboutTitle = styled.h2`
@@ -30,6 +53,21 @@ line-height: 115%;
 letter-spacing: -0.04em;
 color: var(--white);
 padding-bottom: 20px;
+
+@media screen and (min-width: 744px){
+font-family: var(--second-family);
+font-weight: 700;
+font-size: 40px;
+line-height: 115%;
+letter-spacing: -0.03em;
+color: var(--white);
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 
 `;
 
@@ -46,7 +84,16 @@ background: var(--substrate);
     z-index: 0;
     margin-bottom: 12px;
      overflow: hidden;
+@media screen and (min-width: 744px){
+width: 696px;
+height: 480px;
 
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
      
 `;
 
@@ -59,13 +106,30 @@ box-shadow: 0 0 18px -5px rgba(0, 0, 0, 0.5),
  inset 0 1px 2px 0 #525154;
 background: var(--black-400);
 margin: 20px;
+@media screen and (min-width: 744px){
 
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const ComputerIcon = styled.img`
 // width: 32px;
 // height: 32px;
 padding: 15px;
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 
@@ -78,6 +142,14 @@ line-height: 125%;
 color: var(--white);
 margin:  8px 20px;
 
+@media screen and (min-width: 744px){
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const ComprehensiveText = styled.p`
@@ -87,7 +159,19 @@ font-size: 16px;
 line-height: 137%;
 color: var(--gray-500);
 margin: 10px 20px;
+@media screen and (min-width: 744px){
+font-family: var(--font-family);
+font-weight: 400;
+font-size: 17px;
+line-height: 137%;
+color: var(--gray-500);
 
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 // ! TotalDepositContainer
@@ -96,11 +180,16 @@ export const ContainerTabl = styled.div`
 display: flex;
 gap: 6px;
 width: 301px;
-// height: 155px; 
-
-// margin: 20px 20px 4px 20px;
 margin: 0 auto;
+@media screen and (min-width: 744px){
+width: 655px;
+gap: 13px;
+}
 
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 
@@ -114,11 +203,33 @@ background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255,
 display: flex;
 justify-content: space-between;
     flex-direction: column;
+
+@media screen and (min-width: 744px){
+border: 0.54px solid #444;
+border-radius: 6px;
+width: 153px;
+height: 67px;
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const Div = styled.div`
 display: flex;
 justify-content: space-between;
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const PriseContainer = styled.div`
@@ -126,7 +237,17 @@ padding: 0px 0px 0px 0px;
 width: 27px;
 height: 14px;
 margin : 5px;
+@media screen and (min-width: 744px){
+padding: 0px 0px 0px 0px;
+width: 55px;
+height: 30px;
 
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 
@@ -136,6 +257,19 @@ font-weight: 200;
 font-size: 3px;
 line-height: 150%;
 color: var(--white);
+@media screen and (min-width: 744px){
+font-family: var(--font-family);
+font-weight: 200;
+font-size: 8px;
+line-height: 150%;
+color: var(--white);
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const PriseText = styled.p`
@@ -144,6 +278,20 @@ font-weight: 200;
 font-size: 5px;
 line-height: 135%;
 color: var(--white);
+
+@media screen and (min-width: 744px){
+font-family: var(--font-family);
+font-weight: 200;
+font-size: 13px;
+line-height: 135%;
+color: var(--white);
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const DollarSpan = styled.button`
@@ -159,23 +307,63 @@ display: flex;
     align-items: center;
     
 background: linear-gradient(90deg, #ed1816 0%, #f84215 63.35%, #fe5b14 100%);
+@media screen and (min-width: 744px){
+border-radius: 5px;
+width: 21px;
+height: 21px;
+margin: 8px;
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const DollarIcon = styled.img`
 width: 3px;
 height: 5px;
+@media screen and (min-width: 744px){
+width: 6px;
+height: 10px;
 
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const GrafikWrapp = styled.div`
 width: 70px;
 height: 9px;
+margin-top: -5%;
+@media screen and (min-width: 744px){
+width: 152px;
+height: 21px;
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 
 export const GrafikIcon = styled.img`
 stroke-width: 0.50px;
 stroke: #ff5e5e;
+@media screen and (min-width: 744px){
+stroke-width: 1.08px;
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 
@@ -192,6 +380,18 @@ background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255,
 display: flex;
 align-items: center;
     justify-content: center;
+@media screen and (min-width: 744px){
+border: 0.54px solid #444;
+border-radius: 6px;
+width: 153px;
+height: 67px;
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const AllProjectsTitle = styled.p`
@@ -200,6 +400,20 @@ font-weight: 500;
 font-size: 3px;
 line-height: 150%;
 color: var(--white);
+
+@media screen and (min-width: 744px){
+font-family: var(--font-family);
+font-weight: 500;
+font-size: 8px;
+line-height: 150%;
+color: var(--white);
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const AllProjectsText = styled.p`
@@ -208,6 +422,20 @@ font-weight: 400;
 font-size: 3px;
 line-height: 150%;
 color: var(--gray-500);
+
+@media screen and (min-width: 744px){
+font-family: var(--font-family);
+font-weight: 400;
+font-size: 7px;
+line-height: 150%;
+color: var(--gray-500);
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const AllProjectsSpann = styled.button`
@@ -219,6 +447,16 @@ width: 2px;
 height: 2px;
 background: linear-gradient(90deg, #ed1816 0%, #f84215 63.35%, #fe5b14 100%);
 
+@media screen and (min-width: 744px){
+width: 6px;
+height: 6px;
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const AllProjectsSpannGray = styled.button`
@@ -231,11 +469,31 @@ width: 2px;
 height: 2px;
 background: linear-gradient(90deg,rgb(0, 0, 0) 0%,rgb(23, 20, 20) 63.35%,rgb(0, 0, 0) 100%);
 
+@media screen and (min-width: 744px){
+width: 6px;
+height: 6px;
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const ProzentIconContainer = styled.div`
 width: 21px;
 height: 21px;
+
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const ProzentText = styled.div`
@@ -264,7 +522,33 @@ color: var(--gray-500);
     top: 12px;
     left: 9px;
 }
+@media screen and (min-width: 744px){
 
+p {
+font-family: var(--font-family);
+font-weight: 400;
+font-size: 11px;
+text-align: center;
+color: var(--gray-500);
+top: 0px;
+ left: -5px;
+}
+
+span{
+font-family: var(--font-family);
+font-weight: 400;
+font-size: 5px;
+text-align: center;
+color: var(--gray-500);
+top: 14px;
+left: -11px;
+}
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 
@@ -272,7 +556,17 @@ export const ProzentIcon = styled.img`
 width: 21px;
 height: 21px;
     position: absolute;
+@media screen and (min-width: 744px){
+width: 46px;
+height: 46px;
+ bottom: -24px;
+        left: -26px;
+}
 
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 // ! Expenses
@@ -280,7 +574,15 @@ height: 21px;
 export const GrafikIconRed = styled.img`
 stroke-width: 0.50px;
 stroke: #ff5e5e;
+@media screen and (min-width: 744px){
 
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 // ! task not finished
@@ -288,7 +590,15 @@ stroke: #ff5e5e;
 export const ListIcon = styled.img`
 width: 4px;
 height: 4px;
+@media screen and (min-width: 744px){
 
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const TaskText = styled.p`
@@ -300,6 +610,15 @@ color: var(--gray-500);
 position: relative;
 bottom: 5px;
 left: 5px;
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 const moveGradient = keyframes`
@@ -320,6 +639,15 @@ export const ProgressBarContainer = styled.div`
   background: #e6eaee;
   border-radius: 3px;
   overflow: hidden;
+  @media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const ProgressBar = styled.div`
@@ -329,7 +657,17 @@ export const ProgressBar = styled.div`
   border-radius: 1px;
   background: linear-gradient(90deg, #ed1816 0%, #f84215 63.35%, #fe5b14 100%);
   animation: ${moveGradient} 1.5s infinite alternate ease-in-out;
-`;;
+
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
+  `;
 
 
 // ! projects overview 
@@ -344,6 +682,16 @@ width: 100%;
     flex-wrap: nowrap;
     justify-content: center;
     margin-top: 10px;
+
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const ShadowContainer = styled.div`
@@ -360,6 +708,16 @@ border-radius: 13px;
     background: linear-gradient(0deg, #101010 0%, rgba(16, 16, 16, 0) 100%);
     pointer-events: none; /* Щоб тінь не заважала клікам */
   }
+
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const ProjectsOverviewContainer = styled.div`
@@ -369,6 +727,16 @@ width: 198px;
 height: 110px;
 box-shadow: 0 0 0 0 var(--white), 0 0 0 0px rgba(244, 244, 245, 0.1), 0 0 0 0 rgba(0, 0, 0, 0), 0 3px 4px 0 rgba(0, 0, 0, 0.25);
 background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 30%, rgba(255, 255, 255, 0.02) 100%);
+
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const ProjectsOverviewTextContainer = styled.div`
@@ -380,7 +748,17 @@ flex-direction: row;
     justify-content: space-between;
     align-items: center;
     flex-wrap: nowrap;
-`;
+
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
+    `;
 
 export const ProjectsOverviewText = styled.p`
 font-family: var(--font-family);
@@ -389,6 +767,15 @@ font-size: 3px;
 line-height: 150%;
 color: var(--white);
 
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const ProjectsOverviewSpanContainer = styled.div`
@@ -402,6 +789,16 @@ height: 7px;
     align-items: center;
     text-align: center;
     gap: 2px;
+
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const ProjectsOverviewSpanRed = styled.span`
@@ -421,6 +818,15 @@ text-align: center;
     align-items: center;
 box-shadow: 0 0 5px 0 rgba(13, 153, 255, 0.2), inset 0 0px 1px 0 #525154, 0 0 7px -2px rgba(0, 0, 0, 0.5);
 background: linear-gradient(90deg, #ed1816 0%, #f84215 63.35%, #fe5b14 100%);
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 
@@ -441,11 +847,33 @@ text-align: center;
     align-items: center;
 
 box-shadow: inset 0 0px 1px 0 #525154, 0 0 7px -2px rgba(0, 0, 0, 0.5);
-background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 30%, rgba(255, 255, 255, 0.02) 100%);`;
+background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 30%, rgba(255, 255, 255, 0.02) 100%)
+
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
+`;
+
 
 export const IconTabl = styled.img`
 width: 198px;
 height: 97px;
+
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 // ! My To Do Items 
@@ -458,6 +886,16 @@ height: 110px;
 
 box-shadow: 0 0 0 0 var(--white), 0 0 0 0px rgba(244, 244, 245, 0.1), 0 0 0 0 rgba(0, 0, 0, 0), 0 3px 4px 0 rgba(0, 0, 0, 0.25);
 background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 30%, rgba(255, 255, 255, 0.02) 100%);
+
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const MyToDoItemsTitel = styled.h4`
@@ -466,11 +904,29 @@ font-weight: 300;
 font-size: 3px;
 line-height: 150%;
 color: var(--white);
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const MyToDoItemsTextSpam = styled.p`
 width: 85px;
 height: 5px;
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const MyToDoItemsTextOrang = styled.p`
@@ -479,6 +935,15 @@ font-weight: 300;
 font-size: 3px;
 line-height: 150%;
 color: var(--orange-500);
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 //!------------------------------------------//////
 
@@ -492,11 +957,30 @@ display: flex;
     justify-content: space-around;
     align-items: center;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 30%, rgba(255, 255, 255, 0.02) 100%);
-`;
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
+    `;
 
 export const MyToDoItems = styled.div`
 width: 95px;
 height: 90px;
+
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const ToDoContainer = styled.div`
@@ -505,6 +989,16 @@ width: 95px;
 height: 28px;
 background: #242424;
  border: 0.5px solid var(--red-50);
+
+ @media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 //
 `;
 
@@ -513,12 +1007,30 @@ width: 85px;
 height: 5px;
  padding: 3px 4px;
 display: flex;
+
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const IconWarning = styled.img`
 width: 4px;
 height: 4px;
+@media screen and (min-width: 744px){
 
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const WarningOrangText = styled.p`
@@ -527,6 +1039,16 @@ font-weight: 300;
 font-size: 3px;
 line-height: 150%;
 color: var(--orange-500);
+
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const CompleteContainer = styled.div`
@@ -536,7 +1058,15 @@ export const CompleteContainer = styled.div`
     flex-wrap: wrap;
     width: 100%;
     justify-content: center;
-   
+ @media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}  
 `;
 
 export const DataContainer = styled.div`
@@ -547,6 +1077,16 @@ display: flex
     gap: 7px;
     height: 8px;
     padding: 0;
+
+    @media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const DataContainerText = styled.div`
@@ -554,13 +1094,31 @@ display: flex;
     flex-direction: row;
     align-items: baseline;
     gap: 4px;
+@media screen and (min-width: 744px){
 
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 
 export const PointIcon = styled.img`
 width: 2px;
 height: 3px;
+
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const MyToDoListBoxCheck = styled.p`
@@ -571,6 +1129,16 @@ height: 4px;
 
 box-shadow: inset 0 0px 1px 0 #525154, 0 0 7px -2px rgba(0, 0, 0, 0.5);
 background: var(--black-350);
+
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const CompleteText = styled.p`
@@ -578,6 +1146,16 @@ font-family: var(--font-family);
 font-weight: 400;
 font-size: 3px;
 color: var(--white);
+
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 
@@ -587,12 +1165,31 @@ width: 15px;
 height: 13px;
 display: flex;
 gap: 2px;
+
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 export const MyToDoListText = styled.p`
 font-family: var(--font-family);
 font-weight: 300;
 font-size: 3px;
 color: var(--white);
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const DeleteIconBox = styled.button`
@@ -619,6 +1216,15 @@ export const WriteOrangeBox = styled.span`
   background: linear-gradient(90deg, #ed1816 0%, #f84215 63.35%, #fe5b14 100%);
   display: inline-block;
   text-align: center;
+  @media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 
@@ -627,6 +1233,15 @@ width: 3px;
 height: 3px;
 stroke-width: 0.25px;
 stroke: #ff5e5e;
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const EditorIcon = styled.img`
@@ -635,6 +1250,15 @@ height: 3px;
 stroke-width: 0.25px;
 stroke:  #ff5e5e;
 margin: 1px;
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const DataText = styled.p`
@@ -644,6 +1268,15 @@ font-size: 3px;
 line-height: 150%;
 color: var(--gray-500);
 text-align: start;
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 
