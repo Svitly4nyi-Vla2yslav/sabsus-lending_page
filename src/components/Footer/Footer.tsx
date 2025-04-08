@@ -9,16 +9,18 @@ import {
 import { Border } from '../PartnersBanner/Partners.styled';
 import FooterIcon1 from '../../assets/icons/footerIcon.svg';
 import { PoliciesContent } from './PoliciesContent';
+import { useTranslation } from 'react-i18next';
 
 const Footer: React.FC = () => {
   const [showPolicies, setShowPolicies] = useState(false);
   const [activePolicy, setActivePolicy] = useState<string | null>(null);
+  const { t } = useTranslation();
 
-  
   const handlePolicyClick = (policy: string) => {
     setActivePolicy(policy);
     setShowPolicies(true);
   };
+
   return (
     <>
       <FooterContainer>
@@ -26,13 +28,13 @@ const Footer: React.FC = () => {
         <FooterTitelContainer>
           <FooterTitle>© 2024 SABSUS</FooterTitle>
           <FooterTitle onClick={() => handlePolicyClick('privacy')}>
-            Privacy Policy
+            {t('footer.privacyPolicy')}
           </FooterTitle>
           <FooterTitle onClick={() => handlePolicyClick('terms')}>
-            Terms of Service
+            {t('footer.termsOfService')}
           </FooterTitle>
           <FooterTitle onClick={() => handlePolicyClick('cookie')}>
-            Cookie Policy
+            {t('footer.cookiePolicy')}
           </FooterTitle>
         </FooterTitelContainer>
         <BackgroundIconContainer>

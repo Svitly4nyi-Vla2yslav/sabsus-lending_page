@@ -13,6 +13,7 @@ import {
 import { Element } from 'react-scroll';
 import Star from '../../assets/icons/faq/faqStar.svg';
 import X from '../../assets/icons/faq/+.svg';
+import { useTranslation } from 'react-i18next';
 
 interface Question {
   question: string;
@@ -22,6 +23,7 @@ interface Question {
 
 const FAQ: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const { t } = useTranslation();
 
   const toggleAnswer = (index: number) => {
     setActiveIndex(prev => (prev === index ? null : index));
@@ -29,43 +31,37 @@ const FAQ: React.FC = () => {
 
   const questions: Question[] = [
     {
-      question: 'What services do you offer?',
-      answer: 'Yes, new mockups are released every month.',
-      answer2:
-        'We specialize in developing CRM systems, mobile applications, and custom IT solutions. We also provide database creation, server setup on AWS, and UI/UX design.',
+      question: t('faq.questions.q1.question'),
+      answer: t('faq.questions.q1.answer'),
+      answer2: t('faq.questions.q1.answer2'),
     },
     {
-      question: 'How long does it take to complete a project?',
-      answer: 'Yes, timelines vary depending on the project scope.',
-      answer2:
-        'Simple projects can take 1–2 weeks, while more complex systems like CRM or mobile apps may take 1–2 months.',
+      question: t('faq.questions.q2.question'),
+      answer: t('faq.questions.q2.answer'),
+      answer2: t('faq.questions.q2.answer2'),
     },
     {
-      question: 'Can I customize the features of my CRM system or application?',
-      answer:
-        'Yes, all features can be tailored to your specific business needs. ',
-      answer2:
-        'We develop fully custom logic, dashboards, and workflows based on your requirements.',
+      question: t('faq.questions.q3.question'),
+      answer: t('faq.questions.q3.answer'),
+      answer2: t('faq.questions.q3.answer2'),
     },
     {
-      question: 'Do you provide ongoing support after project completion?',
-      answer: 'Yes, we offer maintenance and updates after launch.',
-      answer2:
-        'This includes bug fixing, performance optimization, and feature upgrades upon request.',
+      question: t('faq.questions.q4.question'),
+      answer: t('faq.questions.q4.answer'),
+      answer2: t('faq.questions.q4.answer2'),
     },
     {
-      question: 'How much do your services cost?',
-      answer: 'Yes, prices depend on the complexity of the project.',
-      answer2:
-        'Basic websites start from €500, while custom systems like CRMs or apps are estimated individually after a consultation.',
+      question: t('faq.questions.q5.question'),
+      answer: t('faq.questions.q5.answer'),
+      answer2: t('faq.questions.q5.answer2'),
     },
   ];
 
   return (
     <Element name="faq">
       <FAQSection>
-        <FAQText>FAQ</FAQText>
-        <FAQTitle>Everything You Need to Know Before Getting Started</FAQTitle>
+        <FAQText>{t('faq.sectionTitle')}</FAQText>
+        <FAQTitle>{t('faq.mainHeading')}</FAQTitle>
         <div>
           {questions.map((q, index) => (
             <QuestionItem key={index}>

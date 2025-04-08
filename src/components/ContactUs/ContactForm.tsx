@@ -38,6 +38,8 @@ import { IconsStars } from '../BurgerMenu/BurgerMenu.styled';
 import { SuccessModal } from './SuccessMessage';
 import IconStars from '../../assets/icons/Icon-stars.svg';
 
+import { useTranslation } from 'react-i18next';
+
 interface FormErrors {
   firstName?: string;
   lastName?: string;
@@ -79,42 +81,43 @@ const ContactForm: React.FC = () => {
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [isUploading, setIsUploading] = useState(false);
+  const { t } = useTranslation();
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
 
     if (!formData.firstName.trim()) {
-      newErrors.firstName = 'First name is required';
+      newErrors.firstName = t('contactForm.errors.firstName');
     }
 
     if (!formData.lastName.trim()) {
-      newErrors.lastName = 'Last name is required';
+      newErrors.lastName = t('contactForm.errors.lastName');
     }
 
     if (!formData.budget) {
-      newErrors.budget = 'Please select budget range';
+      newErrors.budget = t('contactForm.errors.budget');
     }
 
     if (!formData.contactMethod) {
-      newErrors.contactMethod = 'Please select contact method';
+      newErrors.contactMethod = t('contactForm.errors.contactMethod');
     }
 
     if (!formData.contact.trim()) {
-      newErrors.contact = 'Contact information is required';
+      newErrors.contact = t('contactForm.errors.contact.required');
     } else if (
       formData.contactMethod === 'Email' &&
       !/^\S+@\S+\.\S+$/.test(formData.contact)
     ) {
-      newErrors.contact = 'Please enter valid email';
+      newErrors.contact = t('contactForm.errors.contact.email');
     } else if (
       formData.contactMethod === 'Phone' &&
       !/^[\d\s\-+]{10,}$/.test(formData.contact)
     ) {
-      newErrors.contact = 'Please enter valid phone number';
+      newErrors.contact = t('contactForm.errors.contact.phone');
     }
 
     if (!formData.description.trim()) {
-      newErrors.description = 'Description is required';
+      newErrors.description = t('contactForm.errors.description');
     }
 
     setErrors(newErrors);
@@ -165,7 +168,9 @@ const ContactForm: React.FC = () => {
       for (let i = 0; i < files.length; i++) {
         const file = files[i];
         if (file.size > 10 * 1024 * 1024) {
-          throw new Error(`File ${file.name} is too large (max 10MB)`);
+          toast.error(
+            t('contactForm.errors.fileTooLarge', { fileName: file.name })
+          );
         }
 
         const storageRef = ref(storage, `uploads/${Date.now()}_${file.name}`);
@@ -182,30 +187,30 @@ const ContactForm: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-  
+
     const isValid = validateForm();
     if (!isValid) return;
-  
+
     try {
       setIsUploading(true);
-  
+
       // Завантажуємо файли, якщо вони є
       let fileUrls: string[] = [];
       if (formData.files) {
         const fileUrls = await uploadFiles(formData.files);
-        
+
         // Оновлюємо filePreviews з URL
         const updatedPreviews = formData.filePreviews.map((file, index) => ({
           ...file,
-          url: fileUrls[index] // Додаємо URL до відповідного файлу
+          url: fileUrls[index], // Додаємо URL до відповідного файлу
         }));
-        
+
         setFormData(prev => ({
           ...prev,
-          filePreviews: updatedPreviews
+          filePreviews: updatedPreviews,
         }));
       }
-  
+
       // Відправляємо дані у Firestore
       const docRef = await addDoc(collection(db, 'contactSubmissions'), {
         firstName: formData.firstName,
@@ -217,10 +222,10 @@ const ContactForm: React.FC = () => {
         fileUrls,
         createdAt: new Date(),
       });
-  
+
       console.log('Document written with ID: ', docRef.id);
       setIsModalOpen(true);
-  
+
       // Скидаємо форму
       setFormData({
         firstName: '',
@@ -234,12 +239,15 @@ const ContactForm: React.FC = () => {
       });
     } catch (error) {
       console.error('Error:', error);
-      let errorMessage = 'Error submitting form. Please try again.';
+      let errorMessage = t('contactForm.errors.submitError');
+
       if (error instanceof Error) {
         if (error.message.includes('CORS')) {
-          errorMessage = 'Server configuration error. Please contact support.';
+          errorMessage = t('contactForm.errors.serverError');
         } else if (error.message.includes('too large')) {
-          errorMessage = error.message;
+          errorMessage = t('contactForm.errors.fileTooLarge', {
+            fileName: error.message.split(' ')[1] || 'file',
+          });
         }
       }
       toast.error(errorMessage, {
@@ -248,8 +256,8 @@ const ContactForm: React.FC = () => {
           border: '1px solid #ff4d4f',
           padding: '16px',
           color: '#ff4d4f',
-          background: 'var(--substrate)'
-        }
+          background: 'var(--substrate)',
+        },
       });
     } finally {
       setIsUploading(false);
@@ -261,8 +269,8 @@ const ContactForm: React.FC = () => {
       window.open(file.url, '_blank');
     } else {
       // Якщо файл ще не завантажено на сервер
-   
-      toast.error('File is not uploaded yet. Please submit the form first.', {
+
+      toast.error(t('contactForm.errors.fileNotUploaded'), {
         position: 'top-center',
         style: {
           border: '1px solid #ff4d4f',
@@ -270,14 +278,13 @@ const ContactForm: React.FC = () => {
           color: '#ff4d4f',
           background: 'var(--substrate)',
           zIndex: 3,
-        }
+        },
       });
     }
   };
   return (
     <FormWrapper onSubmit={handleSubmit}>
-      <FormTitle>Select your budget range</FormTitle>
-
+      <FormTitle>{t('contactForm.title')}</FormTitle>
       <FormRadioGroup>
         <FormRadioLabel>
           <FormRadioInput
@@ -287,7 +294,7 @@ const ContactForm: React.FC = () => {
             checked={formData.budget === 'Up to $10K'}
             onChange={handleChange}
           />
-          <RadioCustom>Up to $10K</RadioCustom>
+          <RadioCustom>{t('contactForm.budgetOptions.upTo10k')}</RadioCustom>
         </FormRadioLabel>
 
         <FormRadioLabel>
@@ -298,7 +305,7 @@ const ContactForm: React.FC = () => {
             checked={formData.budget === '$10K-$30K'}
             onChange={handleChange}
           />
-          <RadioCustom>$10K-$30K</RadioCustom>
+          <RadioCustom>{t('contactForm.budgetOptions.10kTo30k')}</RadioCustom>
         </FormRadioLabel>
 
         <FormRadioLabel>
@@ -309,7 +316,7 @@ const ContactForm: React.FC = () => {
             checked={formData.budget === '$30K+'}
             onChange={handleChange}
           />
-          <RadioCustom> $30K+</RadioCustom>
+          <RadioCustom>{t('contactForm.budgetOptions.30kPlus')}</RadioCustom>
         </FormRadioLabel>
         {errors.budget && <ErrorText>{errors.budget}</ErrorText>}
       </FormRadioGroup>
@@ -318,18 +325,20 @@ const ContactForm: React.FC = () => {
         <ErrorInput
           type="text"
           name="firstName"
-          placeholder="First Name"
+          placeholder={t('contactForm.fields.firstName')}
           value={formData.firstName}
           onChange={handleChange}
           required
           $hasError={!!errors.firstName}
         />
-        {errors.firstName && <ErrorText>{errors.firstName}</ErrorText>}
+        {errors.firstName && (
+          <ErrorText>{t('contactForm.errors.firstName')}</ErrorText>
+        )}
       </FormGroup>
 
       <FormGroup>
         <ErrorInput
-          placeholder="Last Name"
+          placeholder={t('contactForm.fields.lastName')}
           type="text"
           name="lastName"
           value={formData.lastName}
@@ -343,14 +352,14 @@ const ContactForm: React.FC = () => {
       <FormGroup>
         <CustomSelect
           options={[
-            { value: 'Email', label: 'Email' },
-            { value: 'Phone', label: 'Phone' },
-            { value: 'WhatsApp', label: 'WhatsApp' },
-            { value: 'Telegram', label: 'Telegram' },
+            { value: 'Email', label: t('contactForm.methods.email') },
+            { value: 'Phone', label: t('contactForm.methods.phone') },
+            { value: 'WhatsApp', label: t('contactForm.methods.whatsapp') },
+            { value: 'Telegram', label: t('contactForm.methods.telegram') },
           ]}
           value={formData.contactMethod}
           onChange={value => setFormData({ ...formData, contactMethod: value })}
-          placeholder="Way to Connect"
+          placeholder={t('contactForm.fields.contactMethod')}
           $hasError={!!errors.contactMethod}
         />
         {errors.contactMethod && <ErrorText>{errors.contactMethod}</ErrorText>}
@@ -360,14 +369,14 @@ const ContactForm: React.FC = () => {
         <ErrorInput
           placeholder={
             formData.contactMethod === 'Email'
-              ? 'Your email'
+              ? t('contactForm.fields.contactPlaceholder.email')
               : formData.contactMethod === 'Phone'
-              ? 'Your phone number'
+              ? t('contactForm.fields.contactPlaceholder.phone')
               : formData.contactMethod === 'WhatsApp'
-              ? 'Your WhatsApp'
+              ? t('contactForm.fields.contactPlaceholder.whatsapp')
               : formData.contactMethod === 'Telegram'
-              ? 'Your Telegram'
-              : 'Choose a contact method…'
+              ? t('contactForm.fields.contactPlaceholder.telegram')
+              : t('contactForm.fields.contactPlaceholder.default')
           }
           type={formData.contactMethod === 'Email' ? 'email' : 'text'}
           name="contact"
@@ -381,7 +390,7 @@ const ContactForm: React.FC = () => {
 
       <FormGroup>
         <ErrorTextarea
-          placeholder="Description"
+          placeholder={t('contactForm.fields.description')}
           name="description"
           value={formData.description}
           onChange={handleChange}
@@ -427,7 +436,7 @@ const ContactForm: React.FC = () => {
             <CloudWrapper>
               <CloudIcon src={Cloud} alt="☁️" />
             </CloudWrapper>
-            <span>Click here to upload or drop files here</span>
+            <span>{t('contactForm.fields.fileUpload')}</span>
           </FormFileUpload>
         )}
       </FormGroup>
@@ -435,7 +444,9 @@ const ContactForm: React.FC = () => {
       <FormGroup>
         <MagicButton type="submit" disabled={isUploading}>
           <IconsStars src={IconStars} alt="Stars" />{' '}
-          {isUploading ? 'Uploading...' : 'Submit'}
+          {isUploading
+            ? t('contactForm.submitButton.uploading')
+            : t('contactForm.submitButton.default')}
         </MagicButton>
       </FormGroup>
       {isModalOpen && <SuccessModal onClose={() => setIsModalOpen(false)} />}

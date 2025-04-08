@@ -2,11 +2,7 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/pagination';
 import { Autoplay, Pagination } from 'swiper/modules';
-import {
-  Border,
-  Image,
-  SwiperContainer
-} from './Partners.styled';
+import { Border, Image, SwiperContainer } from './Partners.styled';
 import 'swiper/css/bundle';
 
 import { useMediaQuery } from 'react-responsive';
@@ -69,7 +65,6 @@ const Partners: React.FC = () => {
   const slidesPerView = isMobile ? 2 : isTablet ? 4 : isDesktop ? 7 : 7;
   return (
     <SwiperContainer>
-     
       <Swiper
         loop={true}
         slidesPerView={slidesPerView}

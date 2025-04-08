@@ -134,7 +134,7 @@ position: relative;
 z-index: 0;
 width: 96px;
 height: auto;
-`; 
+`;
 
 export const IconContainerCard2 = styled.div`
 position: absolute;
@@ -167,13 +167,13 @@ height: 281px;
   align-items: center;
   z-index: 0;
  
-`;  
+`;
 
 export const PhoneCreditServices = styled.img`
 position: relative;
 z-index: 0;
 width: 303px;
     height: auto;
-`;  
-  
+`;
+
 

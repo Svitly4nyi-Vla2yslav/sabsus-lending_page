@@ -79,7 +79,7 @@ background: transparent;
 `;
 
 interface AnswerTextProps {
-    $isOpen: boolean;
+  $isOpen: boolean;
 }
 
 export const AnswerText = styled.div<AnswerTextProps>`
@@ -108,7 +108,7 @@ height: 13px;
 `;
 
 interface XIconStyledProps {
-    $rotate?: boolean;
+  $rotate?: boolean;
 }
 
 export const XIcon = styled.img.attrs<XIconStyledProps>(() => ({})) <XIconStyledProps>`
@@ -117,8 +117,8 @@ export const XIcon = styled.img.attrs<XIconStyledProps>(() => ({})) <XIconStyled
     transition: transform 0.6s ease;
   
     ${({ $rotate }) =>
-        $rotate &&
-        `
+    $rotate &&
+    `
         transform: rotate(136deg);
       `}
   `;

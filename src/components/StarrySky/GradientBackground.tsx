@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const GradientWrapper = styled.div`
   position: absolute;
@@ -16,4 +16,3 @@ export const GradientWrapper = styled.div`
 export const GradientBackground = () => {
   return <GradientWrapper />;
 };
-

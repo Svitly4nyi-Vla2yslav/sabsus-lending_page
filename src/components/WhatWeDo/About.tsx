@@ -73,208 +73,217 @@ import Point from '../../assets/icons/about/pointIcon.svg';
 import Delete from '../../assets/icons/about/delete.svg';
 import Editor from '../../assets/icons/about/editor.svg';
 import Card from './Card';
+import { useTranslation } from 'react-i18next';
 
 const About: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <AboutWrapper>
-        <TextAboutUs>What We Do</TextAboutUs>
-        <AboutTitle>
-          We create IT solutions, from CRM to custom apps, to streamline your
-          business
-        </AboutTitle>
+        <TextAboutUs>{t('about.sectionTitle')}</TextAboutUs>
+        <AboutTitle>{t('about.mainHeading')}</AboutTitle>
+
         <ComprehensiveContainer>
           <IconContainer>
-            {' '}
-            <ComputerIcon src={Comp} alt="🖥️" />
+            <ComputerIcon src={Comp} alt={t('about.icons.computer')} />
           </IconContainer>
-          <ComprehensiveTitle>Comprehensive CRM Systems</ComprehensiveTitle>
-          <ComprehensiveText>
-            Develop robust CRM systems tailored to your business needs. Automate
-            workflows and deliver a seamless customer experience.
-          </ComprehensiveText>
+          <ComprehensiveTitle>{t('about.crm.title')}</ComprehensiveTitle>
+          <ComprehensiveText>{t('about.crm.description')}</ComprehensiveText>
+
           <ContainerTabl>
             <TotalDepositContainer>
               <Div>
                 <PriseContainer>
-                  <TotalDepositText>Total Deposit</TotalDepositText>
+                  <TotalDepositText>
+                    {t('about.deposit.total')}
+                  </TotalDepositText>
                   <PriseText>$1200.00</PriseText>
-                </PriseContainer>{' '}
+                </PriseContainer>
                 <DollarSpan>
-                  {' '}
-                  <DollarIcon src={$} alt="💲" />
+                  <DollarIcon src={$} alt={t('about.icons.dollar')} />
                 </DollarSpan>
               </Div>
               <GrafikWrapp>
-                <GrafikIcon src={Graf} />
+                <GrafikIcon src={Graf} alt={t('about.icons.chart')} />
               </GrafikWrapp>
             </TotalDepositContainer>
+
             <ContainerProjects>
-              {' '}
               <ProzentIconContainer>
-                {' '}
                 <ProzentText>
-                  {' '}
-                  <p>62</p> <span>Compete</span>
-                  <ProzentIcon src={Prozent} alt="🍾" />
+                  <p>62</p>
+                  <span>{t('about.projects.completed')}</span>
+                  <ProzentIcon src={Prozent} alt={t('about.icons.percent')} />
                 </ProzentText>
               </ProzentIconContainer>
+
               <PriseContainer>
-                <AllProjectsTitle>All Projects</AllProjectsTitle>
+                <AllProjectsTitle>{t('about.projects.all')}</AllProjectsTitle>
                 <AllProjectsText>
-                  {' '}
-                  <AllProjectsSpann></AllProjectsSpann> Compete{' '}
+                  <AllProjectsSpann></AllProjectsSpann>{' '}
+                  {t('about.projects.status.completed')}
                 </AllProjectsText>
                 <AllProjectsText>
-                  {' '}
-                  <AllProjectsSpann></AllProjectsSpann> Pending
+                  <AllProjectsSpann></AllProjectsSpann>{' '}
+                  {t('about.projects.status.pending')}
                 </AllProjectsText>
                 <AllProjectsText>
-                  <AllProjectsSpannGray> </AllProjectsSpannGray>
-                  Not Start
+                  <AllProjectsSpannGray></AllProjectsSpannGray>
+                  {t('about.projects.status.notStarted')}
                 </AllProjectsText>
               </PriseContainer>
             </ContainerProjects>
+
             <TotalDepositContainer>
               <Div>
                 <PriseContainer>
-                  <TotalDepositText>Total Expenses</TotalDepositText>
+                  <TotalDepositText>
+                    {t('about.expenses.total')}
+                  </TotalDepositText>
                   <PriseText>$1200.00</PriseText>
-                </PriseContainer>{' '}
+                </PriseContainer>
                 <DollarSpan>
-                  {' '}
-                  <DollarIcon src={$} alt="💲" />
+                  <DollarIcon src={$} alt={t('about.icons.dollar')} />
                 </DollarSpan>
               </Div>
               <GrafikWrapp>
-                <GrafikIconRed src={Grafik} />
+                <GrafikIconRed src={Grafik} alt={t('about.icons.chart')} />
               </GrafikWrapp>
             </TotalDepositContainer>
+
             <TotalDepositContainer>
               <Div>
                 <PriseContainer>
-                  <ProjectsOverviewText>Total Deposit</ProjectsOverviewText>
+                  <ProjectsOverviewText>
+                    {t('about.tasks.total')}
+                  </ProjectsOverviewText>
                   <PriseText>20</PriseText>
                 </PriseContainer>
                 <DollarSpan>
-                  <ListIcon src={List} />
+                  <ListIcon src={List} alt={t('about.icons.list')} />
                 </DollarSpan>
               </Div>
-              <TaskText>Tasks Not Finished</TaskText>
+              <TaskText>{t('about.tasks.unfinished')}</TaskText>
               <ProgressBarContainer>
-                {' '}
                 <ProgressBar />
               </ProgressBarContainer>
             </TotalDepositContainer>
           </ContainerTabl>
+
           <ShadowContainer>
             <DivProjects>
               <ProjectsOverviewContainer>
                 <ProjectsOverviewTextContainer>
-                  <ProjectsOverviewText>Projects Overview</ProjectsOverviewText>{' '}
+                  <ProjectsOverviewText>
+                    {t('about.projects.overview')}
+                  </ProjectsOverviewText>
                   <ProjectsOverviewSpanContainer>
-                    <ProjectsOverviewSpanRed>Week</ProjectsOverviewSpanRed>
-                    <ProjectsOverviewSpan>Month</ProjectsOverviewSpan>
-                    <ProjectsOverviewSpan>Year</ProjectsOverviewSpan>
-                    <ProjectsOverviewSpan>All</ProjectsOverviewSpan>
-                  </ProjectsOverviewSpanContainer>{' '}
+                    <ProjectsOverviewSpanRed>
+                      {t('about.time.week')}
+                    </ProjectsOverviewSpanRed>
+                    <ProjectsOverviewSpan>
+                      {t('about.time.month')}
+                    </ProjectsOverviewSpan>
+                    <ProjectsOverviewSpan>
+                      {t('about.time.year')}
+                    </ProjectsOverviewSpan>
+                    <ProjectsOverviewSpan>
+                      {t('about.time.all')}
+                    </ProjectsOverviewSpan>
+                  </ProjectsOverviewSpanContainer>
                 </ProjectsOverviewTextContainer>
-                <IconTabl src={Tabl} />
-              </ProjectsOverviewContainer>{' '}
+                <IconTabl src={Tabl} alt={t('about.icons.table')} />
+              </ProjectsOverviewContainer>
+
               <MyToDoItemsContainer>
                 <MyToDoHeaderContainer>
-                  <MyToDoItemsTitel>My To Do Items</MyToDoItemsTitel>
-                  <MyToDoItemsTitel>View All + Add To Do</MyToDoItemsTitel>
+                  <MyToDoItemsTitel>{t('about.todo.title')}</MyToDoItemsTitel>
+                  <MyToDoItemsTitel>{t('about.todo.viewAll')}</MyToDoItemsTitel>
                 </MyToDoHeaderContainer>
+
                 <MyToDoItems>
                   <ToDoContainer>
                     <WarningOrangContainer>
-                      <IconWarning src={Warn} alt="⚠️" />
-                      <WarningOrangText>Latest to do's</WarningOrangText>
-                    </WarningOrangContainer>
-                    <CompleteContainer>
-                      {' '}
-                      <DataContainer>
-                        <PointIcon src={Point} />
-                        <MyToDoListBoxCheck></MyToDoListBoxCheck>
-                        <CompleteText>
-                          Compete this projects Monday
-                        </CompleteText>
-                        <MyToDoBoxContainer>
-                          <DeleteIconBox>
-                            <DeleteIcon src={Delete} alt="🛑" />
-                          </DeleteIconBox>
-                          <WriteOrangeBox>
-                            <EditorIcon src={Editor} alt="✍️" />
-                          </WriteOrangeBox>
-                        </MyToDoBoxContainer>
-                      </DataContainer>
-                      <DataContainerText>
-                        <DataText>2023-12-26 07:15:00 </DataText>
-                      </DataContainerText>
-                    </CompleteContainer>
-                  </ToDoContainer>
-                  <ToDoContainer>
-                    <WarningOrangContainer>
-                      <IconWarning src={Warn} alt="⚠️" />
+                      <IconWarning src={Warn} alt={t('about.icons.warning')} />
                       <WarningOrangText>
-                        Latest finished to do's
+                        {t('about.todo.latest')}
                       </WarningOrangText>
                     </WarningOrangContainer>
                     <CompleteContainer>
-                      {' '}
                       <DataContainer>
-                        <PointIcon src={Point} />
+                        <PointIcon src={Point} alt={t('about.icons.point')} />
                         <MyToDoListBoxCheck></MyToDoListBoxCheck>
                         <CompleteText>
-                          Compete this projects Monday
+                          {t('about.todo.taskExample')}
                         </CompleteText>
                         <MyToDoBoxContainer>
                           <DeleteIconBox>
-                            <DeleteIcon src={Delete} alt="🛑" />
+                            <DeleteIcon
+                              src={Delete}
+                              alt={t('about.icons.delete')}
+                            />
                           </DeleteIconBox>
                           <WriteOrangeBox>
-                            <EditorIcon src={Editor} alt="✍️" />
+                            <EditorIcon
+                              src={Editor}
+                              alt={t('about.icons.edit')}
+                            />
                           </WriteOrangeBox>
                         </MyToDoBoxContainer>
                       </DataContainer>
                       <DataContainerText>
-                        <DataText>2023-12-26 07:15:00 </DataText>
+                        <DataText>2023-12-26 07:15:00</DataText>
                       </DataContainerText>
                     </CompleteContainer>
                   </ToDoContainer>
-                  <ToDoContainer>
-                    <WarningOrangContainer>
-                      <IconWarning src={Warn} alt="⚠️" />
-                      <WarningOrangText>Latest to do's</WarningOrangText>
-                    </WarningOrangContainer>
-                    <CompleteContainer>
-                      {' '}
-                      <DataContainer>
-                        <PointIcon src={Point} />
-                        <MyToDoListBoxCheck></MyToDoListBoxCheck>
-                        <CompleteText>
-                          Compete this projects Monday
-                        </CompleteText>
-                        <MyToDoBoxContainer>
-                          <DeleteIconBox>
-                            <DeleteIcon src={Delete} alt="🛑" />
-                          </DeleteIconBox>
-                          <WriteOrangeBox>
-                            <EditorIcon src={Editor} alt="✍️" />
-                          </WriteOrangeBox>
-                        </MyToDoBoxContainer>
-                      </DataContainer>
-                      <DataContainerText>
-                        <DataText>2023-12-26 07:15:00 </DataText>
-                      </DataContainerText>
-                    </CompleteContainer>
-                  </ToDoContainer>
+
+                  {/* Повторювані ToDo елементи з однаковим перекладом */}
+                  {[1, 2].map(item => (
+                    <ToDoContainer key={item}>
+                      <WarningOrangContainer>
+                        <IconWarning
+                          src={Warn}
+                          alt={t('about.icons.warning')}
+                        />
+                        <WarningOrangText>
+                          {t('about.todo.latestFinished')}
+                        </WarningOrangText>
+                      </WarningOrangContainer>
+                      <CompleteContainer>
+                        <DataContainer>
+                          <PointIcon src={Point} alt={t('about.icons.point')} />
+                          <MyToDoListBoxCheck></MyToDoListBoxCheck>
+                          <CompleteText>
+                            {t('about.todo.taskExample')}
+                          </CompleteText>
+                          <MyToDoBoxContainer>
+                            <DeleteIconBox>
+                              <DeleteIcon
+                                src={Delete}
+                                alt={t('about.icons.delete')}
+                              />
+                            </DeleteIconBox>
+                            <WriteOrangeBox>
+                              <EditorIcon
+                                src={Editor}
+                                alt={t('about.icons.edit')}
+                              />
+                            </WriteOrangeBox>
+                          </MyToDoBoxContainer>
+                        </DataContainer>
+                        <DataContainerText>
+                          <DataText>2023-12-26 07:15:00</DataText>
+                        </DataContainerText>
+                      </CompleteContainer>
+                    </ToDoContainer>
+                  ))}
                 </MyToDoItems>
               </MyToDoItemsContainer>
             </DivProjects>
           </ShadowContainer>
         </ComprehensiveContainer>
+
         <Card />
       </AboutWrapper>
     </>

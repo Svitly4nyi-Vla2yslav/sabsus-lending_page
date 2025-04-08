@@ -1,5 +1,5 @@
 import { StyledIcon } from './Icon.styled';
-import  sprite from '../../assets/icons/headerSprite.svg';
+import sprite from '../../assets/icons/headerSprite.svg';
 
 import React from 'react';
 

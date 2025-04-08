@@ -8,12 +8,12 @@ interface Option {
 }
 
 interface CustomSelectProps {
-    options: Option[];
-    value: string;
-    onChange: (value: string) => void;
-    placeholder?: string;
-    $hasError?: boolean; // Додаємо цей пропс
-  }
+  options: Option[];
+  value: string;
+  onChange: (value: string) => void;
+  placeholder?: string;
+  $hasError?: boolean; // Додаємо цей пропс
+}
 
 export const CustomSelect: React.FC<CustomSelectProps> = ({
   options,
@@ -40,11 +40,11 @@ export const CustomSelect: React.FC<CustomSelectProps> = ({
     <SelectContainer ref={ref}>
       <SelectHeader onClick={() => setIsOpen(!isOpen)} $isOpen={isOpen}>
         {selectedOption?.label || placeholder}
-        <SelectArrow $isOpen={isOpen}>⌵</SelectArrow> 
+        <SelectArrow $isOpen={isOpen}>⌵</SelectArrow>
       </SelectHeader>
       {isOpen && (
         <SelectOptions>
-          {options.map((option) => (
+          {options.map(option => (
             <SelectOption
               key={option.value}
               onClick={() => {
@@ -66,7 +66,6 @@ export const CustomSelect: React.FC<CustomSelectProps> = ({
 const SelectContainer = styled.div`
   position: relative;
   width: 100%;
-  
 `;
 
 const SelectHeader = styled.div<{ $isOpen: boolean; $hasError?: boolean }>`
@@ -81,11 +80,19 @@ const SelectHeader = styled.div<{ $isOpen: boolean; $hasError?: boolean }>`
   justify-content: space-between;
   align-items: center;
   transition: all 0.3s ease;
-    border-color: ${({ $isOpen, $hasError }) => 
-    $hasError ? '#ff4d4f !important' : 
-    $isOpen ? 'var(--primary)' : 'var(--line)'};
+  border-color: ${({ $isOpen, $hasError }) =>
+    $hasError
+      ? '#ff4d4f !important'
+      : $isOpen
+      ? 'var(--primary)'
+      : 'var(--line)'};
   box-shadow: 0 0 18px -5px rgba(0, 0, 0, 0.5), inset 0 1px 2px 0 #525154;
-background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 30%, rgba(255, 255, 255, 0.02) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.06) 30%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
 `;
 
 const SelectArrow = styled.span<{ $isOpen: boolean }>`
@@ -123,22 +130,22 @@ const SelectOption = styled.div<{ $isSelected: boolean }>`
   }
 `;
 
-
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 export const ErrorText = styled.span`
-border: 1px solid var(--red-500);
-border-radius: 16px;
+  border: 1px solid var(--red-500);
+  border-radius: 16px;
   padding: 9px 10px;
-    height: 52px;
-    position: absolute;
-    bottom: 42px;
-    text-align: center;
-    width: 100%;
-    right: 0px;
-    box-shadow: 0 0 0 0 var(--white), 0 0 0 1px rgba(244, 244, 245, 0.1), 0 0 0 0 rgba(0, 0, 0, 0), 0 6px 9px 0 rgba(0, 0, 0, 0.25);
-    background: var(--substrate);
-    z-index: 1;
+  height: 52px;
+  position: absolute;
+  bottom: 42px;
+  text-align: center;
+  width: 100%;
+  right: 0px;
+  box-shadow: 0 0 0 0 var(--white), 0 0 0 1px rgba(244, 244, 245, 0.1),
+    0 0 0 0 rgba(0, 0, 0, 0), 0 6px 9px 0 rgba(0, 0, 0, 0.25);
+  background: var(--substrate);
+  z-index: 1;
 `;
 
 export const ErrorInput = styled(FormInput)<{ $hasError?: boolean }>`

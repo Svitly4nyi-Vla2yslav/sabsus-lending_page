@@ -20,20 +20,20 @@ import { MagicButton } from '../MagicButton/MagicButton';
 import BackgroundImage from './BackgroundImage';
 
 const Hero: React.FC = ({}) => {
-   const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const { t } = useTranslation();
 
-   const handleScroll = (to: string) => {
-     scroller.scrollTo(to, {
-       smooth: false,
-       duration: 12000,
-       offset: -90,
-     });
-     setIsOpen(false);
-   };
+  const handleScroll = (to: string) => {
+    scroller.scrollTo(to, {
+      smooth: false,
+      duration: 12000,
+      offset: -90,
+    });
+    setIsOpen(false);
+  };
 
   return (
-    <HeroWrapper  id="header">
+    <HeroWrapper id="header">
       <TextDevelopment>{t('hero.developmentAgency')}</TextDevelopment>
       <TitleModern>{t('hero.title')}</TitleModern>
       <TextDescription>{t('hero.description')}</TextDescription>

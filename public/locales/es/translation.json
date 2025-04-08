@@ -1,23 +1,271 @@
 {
-    "hero": {
-      "developmentAgency": "Agencia de desarrollo",
-      "title": "Soluciones IT modernas para tu negocio",
-      "description": "Desarrollamos potentes sistemas CRM, aplicaciones móviles y productos IT únicos que te ayudan a crecer y automatizar procesos empresariales.",
-      "expertiseTitle": "Nuestra experiencia"
+  "hero": {
+    "developmentAgency": "Agencia de desarrollo",
+    "title": "Soluciones IT modernas para tu negocio",
+    "description": "Desarrollamos potentes sistemas CRM, aplicaciones móviles y productos IT únicos que te ayudan a crecer y automatizar procesos empresariales.",
+    "expertiseTitle": "Nuestra experiencia"
+  },
+  "expertise": {
+    "tailored": "Soluciones a medida",
+    "scalable": "Tecnologías escalables",
+    "proven": "Experiencia comprobada"
+  },
+  "menu": {
+    "services": "Servicios",
+    "caseStudies": "Casos de estudio",
+    "faq": "Preguntas frecuentes",
+    "contact": "Contacto"
+  },
+  "buttons": {
+    "contact": "Contáctenos",
+    "getInTouch": "Contactar"
+  },
+  "contactForm": {
+    "title": "Selecciona tu rango de presupuesto",
+    "budgetOptions": {
+      "upTo10k": "$10K",
+      "10kTo30k": "$10K-$30K",
+      "30kPlus": "$30K+"
     },
-    "expertise": {
-      "tailored": "Soluciones a medida",
-      "scalable": "Tecnologías escalables",
-      "proven": "Experiencia comprobada"
+    "fields": {
+      "firstName": "Nombre",
+      "lastName": "Apellido",
+      "contactMethod": "Método de contacto",
+      "contactPlaceholder": {
+        "email": "Tu correo electrónico",
+        "phone": "Tu número de teléfono",
+        "whatsapp": "Tu WhatsApp",
+        "telegram": "Tu Telegram",
+        "default": "Elige un método de contacto..."
+      },
+      "description": "Descripción",
+      "fileUpload": "Haz clic para subir archivos o arrástralos aquí",
+      "filePreview": "Vista previa",
+      "fileRemove": "×"
     },
-    "menu": {
-      "services": "Servicios",
-      "caseStudies": "Casos de estudio",
-      "faq": "Preguntas frecuentes",
-      "contact": "Contacto"
+    "methods": {
+      "email": "Correo electrónico",
+      "phone": "Teléfono",
+      "whatsapp": "WhatsApp",
+      "telegram": "Telegram"
     },
-    "buttons": {
-      "contact": "Contáctenos",
-      "getInTouch": "Contactar"
+    "submitButton": {
+      "default": "Enviar",
+      "uploading": "Subiendo..."
+    },
+    "errors": {
+      "firstName": "El nombre es obligatorio",
+      "lastName": "El apellido es obligatorio",
+      "budget": "Por favor selecciona un rango de presupuesto",
+      "contactMethod": "Por favor selecciona un método de contacto",
+      "contact": {
+        "required": "La información de contacto es obligatoria",
+        "email": "Por favor ingresa un correo electrónico válido",
+        "phone": "Por favor ingresa un número de teléfono válido"
+      },
+      "description": "La descripción es obligatoria",
+      "fileTooLarge": "El archivo {fileName} es demasiado grande (máximo 10MB)",
+      "fileNotUploaded": "El archivo no se ha subido todavía. Por favor envía el formulario primero.",
+      "submitError": "Error al enviar el formulario. Por favor intenta nuevamente.",
+      "serverError": "Error de configuración del servidor. Por favor contacta al soporte."
+    }
+  },
+  "contactUs": {
+    "sectionTitle": "Contáctenos",
+    "mainHeading": "Comencemos a Construir Tu Próxima Gran Idea"
+  },
+  "successModal": {
+    "title": "¡Gracias por contactarnos!",
+    "message": "Hemos recibido tu mensaje y nos pondremos en contacto contigo pronto.",
+    "buttonText": "Volver al inicio"
+  },
+  "faq": {
+    "sectionTitle": "Preguntas frecuentes",
+    "mainHeading": "Todo lo que necesitas saber antes de comenzar",
+    "questions": {
+      "q1": {
+        "question": "¿Qué servicios ofrecen?",
+        "answer": "Sí, lanzamos nuevos modelos cada mes.",
+        "answer2": "Nos especializamos en desarrollar sistemas CRM, aplicaciones móviles y soluciones IT personalizadas. También ofrecemos creación de bases de datos, configuración de servidores en AWS y diseño UI/UX."
+      },
+      "q2": {
+        "question": "¿Cuánto tiempo lleva completar un proyecto?",
+        "answer": "Sí, los plazos varían según el alcance del proyecto.",
+        "answer2": "Los proyectos simples pueden tomar 1-2 semanas, mientras que sistemas más complejos como CRMs o aplicaciones pueden tomar 1-2 meses."
+      },
+      "q3": {
+        "question": "¿Puedo personalizar las características de mi sistema CRM o aplicación?",
+        "answer": "Sí, todas las características pueden adaptarse a las necesidades específicas de tu negocio.",
+        "answer2": "Desarrollamos lógica completamente personalizada, paneles de control y flujos de trabajo basados en tus requisitos."
+      },
+      "q4": {
+        "question": "¿Ofrecen soporte continuo después de completar el proyecto?",
+        "answer": "Sí, ofrecemos mantenimiento y actualizaciones después del lanzamiento.",
+        "answer2": "Esto incluye corrección de errores, optimización de rendimiento y actualizaciones de características bajo solicitud."
+      },
+      "q5": {
+        "question": "¿Cuánto cuestan sus servicios?",
+        "answer": "Sí, los precios dependen de la complejidad del proyecto.",
+        "answer2": "Los sitios web básicos comienzan desde €500, mientras que sistemas personalizados como CRMs o aplicaciones se estiman individualmente después de una consulta."
+      }
+    }
+  },
+  "footer": {
+    "privacyPolicy": "Política de Privacidad",
+    "termsOfService": "Términos de Servicio",
+    "cookiePolicy": "Política de Cookies"
+  },
+  "policies": {
+    "privacy": {
+      "title": "Política de Privacidad",
+      "websiteVisitors": "Visitantes del Sitio",
+      "content": "Landbook.com (\"Landbook\") es una plataforma que recopila inspiraciones de diseño web para ayudar a profesionales creativos. Landbook no posee los derechos de autor de los diseños mostrados ni es responsable del contenido.\n\nPrincipios de privacidad:\n• Solo pedimos información personal cuando es necesaria\n• No compartimos información personal excepto por requerimiento legal\n• No almacenamos información personal innecesariamente\n\nLandbook recopila información no personal como tipo de navegador, idioma y fecha/hora de visita para entender mejor el uso del sitio.\n\nLandbook puede recopilar estadísticas sobre el comportamiento de los visitantes. La información personal solo se comparte con empleados y contratistas que la necesiten."
+    },
+    "terms": {
+      "title": "Términos de Servicio",
+      "content": "Estos términos rigen el uso de Landbook.com:\n\n1. Cuenta de Landbook\nEres responsable de la seguridad de tu cuenta y contenido.\n\n2. Responsabilidad de los Contribuyentes\nEres responsable del contenido que envías, garantizando que:\n• No infringe derechos de terceros\n• No contiene virus o malware\n• No es spam\n• No es obsceno o difamatorio\n\n3. Propiedad Intelectual\nEste acuerdo no transfiere derechos de propiedad intelectual.\n\n4. Cambios\nLandbook puede modificar estos términos en cualquier momento.\n\n5. Terminación\nLandbook puede terminar el acceso en cualquier momento."
+    },
+    "cookie": {
+      "title": "Política de Cookies",
+      "cookies": "Cookies",
+      "content": "Una cookie es información que un sitio web almacena en el dispositivo del visitante. Landbook usa cookies para identificar visitantes y sus preferencias.\n\nLos visitantes pueden configurar su navegador para rechazar cookies, aunque algunas funciones podrían no trabajar correctamente.\n\nCambios en la Política:\nLandbook puede actualizar esta política ocasionalmente. El uso continuado constituye aceptación de los cambios."
+    }
+  },
+  "services": {
+    "sectionTitle": "Nuestros Servicios",
+    "mainHeading": "Soluciones IT integrales adaptadas a las necesidades de su negocio",
+    "cards": {
+      "crm": {
+        "title": "Desarrollo de CRM Personalizado",
+        "description": "Optimice operaciones con sistemas CRM adaptados a sus flujos de trabajo."
+      },
+      "mobile": {
+        "title": "Desarrollo de Aplicaciones Móviles",
+        "description": "Cree aplicaciones móviles que ofrezcan experiencias excepcionales y hagan crecer su negocio."
+      },
+      "it": {
+        "title": "Soluciones IT Personalizadas",
+        "description": "Obtenga soluciones IT personalizadas para resolver desafíos y mejorar la eficiencia.",
+        "customSolution": "Solución Personalizada",
+        "customDescription": "Desarrollo de software a medida para abordar desafíos empresariales únicos y mejorar la eficiencia operativa",
+        "features": {
+          "fullDevelopment": "Desarrollo Completo",
+          "customFeatures": "Funciones Personalizadas",
+          "integration": "Integración"
+        }
+      }
+    }
+  },
+  "ourWork": {
+    "sectionTitle": "Nuestro Trabajo",
+    "mainHeading": "Descubra nuestros proyectos que muestran experiencia en soluciones IT personalizadas",
+    "clientLabel": "Cliente",
+    "imageAlt": "Imagen del proyecto",
+    "defaults": {
+      "noTitle": "Sin título",
+      "noDescription": "Sin descripción",
+      "caseStudyTitle": "Estudio de Caso"
+    },
+    "errors": {
+      "loadProjects": "Error al cargar proyectos:",
+      "loadCaseStudy": "Error al cargar estudio de caso:",
+      "imageLoad": "Error al cargar imagen: {url}"
+    }
+  },
+  "about": {
+    "sectionTitle": "Lo que hacemos",
+    "mainHeading": "Creamos soluciones IT, desde CRM hasta aplicaciones personalizadas, para optimizar su negocio",
+    "icons": {
+      "computer": "Icono de computadora",
+      "dollar": "Signo de dólar",
+      "chart": "Gráfico",
+      "percent": "Porcentaje",
+      "list": "Lista",
+      "table": "Tabla",
+      "warning": "Advertencia",
+      "point": "Punto",
+      "delete": "Eliminar",
+      "edit": "Editar"
+    },
+    "crm": {
+      "title": "Sistemas CRM Integrales",
+      "description": "Desarrollamos potentes sistemas CRM adaptados a las necesidades de su negocio. Automatizamos flujos de trabajo y brindamos una experiencia perfecta al cliente."
+    },
+    "deposit": {
+      "total": "Depósito Total"
+    },
+    "expenses": {
+      "total": "Gastos Totales"
+    },
+    "projects": {
+      "all": "Todos los Proyectos",
+      "completed": "Completado",
+      "status": {
+        "completed": "Completado",
+        "pending": "Pendiente",
+        "notStarted": "No Iniciado"
+      }
+    },
+    "tasks": {
+      "total": "Total de Tareas",
+      "unfinished": "Tareas No Finalizadas"
+    },
+    "time": {
+      "week": "Semana",
+      "month": "Mes",
+      "year": "Año",
+      "all": "Todo"
+    },
+    "todo": {
+      "title": "Mis Tareas",
+      "viewAll": "Ver Todo + Añadir Tarea",
+      "latest": "Últimas tareas",
+      "latestFinished": "Últimas tareas finalizadas",
+      "taskExample": "Completar este proyecto el lunes"
+    }
+  },
+  "card": {
+    "icons": {
+      "unicorn": "Icono de unicornio",
+      "background": "Imagen de fondo",
+      "phone": "Icono de teléfono",
+      "code": "Icono de código",
+      "lamp": "Icono de lámpara",
+      "zip": "Icono de archivo",
+      "engine": "Icono de motor",
+      "lampSmall": "Icono de lámpara pequeña"
+    },
+    "sections": {
+      "standardApps": {
+        "title": "Aplicaciones Estándar",
+        "description": "Creamos aplicaciones intuitivas y estándar en la industria para optimizar sus operaciones comerciales."
+      },
+      "customSolutions": {
+        "title": "Soluciones IT Personalizadas",
+        "description": "Transformamos sus ideas en realidad con soluciones IT adaptadas a sus desafíos."
+      },
+      "design": {
+        "title": "Diseño UX/UI Excepcional",
+        "description": "Creamos diseños que mejoran la experiencia y aumentan el compromiso del usuario."
+      },
+      "packages": {
+        "title": "Paquetes Listos para Lanzar",
+        "description": "Elija entre paquetes flexibles diseñados para cumplir con sus objetivos comerciales."
+      }
+    },
+    "packages": {
+      "standard": {
+        "title": "Paquete CRM Estándar",
+        "description": "Incluye 10 pantallas con funciones esenciales de CRM para optimizar operaciones."
+      },
+      "custom": {
+        "title": "Suite IT Personalizable",
+        "description": "Soluciones IT adaptadas a sus necesidades, desde backend hasta frontend."
+      },
+      "full": {
+        "title": "Paquete de Desarrollo Completo",
+        "description": "Paquete que cubre configuración de servidor, integración de base de datos y diseño UI/UX."
+      }
     }
   }
+}

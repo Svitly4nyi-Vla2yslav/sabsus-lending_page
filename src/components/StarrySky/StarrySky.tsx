@@ -14,7 +14,6 @@ const ParticlesBackground = () => {
 
   return (
     <>
-    
       <Particles
         init={particlesInit}
         options={{

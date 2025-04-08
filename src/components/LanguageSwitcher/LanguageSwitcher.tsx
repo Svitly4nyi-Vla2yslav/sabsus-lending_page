@@ -17,8 +17,8 @@ const languages = [
 // Styled Components
 const Wrapper = styled.div`
   position: relative;
-left: 70px;
-display: flex;
+  left: 70px;
+  display: flex;
   z-index: 100;
 `;
 
@@ -84,7 +84,7 @@ const LanguageSwitcher = () => {
   const toggleMenu = () => setIsOpen(prev => !prev);
 
   return (
-    <Wrapper >
+    <Wrapper>
       <Button onClick={toggleMenu}>
         <span>{selectedLang.label}</span>
         <Icons src={selectedLang.flag} alt={selectedLang.label} />

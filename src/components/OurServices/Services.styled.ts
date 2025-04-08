@@ -207,7 +207,7 @@ gap: 2px;
     border-radius: 46px;
     padding: 4px 8px;
     width: 100%;
-    height: 25px;
+    height: auto;
     box-shadow: 0 0 18px -4px rgba(0, 0, 0, 0.5), inset 0 1px 2px 0 #525154;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 30%, rgba(255, 255, 255, 0.02) 100%);
     flex-direction: row;

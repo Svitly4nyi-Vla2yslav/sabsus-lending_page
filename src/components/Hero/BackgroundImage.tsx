@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Icon from "../../assets/icons/HeroBackgroundIcon.svg";
+import Icon from '../../assets/icons/HeroBackgroundIcon.svg';
 
 const BackgroundImageContainer = styled.div`
   position: absolute;
@@ -11,8 +11,8 @@ const BackgroundImageContainer = styled.div`
   opacity: 0.8; /* Змінюємо прозорість */
   z-index: 0; /* Важливо: відправляємо на задній план */
 
- &::after {
-      content: "";
+  &::after {
+    content: '';
     position: absolute;
     bottom: 0;
     left: 0;
@@ -20,7 +20,8 @@ const BackgroundImageContainer = styled.div`
     height: 46%;
     background: linear-gradient(0deg, #101010 70%, rgba(16, 16, 16, 0) 100%);
     pointer-events: none;
-}`;
+  }
+`;
 
 const BackgroundHeroImage = styled.img`
   width: 100%;
@@ -32,7 +33,7 @@ const BackgroundHeroImage = styled.img`
 const BackgroundImage: React.FC = () => {
   return (
     <BackgroundImageContainer>
-      <BackgroundHeroImage src={Icon} alt='Background Icon' />
+      <BackgroundHeroImage src={Icon} alt="Background Icon" />
     </BackgroundImageContainer>
   );
 };

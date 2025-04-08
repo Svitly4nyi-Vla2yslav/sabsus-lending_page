@@ -70,7 +70,7 @@ position: relative;
 z-index: 0;
  width: 122px;
   height: 250px;
-`; 
+`;
 
 export const IconContainerCard2 = styled.div`
         position: absolute;
@@ -111,7 +111,7 @@ z-index: 0;
 width: 320px;
 height: 291px;
 opacity: 0.7;
-`; 
+`;
 
 export const IconContainerCredit = styled.div`
      position: absolute;
@@ -131,7 +131,7 @@ position: relative;
 z-index: 0;
 width: 337px;
 height: 281px;
-`; 
+`;
 
 export const CardZipContainer = styled.div`
 width: 343px;

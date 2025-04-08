@@ -28,7 +28,6 @@ import {
   PhoneIconCredit,
   SmollCard,
 } from './Card.styled';
-
 import BackgroundImage from '../../assets/icons/about/rainbow.svg';
 import Phone1 from '../../assets/icons/about/phone1.svg';
 import Phone2 from '../../assets/icons/about/phone2.svg';
@@ -40,98 +39,102 @@ import Credit from '../../assets/icons/about/creditCard.svg';
 import Zip from '../../assets/icons/about/Zip.svg';
 import Engine from '../../assets/icons/about/engineCard.svg';
 import SmollLamp from '../../assets/icons/about/smollLamp.svg';
+import { useTranslation } from 'react-i18next';
 
 const Card: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <ComprehensiveContainer>
         <IconContainer>
-          <ComputerIcon src={Icon} alt="🦄" />
+          <ComputerIcon src={Icon} alt={t('card.icons.unicorn')} />
         </IconContainer>
-        <ComprehensiveTitle>Standard Applications</ComprehensiveTitle>
+        <ComprehensiveTitle>
+          {t('card.sections.standardApps.title')}
+        </ComprehensiveTitle>
         <ComprehensiveText>
-          Create intuitive, industry-standard applications to streamline your
-          business operations.
+          {t('card.sections.standardApps.description')}
         </ComprehensiveText>
-        <>
-          <BackgroundIconContainer>
-            <BackgroundIcon src={BackgroundImage} alt="Background Icon" />
-            <IconContainerCard>
-              <PhoneIcon src={Phone1} alt="📱" />
-            </IconContainerCard>
-            <IconContainerCard1>
-              <PhoneIcon1 src={Phone2} alt="📱" />
-            </IconContainerCard1>
-            <IconContainerCard2>
-              <PhoneIcon2 src={Phone3} alt="📱" />
-            </IconContainerCard2>
-          </BackgroundIconContainer>
-        </>
+        <BackgroundIconContainer>
+          <BackgroundIcon
+            src={BackgroundImage}
+            alt={t('card.icons.background')}
+          />
+          <IconContainerCard>
+            <PhoneIcon src={Phone1} alt={t('card.icons.phone')} />
+          </IconContainerCard>
+          <IconContainerCard1>
+            <PhoneIcon1 src={Phone2} alt={t('card.icons.phone')} />
+          </IconContainerCard1>
+          <IconContainerCard2>
+            <PhoneIcon2 src={Phone3} alt={t('card.icons.phone')} />
+          </IconContainerCard2>
+        </BackgroundIconContainer>
       </ComprehensiveContainer>
+
       <ComprehensiveContainer>
         <IconContainer>
-          <ComputerIcon src={Code} alt="♨️" />
+          <ComputerIcon src={Code} alt={t('card.icons.code')} />
         </IconContainer>
-        <ComprehensiveTitle>Custom IT Solutions</ComprehensiveTitle>
+        <ComprehensiveTitle>
+          {t('card.sections.customSolutions.title')}
+        </ComprehensiveTitle>
         <ComprehensiveText>
-          Transform your ideas into reality with our IT solutions tailored to
-          your challenges.
+          {t('card.sections.customSolutions.description')}
         </ComprehensiveText>
         <BackgroundIconContainer>
           <IconContainerCardCode>
-            <PhoneIconCode src={BigCode} alt="📱" />
-          </IconContainerCardCode>{' '}
+            <PhoneIconCode src={BigCode} alt={t('card.icons.phone')} />
+          </IconContainerCardCode>
         </BackgroundIconContainer>
       </ComprehensiveContainer>
+
       <ComprehensiveContainer>
         <IconContainer>
-          <ComputerIcon src={Lamp} alt="🪔" />
+          <ComputerIcon src={Lamp} alt={t('card.icons.lamp')} />
         </IconContainer>
-        <ComprehensiveTitle>Exceptional UX/UI Design</ComprehensiveTitle>
+        <ComprehensiveTitle>
+          {t('card.sections.design.title')}
+        </ComprehensiveTitle>
         <ComprehensiveText>
-          Create designs that enhance experience and drive engagement.
+          {t('card.sections.design.description')}
         </ComprehensiveText>
         <BackgroundIconContainer>
           <IconContainerCredit>
-            <PhoneIconCredit src={Credit} alt="📱" />
-          </IconContainerCredit>{' '}
+            <PhoneIconCredit src={Credit} alt={t('card.icons.phone')} />
+          </IconContainerCredit>
         </BackgroundIconContainer>
       </ComprehensiveContainer>
+
       <ComprehensiveContainer>
         <IconContainer>
-          <ComputerIcon src={Zip} alt="🪔" />
+          <ComputerIcon src={Zip} alt={t('card.icons.zip')} />
         </IconContainer>
-        <ComprehensiveTitle>Ready-to-Launch Packages</ComprehensiveTitle>
+        <ComprehensiveTitle>
+          {t('card.sections.packages.title')}
+        </ComprehensiveTitle>
         <ComprehensiveText>
-          Select from flexible packages designed to meet your business goals.
+          {t('card.sections.packages.description')}
         </ComprehensiveText>
         <BackgroundIconContainer>
           <CardZipContainer>
             <CardSmollContainer>
               <SmollCard>
-                {' '}
-                <EngineIcons src={Engine} />{' '}
-                <CardTitel>Standard CRM Package</CardTitel>
-                <CardText>
-                  Includes 10 screens with essential CRM features to streamline
-                  operations.
-                </CardText>
+                <EngineIcons src={Engine} alt={t('card.icons.engine')} />
+                <CardTitel>{t('card.packages.standard.title')}</CardTitel>
+                <CardText>{t('card.packages.standard.description')}</CardText>
               </SmollCard>
               <SmollCard>
-                <EngineIcons src={SmollLamp} />
-                <CardTitel>Customizable IT Suite</CardTitel>
-                <CardText>
-                  IT solutions tailored to your needs, from backend to frontend.
-                </CardText>
+                <EngineIcons src={SmollLamp} alt={t('card.icons.lampSmall')} />
+                <CardTitel>{t('card.packages.custom.title')}</CardTitel>
+                <CardText>{t('card.packages.custom.description')}</CardText>
               </SmollCard>
             </CardSmollContainer>
             <BigCard>
-              <EngineIcons src={SmollLamp} />
-              <CardTitel>Full Development Package</CardTitel>
-              <CardText>
-                Package covering server setup, database integration, and UI/UX
-                design.
-              </CardText>
+              <EngineIcons src={SmollLamp} alt={t('card.icons.lampSmall')} />
+              <CardTitel>{t('card.packages.full.title')}</CardTitel>
+              <CardText>{t('card.packages.full.description')}</CardText>
             </BigCard>
           </CardZipContainer>
         </BackgroundIconContainer>
