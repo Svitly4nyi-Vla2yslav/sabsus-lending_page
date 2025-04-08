@@ -14,6 +14,7 @@ import FAQ from './components/FAQ/FAQ';
 import ContactUs from './components/ContactUs/ContactUs';
 import Footer from './components/Footer/Footer';
 import BackgroundImage from './components/Hero/BackgroundImage';
+import CookieBanner from './components/CookieBanner/CookieBanner';
 const App = () => {
   return (
     <GlobalContainer>
@@ -30,6 +31,7 @@ const App = () => {
       <FAQ />
       <ContactUs />
       <Footer />
+      <CookieBanner />
     </GlobalContainer>
   );
 };
