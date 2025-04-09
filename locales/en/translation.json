@@ -200,6 +200,15 @@
     "projects": {
       "all": "All Projects",
       "completed": "Completed",
+      "overview": {
+        "title": "Projects Overview"
+      },
+      "filter": {
+        "week": "Week",
+        "month": "Month",
+        "year": "Year",
+        "all": "All"
+      },
       "status": {
         "completed": "Completed",
         "pending": "Pending",
@@ -267,5 +276,9 @@
         "description": "Package covering server setup, database integration, and UI/UX design."
       }
     }
+  },
+  "cookies": {
+    "message": "We use cookies for analytics",
+    "acceptButton": "Got it, accept"
   }
 }
