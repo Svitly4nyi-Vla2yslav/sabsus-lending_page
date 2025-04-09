@@ -710,7 +710,18 @@ border-radius: 13px;
   }
 
 @media screen and (min-width: 744px){
+ 
 
+     &::after {
+    content: "";
+    position: absolute;
+      bottom: 31px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(0deg, #101010 0%, rgba(16, 16, 16, 0) 100%);
+    pointer-events: none; /* Щоб тінь не заважала клікам */
+  }
 
 }
 
@@ -729,7 +740,10 @@ box-shadow: 0 0 0 0 var(--white), 0 0 0 0px rgba(244, 244, 245, 0.1), 0 0 0 0 rg
 background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 30%, rgba(255, 255, 255, 0.02) 100%);
 
 @media screen and (min-width: 744px){
-
+border: 0.54px solid #444;
+border-radius: 6px;
+width: 432px;
+height: 239px;
 
 }
 
@@ -745,12 +759,15 @@ width: auto;
 height: 13px;
 display: flex;
 flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: nowrap;
+justify-content: space-between;
+align-items: center;
+flex-wrap: nowrap;
 
 @media screen and (min-width: 744px){
-
+border-radius: 6px 6px 0 0;
+padding: 13px 10px 0px 10px;
+width: 423px;
+height: 29px;
 
 }
 
@@ -768,7 +785,11 @@ line-height: 150%;
 color: var(--white);
 
 @media screen and (min-width: 744px){
-
+font-family: var(--font-family);
+font-weight: 300;
+font-size: 8px;
+line-height: 150%;
+color: var(--white);
 
 }
 
@@ -791,7 +812,9 @@ height: 7px;
     gap: 2px;
 
 @media screen and (min-width: 744px){
-
+padding: 0px 2px;
+width: 146px;
+height: 16px;
 
 }
 
@@ -819,7 +842,10 @@ text-align: center;
 box-shadow: 0 0 5px 0 rgba(13, 153, 255, 0.2), inset 0 0px 1px 0 #525154, 0 0 7px -2px rgba(0, 0, 0, 0.5);
 background: linear-gradient(90deg, #ed1816 0%, #f84215 63.35%, #fe5b14 100%);
 @media screen and (min-width: 744px){
-
+border-radius: 2px;
+padding: 2px 8px 2px 7px;
+width: 34px;
+height: 16px;
 
 }
 
@@ -847,10 +873,13 @@ text-align: center;
     align-items: center;
 
 box-shadow: inset 0 0px 1px 0 #525154, 0 0 7px -2px rgba(0, 0, 0, 0.5);
-background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 30%, rgba(255, 255, 255, 0.02) 100%)
+background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 30%, rgba(255, 255, 255, 0.02) 100%);
 
 @media screen and (min-width: 744px){
-
+border-radius: 2px;
+padding: 2px 8px 2px 7px;
+width: 100%;
+height: 16px;
 
 }
 
@@ -866,8 +895,11 @@ width: 198px;
 height: 97px;
 
 @media screen and (min-width: 744px){
-
-
+width: 431px;
+height: 211px;
+        margin-top: 40px;
+        width: 431px;
+        height: 211px;
 }
 
 @media screen and (min-width: 1440px){

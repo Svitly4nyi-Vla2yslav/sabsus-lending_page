@@ -200,6 +200,15 @@
     "projects": {
       "all": "Todos los Proyectos",
       "completed": "Completado",
+      "overview": {
+        "title": "Resumen de Proyectos"
+      },
+      "filter": {
+        "week": "Semana",
+        "month": "Mes",
+        "year": "Año",
+        "all": "Todos"
+      },
       "status": {
         "completed": "Completado",
         "pending": "Pendiente",
@@ -267,5 +276,9 @@
         "description": "Paquete que cubre configuración de servidor, integración de base de datos y diseño UI/UX."
       }
     }
+  },
+  "cookies": {
+    "message": "Usamos cookies para análisis",
+    "acceptButton": "Entendido, aceptar"
   }
 }

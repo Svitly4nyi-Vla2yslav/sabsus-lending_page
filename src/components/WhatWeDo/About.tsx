@@ -176,24 +176,24 @@ const About: React.FC = () => {
               <ProjectsOverviewContainer>
                 <ProjectsOverviewTextContainer>
                   <ProjectsOverviewText>
-                    {t('about.projects.overview')}
+                    {t('about.projects.overview.title')}
                   </ProjectsOverviewText>
                   <ProjectsOverviewSpanContainer>
                     <ProjectsOverviewSpanRed>
-                      {t('about.time.week')}
+                      {t('about.projects.filter.week')}
                     </ProjectsOverviewSpanRed>
                     <ProjectsOverviewSpan>
-                      {t('about.time.month')}
+                      {t('about.projects.filter.month')}
                     </ProjectsOverviewSpan>
                     <ProjectsOverviewSpan>
-                      {t('about.time.year')}
+                      {t('about.projects.filter.year')}
                     </ProjectsOverviewSpan>
                     <ProjectsOverviewSpan>
-                      {t('about.time.all')}
+                      {t('about.projects.filter.all')}
                     </ProjectsOverviewSpan>
                   </ProjectsOverviewSpanContainer>
                 </ProjectsOverviewTextContainer>
-                <IconTabl src={Tabl} alt={t('about.icons.table')} />
+                <IconTabl src={Tabl} alt={t('table')} />
               </ProjectsOverviewContainer>
 
               <MyToDoItemsContainer>
