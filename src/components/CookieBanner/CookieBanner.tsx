@@ -100,6 +100,16 @@ const BannerContainer = styled.div`
       transform: translate(-50%, 0);
     }
   }
+
+      @media screen and (min-width: 744px){
+display: flex;
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 const BannerContent = styled.div`
@@ -115,6 +125,21 @@ const BannerContent = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+
+@media screen and (min-width: 744px){
+         display: flex
+;
+        flex-direction: row;
+        justify-content: center;
+        align-items: baseline;
+        gap: 40px;
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 const BannerText = styled.p`
@@ -125,12 +150,32 @@ const BannerText = styled.p`
   color: var(--white);
   margin: 0;
   text-align: center;
+
+      @media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 const ButtonContainer = styled.div`
   width: 70%;
   display: flex;
   justify-content: center;
+
+      @media screen and (min-width: 744px){
+  width: 30%;
+
+}
+
+@media screen and (min-width: 1440px){
+ width: 20%;
+
+}
 `;
 
 const AcceptIcon = styled.svg`

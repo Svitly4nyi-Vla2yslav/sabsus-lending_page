@@ -14,6 +14,16 @@ export const SwiperContainer = styled.div`
      padding: 0px 0px;
      margin: 0 auto;
   }
+
+      @media screen and (min-width: 744px){
+width: 100vw;
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 
