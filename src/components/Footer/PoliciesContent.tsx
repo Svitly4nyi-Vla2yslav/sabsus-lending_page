@@ -34,7 +34,7 @@ export const PoliciesContent: React.FC<PoliciesContentProps> = ({
 
   return (
     <PoliciesContainer>
-      <GradientWrapper />
+      {/* <GradientWrapper /> */}
       <Element name="privacy">
         <PolicySection>
           <PolicyTitle>

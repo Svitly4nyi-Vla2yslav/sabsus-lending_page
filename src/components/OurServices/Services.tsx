@@ -3,6 +3,7 @@ import {
   BackgroundIconContainer,
   CardContainer,
   CardContainerBig,
+  CardGridDeckstop,
   CardsGrid,
   GradientKey,
   IconContainerCardCode,
@@ -44,80 +45,82 @@ const Services: React.FC = () => {
       <ServicesWrapper>
         <TextServices>{t('services.sectionTitle')}</TextServices>
         <ServicesTitle>{t('services.mainHeading')}</ServicesTitle>
-        <CardsGrid>
-          <CardContainer>
-            <IconContainer>
-              <ComputerIcon src={Comp} alt="🪔" />
-            </IconContainer>
-            <ComprehensiveTitle>
-              {t('services.cards.crm.title')}
-            </ComprehensiveTitle>
-            <ComprehensiveText>
-              {t('services.cards.crm.description')}
-            </ComprehensiveText>
-            <BackgroundIconContainer>
-              <IconContainerCreditServices>
-                <PhoneIconCreditServices src={Grafik} alt="📱" />
-              </IconContainerCreditServices>
-            </BackgroundIconContainer>
-          </CardContainer>
-          <CardContainer>
-            <IconContainer>
-              <ComputerIcon src={phone} alt="🪔" />
-            </IconContainer>
-            <ComprehensiveTitle>
-              {t('services.cards.mobile.title')}
-            </ComprehensiveTitle>
-            <ComprehensiveText>
-              {t('services.cards.mobile.description')}
-            </ComprehensiveText>
-            <BackgroundIconContainer>
-              <IconCreditServices>
-                <PhoneCreditServices src={kredit} alt="📱" />
-              </IconCreditServices>
-            </BackgroundIconContainer>
-          </CardContainer>{' '}
-        </CardsGrid>
+        <CardGridDeckstop>
+          <CardsGrid>
+            <CardContainer>
+              <IconContainer>
+                <ComputerIcon src={Comp} alt="🪔" />
+              </IconContainer>
+              <ComprehensiveTitle>
+                {t('services.cards.crm.title')}
+              </ComprehensiveTitle>
+              <ComprehensiveText>
+                {t('services.cards.crm.description')}
+              </ComprehensiveText>
+              <BackgroundIconContainer>
+                <IconContainerCreditServices>
+                  <PhoneIconCreditServices src={Grafik} alt="📱" />
+                </IconContainerCreditServices>
+              </BackgroundIconContainer>
+            </CardContainer>
+            <CardContainer>
+              <IconContainer>
+                <ComputerIcon src={phone} alt="🪔" />
+              </IconContainer>
+              <ComprehensiveTitle>
+                {t('services.cards.mobile.title')}
+              </ComprehensiveTitle>
+              <ComprehensiveText>
+                {t('services.cards.mobile.description')}
+              </ComprehensiveText>
+              <BackgroundIconContainer>
+                <IconCreditServices>
+                  <PhoneCreditServices src={kredit} alt="📱" />
+                </IconCreditServices>
+              </BackgroundIconContainer>
+            </CardContainer>{' '}
+          </CardsGrid>
 
-        <CardContainerBig>
-          <IconContainer>
-            <ComputerIcon src={key} alt="🪔" />
-          </IconContainer>
-          <ComprehensiveTitle>
-            {t('services.cards.it.title')}
-          </ComprehensiveTitle>
-          <ComprehensiveText>
-            {t('services.cards.it.description')}
-          </ComprehensiveText>
-          <BackgroundIconContainer>
-            <IconContainerCardCode>
-              <WrapperCardKey>
-                <GradientKey src={keyGradient} />
-              </WrapperCardKey>
-            </IconContainerCardCode>
-            <KeyTextIconContainer>
-              <KeyTitel>{t('services.cards.it.customSolution')}</KeyTitel>
-              <KeyText>{t('services.cards.it.customDescription')}</KeyText>
-              <KeySpanContainer>
-                <KeySpan>
-                  <KeySpanText>
-                    {t('services.cards.it.features.fullDevelopment')}
-                  </KeySpanText>
-                </KeySpan>
-                <KeySpan>
-                  <KeySpanText>
-                    {t('services.cards.it.features.customFeatures')}
-                  </KeySpanText>
-                </KeySpan>
-                <KeySpan>
-                  <KeySpanText>
-                    {t('services.cards.it.features.integration')}
-                  </KeySpanText>
-                </KeySpan>
-              </KeySpanContainer>
-            </KeyTextIconContainer>
-          </BackgroundIconContainer>
-        </CardContainerBig>
+          <CardContainerBig>
+            <IconContainer>
+              <ComputerIcon src={key} alt="🪔" />
+            </IconContainer>
+            <ComprehensiveTitle>
+              {t('services.cards.it.title')}
+            </ComprehensiveTitle>
+            <ComprehensiveText>
+              {t('services.cards.it.description')}
+            </ComprehensiveText>
+            <BackgroundIconContainer>
+              <IconContainerCardCode>
+                <WrapperCardKey>
+                  <GradientKey src={keyGradient} />
+                </WrapperCardKey>
+              </IconContainerCardCode>
+              <KeyTextIconContainer>
+                <KeyTitel>{t('services.cards.it.customSolution')}</KeyTitel>
+                <KeyText>{t('services.cards.it.customDescription')}</KeyText>
+                <KeySpanContainer>
+                  <KeySpan>
+                    <KeySpanText>
+                      {t('services.cards.it.features.fullDevelopment')}
+                    </KeySpanText>
+                  </KeySpan>
+                  <KeySpan>
+                    <KeySpanText>
+                      {t('services.cards.it.features.customFeatures')}
+                    </KeySpanText>
+                  </KeySpan>
+                  <KeySpan>
+                    <KeySpanText>
+                      {t('services.cards.it.features.integration')}
+                    </KeySpanText>
+                  </KeySpan>
+                </KeySpanContainer>
+              </KeyTextIconContainer>
+            </BackgroundIconContainer>
+          </CardContainerBig>
+        </CardGridDeckstop>
       </ServicesWrapper>
     </Element>
   );

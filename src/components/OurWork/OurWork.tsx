@@ -18,6 +18,7 @@ import {
   WorkShadowContainer,
   WorkWrapper,
   ImagesRow,
+  WorkCardsWrapper,
 } from './OurWork.styled';
 import { getProjects, Project, getCaseStudy } from '../../firabase';
 import { Element } from 'react-scroll';
@@ -58,7 +59,7 @@ const OurWork: React.FC = () => {
       <WorkWrapper>
         <OurWorkText>{t('ourWork.sectionTitle')}</OurWorkText>
         <OurWorkTitel>{t('ourWork.mainHeading')}</OurWorkTitel>
-
+<WorkCardsWrapper>
         {projects.map(project => (
           <WorkCardWrapper key={project.id}>
             <WorkCardTitle>
@@ -131,7 +132,7 @@ const OurWork: React.FC = () => {
               </WorkShadowContainer>
             )}
           </WorkCardWrapper>
-        ))}
+        ))}</WorkCardsWrapper>
 
         {caseStudy && (
           <WorkCardWrapper>

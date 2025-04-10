@@ -14,7 +14,7 @@ width: 696px;
 }
 
 @media screen and (min-width: 1440px){
-
+width: 1344px;
 
 }
 `;
@@ -42,7 +42,7 @@ background-clip: text;
 }
 
 @media screen and (min-width: 1440px){
-
+padding-bottom: 16px;
 
 }
 `;
@@ -68,6 +68,24 @@ color: var(--white);
 
 @media screen and (min-width: 1440px){
 
+width: 774px;
+padding-bottom: 50px;
+}
+`;
+
+export const WorkCardsWrapper = styled.div`
+  display: grid;
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+gap: 24px;
+grid-template-columns: repeat(2, 1fr);
+height: auto;
+margin: 0 auto;
 
 }
 `;
@@ -92,8 +110,8 @@ background: var(--substrate);
 }
 
 @media screen and (min-width: 1440px){
-
-
+margin: 0;
+width: 660px;
 }
 `;
 
@@ -168,9 +186,9 @@ export const WorkShadowContainer = styled.div`
     bottom: -10%;
     left: 0;
     width: 100vh;
-    height: 20%;
-  background: linear-gradient(0deg, #101010 0%, rgba(16, 16, 16, 0) 100%), linear-gradient(0deg, #101010 0%, rgba(16, 16, 16, 0) 100%), linear-gradient(0deg, #101010 0%, rgba(16, 16, 16, 0) 100%);
-    pointer-events: none;
+    height: 14%;
+  // background: linear-gradient(0deg, #101010 0%, rgba(16, 16, 16, 0) 100%), linear-gradient(0deg, #101010 0%, rgba(16, 16, 16, 0) 100%), linear-gradient(0deg, #101010 0%, rgba(16, 16, 16, 0) 100%);
+    // pointer-events: none;
 }
 
 }
@@ -199,6 +217,11 @@ height: 100%;
 }
 
 @media screen and (min-width: 1440px){
+gap: 10px;
+        width: 634px;
+        top: 25%;
+        left: 45%;
+        height: 340px;
 }
 `;
 
@@ -392,6 +415,8 @@ top: 36%;
 
 @media screen and (min-width: 1440px){
 
+top: 23%;
+        left: 0%;
 
 }
 `;
@@ -410,8 +435,8 @@ height: 398px;
 }
 
 @media screen and (min-width: 1440px){
-
-
+height: auto;
+width: 612px;
 }
 `;
 

@@ -22,8 +22,9 @@ display: flex;
 }
 
 @media screen and (min-width: 1440px){
-
-
+width: 660px;
+height: 426px;
+        margin-top: 170px;
 }
 `;
 

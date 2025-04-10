@@ -21,7 +21,7 @@ width: 100vw;
 }
 
 @media screen and (min-width: 1440px){
-
+gap: 50px;
 
 }
 `;
@@ -45,6 +45,15 @@ height : auto;
 width: 100%;
 padding: 0 auto;
 margin: 0 auto;
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+margin-right: 50px;
+}
 `;
 
 export const Image = styled.img`
@@ -53,4 +62,14 @@ width: 100%;
 object-fit: contain;
 padding: 0 auto;
 margin: 0 auto; 
+
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+height: 52px;
+
+}
 `;

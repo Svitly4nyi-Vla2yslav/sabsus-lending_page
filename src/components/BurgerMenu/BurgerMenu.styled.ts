@@ -5,6 +5,16 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
     display: flex;
     align-items: center;
+
+        @media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+display: none;
+
+}
 `;
 
 export const BurgerButton = styled.button`
@@ -19,6 +29,16 @@ export const BurgerButton = styled.button`
   border: none;
   cursor: pointer;
   z-index: 10;
+
+      @media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const Line = styled(motion.div)`
@@ -27,6 +47,16 @@ export const Line = styled(motion.div)`
   background: white;
   border-radius: 2px;
    z-index: 10;
+
+       @media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const MenuOverlay = styled(motion.div)`
@@ -42,6 +72,16 @@ export const MenuOverlay = styled(motion.div)`
   flex-direction: column;
   z-index: 1;
   overflow-y: auto;
+
+      @media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const ButtonWrapp = styled.div`
@@ -50,6 +90,16 @@ width: 300px;
  left: 50%;
  transform: translateX(-50%);
  bottom: 10%;
+
+     @media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const MenuLink = styled(motion.a)`
@@ -63,6 +113,21 @@ export const MenuLink = styled(motion.a)`
   &:hover {
     color: #fe5b14;
   }
+
+      @media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+font-family: var(--font-family);
+font-weight: 400;
+font-size: 18px;
+line-height: 135%;
+text-align: center;
+color: var(--white);
+
+}
 `;
 
 export const IconsStars =  styled.img`

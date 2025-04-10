@@ -22,6 +22,7 @@ display: flex;
 }
 
 @media screen and (min-width: 1440px){
+width: 1344px;
 
 
 }
@@ -50,7 +51,8 @@ width: 696px;
 }
 
 @media screen and (min-width: 1440px){
-
+width: 1344px;
+    justify-content: flex-start;
 
 }
 
@@ -70,8 +72,7 @@ margin-bottom: 20px;
 }
 
 @media screen and (min-width: 1440px){
-
-
+margin-left: 40px;
 }
 `;
 
@@ -90,6 +91,7 @@ height: auto;
 
 @media screen and (min-width: 1440px){
 
+width: 1344px;
 
 }
 `;
@@ -112,7 +114,8 @@ export const BackgroundIconContainer = styled.div`
 }
 
 @media screen and (min-width: 1440px){
-
+width: 1344px;
+        top: 10%;
 
 }
   
@@ -134,7 +137,7 @@ background:rgba(0, 0, 0, 0.86);
 }
 
 @media screen and (min-width: 1440px){
-
+margin-top:15% ; 
 
 }
 `;

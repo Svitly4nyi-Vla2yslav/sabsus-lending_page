@@ -17,7 +17,6 @@ width: 696px;
 
 @media screen and (min-width: 1440px){
 
-
 }
 `;
 
@@ -71,7 +70,9 @@ color: var(--white);
 }
 
 @media screen and (min-width: 1440px){
-
+width: 510px;
+        margin: 0 auto;
+        padding-bottom: 50px;
 
 }
 `;

@@ -13,7 +13,21 @@ width: 696px;
 }
 
 @media screen and (min-width: 1440px){
+width: 1344px;
 
+}
+`;
+
+export const AboutCardContainer = styled.div`
+    display: inherit;
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+width: 1344px;
+gap: 24px;
 
 }
 `;
@@ -40,7 +54,7 @@ background-clip: text;
 }
 
 @media screen and (min-width: 1440px){
-
+padding-bottom: 16px;
 
 }
 `;
@@ -66,7 +80,8 @@ color: var(--white);
 
 @media screen and (min-width: 1440px){
 
-
+width: 774px;
+padding-bottom: 50px;
 }
 
 `;
@@ -91,8 +106,8 @@ height: 480px;
 }
 
 @media screen and (min-width: 1440px){
-
-
+width: initial;
+height: 480px;
 }
      
 `;

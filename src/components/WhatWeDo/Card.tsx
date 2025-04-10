@@ -42,39 +42,42 @@ import Zip from '../../assets/icons/about/Zip.svg';
 import Engine from '../../assets/icons/about/engineCard.svg';
 import SmollLamp from '../../assets/icons/about/smollLamp.svg';
 import { useTranslation } from 'react-i18next';
+import { useMediaQuery } from 'react-responsive';
 
 const Card: React.FC = () => {
   const { t } = useTranslation();
-
+  const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
   return (
     <CardContainer>
       <CardsGrid>
-        <ComprehensiveContainer>
-          <IconContainer>
-            <ComputerIcon src={Icon} alt={t('card.icons.unicorn')} />
-          </IconContainer>
-          <ComprehensiveTitle>
-            {t('card.sections.standardApps.title')}
-          </ComprehensiveTitle>
-          <ComprehensiveText>
-            {t('card.sections.standardApps.description')}
-          </ComprehensiveText>
-          <BackgroundIconContainer>
-            <BackgroundIcon
-              src={BackgroundImage}
-              alt={t('card.icons.background')}
-            />
-            <IconContainerCard>
-              <PhoneIcon src={Phone1} alt={t('card.icons.phone')} />
-            </IconContainerCard>
-            <IconContainerCard1>
-              <PhoneIcon1 src={Phone2} alt={t('card.icons.phone')} />
-            </IconContainerCard1>
-            <IconContainerCard2>
-              <PhoneIcon2 src={Phone3} alt={t('card.icons.phone')} />
-            </IconContainerCard2>
-          </BackgroundIconContainer>
-        </ComprehensiveContainer>
+        {!isDesktop && (
+          <ComprehensiveContainer>
+            <IconContainer>
+              <ComputerIcon src={Icon} alt={t('card.icons.unicorn')} />
+            </IconContainer>
+            <ComprehensiveTitle>
+              {t('card.sections.standardApps.title')}
+            </ComprehensiveTitle>
+            <ComprehensiveText>
+              {t('card.sections.standardApps.description')}
+            </ComprehensiveText>
+            <BackgroundIconContainer>
+              <BackgroundIcon
+                src={BackgroundImage}
+                alt={t('card.icons.background')}
+              />
+              <IconContainerCard>
+                <PhoneIcon src={Phone1} alt={t('card.icons.phone')} />
+              </IconContainerCard>
+              <IconContainerCard1>
+                <PhoneIcon1 src={Phone2} alt={t('card.icons.phone')} />
+              </IconContainerCard1>
+              <IconContainerCard2>
+                <PhoneIcon2 src={Phone3} alt={t('card.icons.phone')} />
+              </IconContainerCard2>
+            </BackgroundIconContainer>
+          </ComprehensiveContainer>
+        )}
 
         <ComprehensiveContainer>
           <IconContainer>
@@ -129,7 +132,10 @@ const Card: React.FC = () => {
                   <CardText>{t('card.packages.standard.description')}</CardText>
                 </SmollCard>
                 <SmollCard>
-                  <EngineIcons src={SmollLamp} alt={t('card.icons.lampSmall')} />
+                  <EngineIcons
+                    src={SmollLamp}
+                    alt={t('card.icons.lampSmall')}
+                  />
                   <CardTitel>{t('card.packages.custom.title')}</CardTitel>
                   <CardText>{t('card.packages.custom.description')}</CardText>
                 </SmollCard>

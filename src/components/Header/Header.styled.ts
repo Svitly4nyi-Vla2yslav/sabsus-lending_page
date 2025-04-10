@@ -88,3 +88,33 @@ left: 53%;
 }
 `;
 
+export const ButtonWrapp = styled.div`
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+    display: flex;
+    width: 18%;
+   margin-top: -19px;
+
+}
+`;
+
+
+export const MenuContainer = styled.div`
+@media screen and (min-width: 1440px){
+
+position: relative;
+display: flex;
+    width: 47%;
+    margin-right: 13%;
+        flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+
+`;
+

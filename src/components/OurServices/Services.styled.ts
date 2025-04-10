@@ -14,6 +14,7 @@ width: 696px;
 }
 
 @media screen and (min-width: 1440px){
+width: 1344px;
 
 
 }
@@ -36,6 +37,23 @@ margin-bottom: 12px;
   }
 `;
 
+export const CardGridDeckstop = styled.div`
+   display: grid;
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+width: 1344px;
+gap: 24px;
+grid-template-columns: repeat(3, 0fr);
+height: auto;
+margin: 0 auto;
+
+}
+`
+
 export const TextServices = styled.h3`
 font-family: var(--font-family);
 font-weight: 500;
@@ -53,8 +71,14 @@ padding-bottom: 10px;
 }
 
 @media screen and (min-width: 1440px){
-
-
+font-family: var(--font-family);
+font-weight: 500;
+font-size: 22px;
+background: linear-gradient(168deg, #fff 0%, #fe5b14 100%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+padding-bottom: 16px;
 }
 `;
 
@@ -73,8 +97,14 @@ padding-bottom: 20px;
 }
 
 @media screen and (min-width: 1440px){
-
-
+font-family: var(--second-family);
+font-weight: 700;
+font-size: 40px;
+line-height: 115%;
+letter-spacing: -0.03em;
+color: var(--white);
+width: 774px;
+padding-bottom: 50px;
 }
 `;
 
@@ -99,7 +129,8 @@ height: 480px;
 }
 
 @media screen and (min-width: 1440px){
-
+border-radius: 16px;
+width: 432px;
 
 }
  
@@ -128,7 +159,9 @@ height: 480px;
 
 @media screen and (min-width: 1440px){
 
-
+border-radius: 16px;
+width: 432px;
+margin: 0 auto;
 }
  
 `;

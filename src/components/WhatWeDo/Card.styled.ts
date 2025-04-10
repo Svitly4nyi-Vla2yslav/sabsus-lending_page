@@ -28,7 +28,8 @@ export const CardsGrid = styled.div`
   }
 
   @media screen and (min-width: 1440px) {
-    // Додаткові стилі для великих екранів, якщо потрібно
+          grid-template-columns: repeat(3, 0fr);
+          gap: 24px;
   }
 `;
 
@@ -52,8 +53,9 @@ height: 480px;
 }
 
 @media screen and (min-width: 1440px){
-
-
+margin-top: 10px;
+width: 432px;
+height: 480px;
 }
      
 `;
@@ -86,8 +88,7 @@ export const BackgroundIconContainer = styled.div`
 }
 
 @media screen and (min-width: 1440px){
-
-
+width: 400px;
 }
   
 `;
@@ -115,7 +116,7 @@ export const IconContainerCard = styled.div`
 
 @media screen and (min-width: 1440px){
 
-
+left: 10%;
 }
 `;
 
@@ -151,7 +152,7 @@ export const IconContainerCard1 = styled.div`
 }
 
 @media screen and (min-width: 1440px){
-
+left: 36%;
 
 }
 `;
@@ -189,7 +190,7 @@ export const IconContainerCard2 = styled.div`
 
 @media screen and (min-width: 1440px){
 
-
+left: 72%;
 }
 `;
 
@@ -226,7 +227,7 @@ height: 232px;
 }
 
 @media screen and (min-width: 1440px){
-
+        left: 20%;
 
 }
 `;
@@ -265,8 +266,8 @@ height: 281px;
 }
 
 @media screen and (min-width: 1440px){
-
-
+ left: auto;
+width: 384px;
 }
 `;
 
@@ -282,7 +283,7 @@ height: 281px;
 
 @media screen and (min-width: 1440px){
 
-
+width: 100vh;
 }
 `;
 
@@ -296,7 +297,7 @@ margin-top: 30px;
 }
 
 @media screen and (min-width: 1440px){
-
+width: 384px;
 
 }
 `;
@@ -316,8 +317,10 @@ padding: 20px 20px 5px 20px;
 }
 
 @media screen and (min-width: 1440px){
-
-
+width: 384px;
+padding: 0;
+gap: 4px;
+margin-bottom: 4px;
 }
 `;
 
@@ -337,7 +340,10 @@ background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255,
 
 @media screen and (min-width: 1440px){
 
-
+border-radius: 24px;
+padding: 16px;
+width: 190px;
+height: 133px;
 }
 `;
 
@@ -353,7 +359,7 @@ margin: 12px;
 
 @media screen and (min-width: 1440px){
 
-
+margin: 0;
 }
 `;
 
@@ -373,7 +379,10 @@ background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255,
 }
 
 @media screen and (min-width: 1440px){
-
+border-radius: 24px;
+padding: 16px;
+width: 384px;
+height: 118px;
 
 }
 `;
@@ -392,7 +401,11 @@ margin: 5px 12px;
 }
 
 @media screen and (min-width: 1440px){
-
+font-family: var(--second-family);
+font-weight: 500;
+font-size: 12px;
+line-height: 120%;
+color: var(--white);
 
 }
 `;
@@ -412,7 +425,11 @@ margin: 5px 12px;
 
 @media screen and (min-width: 1440px){
 
-
+font-family: var(--font-family);
+font-weight: 400;
+font-size: 12px;
+line-height: 125%;
+color: var(--gray-500);
 }
 `;
 

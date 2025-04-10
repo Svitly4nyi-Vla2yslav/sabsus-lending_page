@@ -20,6 +20,7 @@ const BackgroundImageContainer = styled.div`
     height: 46%;
     background: linear-gradient(0deg, #101010 70%, rgba(16, 16, 16, 0) 100%);
     pointer-events: none;
+
   }
 
   @media screen and (min-width: 744px){
@@ -29,7 +30,22 @@ const BackgroundImageContainer = styled.div`
 
 @media screen and (min-width: 1440px){
 
+    // background: linear-gradient(0deg, #000 70%, #000 100%);
 
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 36%;
+    background: linear-gradient(0deg, #000 70%, #000 100%);
+    pointer-events: none;
+
+  }
+
+  top: -76%
 }
 `;
 
@@ -44,7 +60,7 @@ const BackgroundHeroImage = styled.img`
 }
 
 @media screen and (min-width: 1440px){
-
+    // background: linear-gradient(359deg, #101010 79%, rgba(16, 16, 16, 0) 100%);
 
 }
 `;

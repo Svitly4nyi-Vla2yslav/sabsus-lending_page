@@ -14,7 +14,7 @@ width: 696px;
 }
 
 @media screen and (min-width: 1440px){
-
+width: 888px;
 
 }
 `;
@@ -68,8 +68,9 @@ color: var(--white);
 }
 
 @media screen and (min-width: 1440px){
-
-
+        width: 776px;
+        margin: 0 auto;
+        padding-bottom: 50px;
 }
 `;
 
@@ -98,7 +99,7 @@ width: 696px;
 }
 
 @media screen and (min-width: 1440px){
-
+width: 888px;
 
 }
 `;
