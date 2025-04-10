@@ -2,6 +2,8 @@ import React from 'react';
 import {
   BackgroundIconContainer,
   CardContainer,
+  CardContainerBig,
+  CardsGrid,
   GradientKey,
   IconContainerCardCode,
   IconContainerCreditServices,
@@ -13,7 +15,6 @@ import {
   KeyTextIconContainer,
   KeyTitel,
   PhoneCreditServices,
-  PhoneIconCode,
   PhoneIconCreditServices,
   ServicesTitle,
   ServicesWrapper,
@@ -43,42 +44,42 @@ const Services: React.FC = () => {
       <ServicesWrapper>
         <TextServices>{t('services.sectionTitle')}</TextServices>
         <ServicesTitle>{t('services.mainHeading')}</ServicesTitle>
+        <CardsGrid>
+          <CardContainer>
+            <IconContainer>
+              <ComputerIcon src={Comp} alt="🪔" />
+            </IconContainer>
+            <ComprehensiveTitle>
+              {t('services.cards.crm.title')}
+            </ComprehensiveTitle>
+            <ComprehensiveText>
+              {t('services.cards.crm.description')}
+            </ComprehensiveText>
+            <BackgroundIconContainer>
+              <IconContainerCreditServices>
+                <PhoneIconCreditServices src={Grafik} alt="📱" />
+              </IconContainerCreditServices>
+            </BackgroundIconContainer>
+          </CardContainer>
+          <CardContainer>
+            <IconContainer>
+              <ComputerIcon src={phone} alt="🪔" />
+            </IconContainer>
+            <ComprehensiveTitle>
+              {t('services.cards.mobile.title')}
+            </ComprehensiveTitle>
+            <ComprehensiveText>
+              {t('services.cards.mobile.description')}
+            </ComprehensiveText>
+            <BackgroundIconContainer>
+              <IconCreditServices>
+                <PhoneCreditServices src={kredit} alt="📱" />
+              </IconCreditServices>
+            </BackgroundIconContainer>
+          </CardContainer>{' '}
+        </CardsGrid>
 
-        <CardContainer>
-          <IconContainer>
-            <ComputerIcon src={Comp} alt="🪔" />
-          </IconContainer>
-          <ComprehensiveTitle>
-            {t('services.cards.crm.title')}
-          </ComprehensiveTitle>
-          <ComprehensiveText>
-            {t('services.cards.crm.description')}
-          </ComprehensiveText>
-          <BackgroundIconContainer>
-            <IconContainerCreditServices>
-              <PhoneIconCreditServices src={Grafik} alt="📱" />
-            </IconContainerCreditServices>
-          </BackgroundIconContainer>
-        </CardContainer>
-
-        <CardContainer>
-          <IconContainer>
-            <ComputerIcon src={phone} alt="🪔" />
-          </IconContainer>
-          <ComprehensiveTitle>
-            {t('services.cards.mobile.title')}
-          </ComprehensiveTitle>
-          <ComprehensiveText>
-            {t('services.cards.mobile.description')}
-          </ComprehensiveText>
-          <BackgroundIconContainer>
-            <IconCreditServices>
-              <PhoneCreditServices src={kredit} alt="📱" />
-            </IconCreditServices>
-          </BackgroundIconContainer>
-        </CardContainer>
-
-        <CardContainer>
+        <CardContainerBig>
           <IconContainer>
             <ComputerIcon src={key} alt="🪔" />
           </IconContainer>
@@ -116,7 +117,7 @@ const Services: React.FC = () => {
               </KeySpanContainer>
             </KeyTextIconContainer>
           </BackgroundIconContainer>
-        </CardContainer>
+        </CardContainerBig>
       </ServicesWrapper>
     </Element>
   );

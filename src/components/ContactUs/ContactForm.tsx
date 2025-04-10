@@ -7,9 +7,12 @@ import {
   FilePreviewContainer,
   FilePreviewLink,
   FileSize,
+  FormRadioGroupContainer,
   FormWrapper,
+  NameContainer,
   RadioCustom,
   RemoveFileButton,
+  TextareaDiv,
 } from './ContactUs.styled';
 import { toast } from 'react-toastify';
 
@@ -284,111 +287,119 @@ const ContactForm: React.FC = () => {
   };
   return (
     <FormWrapper onSubmit={handleSubmit}>
-      <FormTitle>{t('contactForm.title')}</FormTitle>
-      <FormRadioGroup>
-        <FormRadioLabel>
-          <FormRadioInput
-            type="radio"
-            name="budget"
-            value="Up to $10K"
-            checked={formData.budget === 'Up to $10K'}
+      <FormRadioGroupContainer>
+        <FormTitle>{t('contactForm.title')}</FormTitle>
+        <FormRadioGroup>
+          <FormRadioLabel>
+            <FormRadioInput
+              type="radio"
+              name="budget"
+              value="Up to $10K"
+              checked={formData.budget === 'Up to $10K'}
+              onChange={handleChange}
+            />
+            <RadioCustom>{t('contactForm.budgetOptions.upTo10k')}</RadioCustom>
+          </FormRadioLabel>
+
+          <FormRadioLabel>
+            <FormRadioInput
+              type="radio"
+              name="budget"
+              value="$10K-$30K"
+              checked={formData.budget === '$10K-$30K'}
+              onChange={handleChange}
+            />
+            <RadioCustom>{t('contactForm.budgetOptions.10kTo30k')}</RadioCustom>
+          </FormRadioLabel>
+
+          <FormRadioLabel>
+            <FormRadioInput
+              type="radio"
+              name="budget"
+              value="$30K+"
+              checked={formData.budget === '$30K+'}
+              onChange={handleChange}
+            />
+            <RadioCustom>{t('contactForm.budgetOptions.30kPlus')}</RadioCustom>
+          </FormRadioLabel>
+          {errors.budget && <ErrorText>{errors.budget}</ErrorText>}
+        </FormRadioGroup>
+      </FormRadioGroupContainer>
+      <NameContainer>
+        <FormGroup>
+          <ErrorInput
+            type="text"
+            name="firstName"
+            placeholder={t('contactForm.fields.firstName')}
+            value={formData.firstName}
             onChange={handleChange}
+            required
+            $hasError={!!errors.firstName}
           />
-          <RadioCustom>{t('contactForm.budgetOptions.upTo10k')}</RadioCustom>
-        </FormRadioLabel>
+          {errors.firstName && (
+            <ErrorText>{t('contactForm.errors.firstName')}</ErrorText>
+          )}
+        </FormGroup>
 
-        <FormRadioLabel>
-          <FormRadioInput
-            type="radio"
-            name="budget"
-            value="$10K-$30K"
-            checked={formData.budget === '$10K-$30K'}
+        <FormGroup>
+          <ErrorInput
+            placeholder={t('contactForm.fields.lastName')}
+            type="text"
+            name="lastName"
+            value={formData.lastName}
             onChange={handleChange}
+            required
+            $hasError={!!errors.lastName}
           />
-          <RadioCustom>{t('contactForm.budgetOptions.10kTo30k')}</RadioCustom>
-        </FormRadioLabel>
+          {errors.lastName && <ErrorText>{errors.lastName}</ErrorText>}
+        </FormGroup>
 
-        <FormRadioLabel>
-          <FormRadioInput
-            type="radio"
-            name="budget"
-            value="$30K+"
-            checked={formData.budget === '$30K+'}
+        <FormGroup>
+          <CustomSelect
+            options={[
+              { value: 'Email', label: t('contactForm.methods.email') },
+              { value: 'Phone', label: t('contactForm.methods.phone') },
+              { value: 'WhatsApp', label: t('contactForm.methods.whatsapp') },
+              { value: 'Telegram', label: t('contactForm.methods.telegram') },
+            ]}
+            value={formData.contactMethod}
+            onChange={value =>
+              setFormData({ ...formData, contactMethod: value })
+            }
+            placeholder={t('contactForm.fields.contactMethod')}
+            $hasError={!!errors.contactMethod}
+          />
+          {errors.contactMethod && (
+            <ErrorText>{errors.contactMethod}</ErrorText>
+          )}
+        </FormGroup>
+
+        <FormGroup>
+          <ErrorInput
+            placeholder={
+              formData.contactMethod === 'Email'
+                ? t('contactForm.fields.contactPlaceholder.email')
+                : formData.contactMethod === 'Phone'
+                ? t('contactForm.fields.contactPlaceholder.phone')
+                : formData.contactMethod === 'WhatsApp'
+                ? t('contactForm.fields.contactPlaceholder.whatsapp')
+                : formData.contactMethod === 'Telegram'
+                ? t('contactForm.fields.contactPlaceholder.telegram')
+                : t('contactForm.fields.contactPlaceholder.default')
+            }
+            type={formData.contactMethod === 'Email' ? 'email' : 'text'}
+            name="contact"
+            value={formData.contact}
             onChange={handleChange}
+            required
+            $hasError={!!errors.contact}
           />
-          <RadioCustom>{t('contactForm.budgetOptions.30kPlus')}</RadioCustom>
-        </FormRadioLabel>
-        {errors.budget && <ErrorText>{errors.budget}</ErrorText>}
-      </FormRadioGroup>
+          {errors.contact && <ErrorText>{errors.contact}</ErrorText>}
+        </FormGroup>
+      </NameContainer>
 
       <FormGroup>
-        <ErrorInput
-          type="text"
-          name="firstName"
-          placeholder={t('contactForm.fields.firstName')}
-          value={formData.firstName}
-          onChange={handleChange}
-          required
-          $hasError={!!errors.firstName}
-        />
-        {errors.firstName && (
-          <ErrorText>{t('contactForm.errors.firstName')}</ErrorText>
-        )}
-      </FormGroup>
-
-      <FormGroup>
-        <ErrorInput
-          placeholder={t('contactForm.fields.lastName')}
-          type="text"
-          name="lastName"
-          value={formData.lastName}
-          onChange={handleChange}
-          required
-          $hasError={!!errors.lastName}
-        />
-        {errors.lastName && <ErrorText>{errors.lastName}</ErrorText>}
-      </FormGroup>
-
-      <FormGroup>
-        <CustomSelect
-          options={[
-            { value: 'Email', label: t('contactForm.methods.email') },
-            { value: 'Phone', label: t('contactForm.methods.phone') },
-            { value: 'WhatsApp', label: t('contactForm.methods.whatsapp') },
-            { value: 'Telegram', label: t('contactForm.methods.telegram') },
-          ]}
-          value={formData.contactMethod}
-          onChange={value => setFormData({ ...formData, contactMethod: value })}
-          placeholder={t('contactForm.fields.contactMethod')}
-          $hasError={!!errors.contactMethod}
-        />
-        {errors.contactMethod && <ErrorText>{errors.contactMethod}</ErrorText>}
-      </FormGroup>
-
-      <FormGroup>
-        <ErrorInput
-          placeholder={
-            formData.contactMethod === 'Email'
-              ? t('contactForm.fields.contactPlaceholder.email')
-              : formData.contactMethod === 'Phone'
-              ? t('contactForm.fields.contactPlaceholder.phone')
-              : formData.contactMethod === 'WhatsApp'
-              ? t('contactForm.fields.contactPlaceholder.whatsapp')
-              : formData.contactMethod === 'Telegram'
-              ? t('contactForm.fields.contactPlaceholder.telegram')
-              : t('contactForm.fields.contactPlaceholder.default')
-          }
-          type={formData.contactMethod === 'Email' ? 'email' : 'text'}
-          name="contact"
-          value={formData.contact}
-          onChange={handleChange}
-          required
-          $hasError={!!errors.contact}
-        />
-        {errors.contact && <ErrorText>{errors.contact}</ErrorText>}
-      </FormGroup>
-
-      <FormGroup>
+        <TextareaDiv>
         <ErrorTextarea
           placeholder={t('contactForm.fields.description')}
           name="description"
@@ -398,7 +409,7 @@ const ContactForm: React.FC = () => {
           $hasError={!!errors.description}
         />
         {errors.description && <ErrorText>{errors.description}</ErrorText>}
-      </FormGroup>
+      </TextareaDiv></FormGroup>
 
       <FormGroup>
         {formData.filePreviews.length > 0 ? (

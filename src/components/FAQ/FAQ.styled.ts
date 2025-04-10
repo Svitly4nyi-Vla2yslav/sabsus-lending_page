@@ -7,6 +7,16 @@ export const FAQSection = styled.section`
     flex-direction: column;
     justify-content: center;
     margin: 80px auto;
+
+        @media screen and (min-width: 744px){
+width: 696px;
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const FAQText = styled.h3`
@@ -19,6 +29,23 @@ background-clip: text;
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 padding-bottom: 10px;
+@media screen and (min-width: 744px){
+font-family: var(--font-family);
+font-weight: 500;
+font-size: 22px;
+text-align: center;
+background: linear-gradient(356deg, #fff 0%, #fe5b14 100%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+margin: 0 auto;
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const FAQTitle = styled.h2`
@@ -29,6 +56,21 @@ line-height: 115%;
 letter-spacing: -0.04em;
 color: var(--white);
 padding-bottom: 20px;
+@media screen and (min-width: 744px){
+font-family: var(--second-family);
+font-weight: 700;
+font-size: 40px;
+line-height: 115%;
+letter-spacing: -0.03em;
+text-align: center;
+color: var(--white);
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const QuestionItem = styled.div`
@@ -48,6 +90,17 @@ margin-bottom: 12px;
     border: 1px solid #fff;
     text-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
   }
+
+
+  @media screen and (min-width: 744px){
+width: 696px;
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const QuestionButton = styled.button`
@@ -76,6 +129,16 @@ background: transparent;
     transform: translateY(-2px);
     text-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
   }
+
+  @media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 interface AnswerTextProps {
@@ -100,11 +163,31 @@ export const AnswerText = styled.div<AnswerTextProps>`
     max-height 0.4s ease;
   margin-top: ${({ $isOpen }) => ($isOpen ? '12px' : '0')};
   will-change: transform, opacity, max-height;
+
+  @media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const StarIcon = styled.img`
 width: 12px;
 height: 13px;
+
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 interface XIconStyledProps {
@@ -121,6 +204,16 @@ export const XIcon = styled.img.attrs<XIconStyledProps>(() => ({})) <XIconStyled
     `
         transform: rotate(136deg);
       `}
+
+      @media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
   `;
 
 export const QuestionWrapper = styled.div`
@@ -129,6 +222,15 @@ flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
+
+    @media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
 }
 
 `;

@@ -1,5 +1,63 @@
 import styled from "styled-components";
 
+export const CardContainer = styled.section`
+ display: flex;
+    width: 343px;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto ;
+@media screen and (min-width: 744px){
+width: 100%;
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
+`;
+
+export const CardsGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  width: 100%;
+
+  @media screen and (min-width: 744px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (min-width: 1440px) {
+    // Додаткові стилі для великих екранів, якщо потрібно
+  }
+`;
+
+export const ComprehensiveContainer = styled.div`
+border: 1px solid var(--line);
+border-radius: 16px;
+width: 100%;
+height: 409px;
+box-shadow: 0 0 0 0 var(--white), 
+0 0 0 1px rgba(244, 244, 245, 0.1),
+ 0 0 0 0 rgba(0, 0, 0, 0), 
+ 0 6px 9px 0 rgba(0, 0, 0, 0.25);
+background: var(--substrate);
+    z-index: 0;
+    margin-bottom: 12px;
+     overflow: hidden;
+@media screen and (min-width: 744px){
+height: 480px;
+  margin-bottom: 0;
+  width: 338px;
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
+     
+`;
+
 export const BackgroundIconContainer = styled.div`
   position: relative;
       bottom: 125px;
@@ -22,7 +80,15 @@ export const BackgroundIconContainer = styled.div`
     background: linear-gradient(0deg, #101010 40%, rgba(16, 16, 16, 0) 100%);
     pointer-events: none;
 }
+@media screen and (min-width: 744px){
 
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
   
 `;
 
@@ -42,7 +108,15 @@ export const IconContainerCard = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 0;
- 
+ @media screen and (min-width: 744px){
+    bottom: 106px;
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const PhoneIcon = styled.img`
@@ -50,6 +124,15 @@ position: relative;
 z-index: 0;
  width: 79px;
   height: 184px;
+  @media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const IconContainerCard1 = styled.div`
@@ -62,7 +145,15 @@ export const IconContainerCard1 = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 0;
- 
+ @media screen and (min-width: 744px){
+    bottom: 103px;
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const PhoneIcon1 = styled.img`
@@ -70,6 +161,15 @@ position: relative;
 z-index: 0;
  width: 122px;
   height: 250px;
+  @media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const IconContainerCard2 = styled.div`
@@ -82,7 +182,15 @@ export const IconContainerCard2 = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 0;
- 
+ @media screen and (min-width: 744px){
+    bottom: 115px;
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const PhoneIcon2 = styled.img`
@@ -90,6 +198,15 @@ position: relative;
 z-index: 0;
 width: 79px;
 height: 184px;
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const IconContainerCardCode = styled.div`
@@ -102,7 +219,16 @@ height: 232px;
   justify-content: center;
   align-items: center;
   z-index: 0;
- 
+ @media screen and (min-width: 744px){
+    bottom: 148px;
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const PhoneIconCode = styled.img`
@@ -111,6 +237,15 @@ z-index: 0;
 width: 320px;
 height: 291px;
 opacity: 0.7;
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const IconContainerCredit = styled.div`
@@ -123,7 +258,16 @@ height: 281px;
   justify-content: center;
   align-items: center;
   z-index: 0;
- 
+ @media screen and (min-width: 744px){
+    bottom: 90px;
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const PhoneIconCredit = styled.img`
@@ -131,13 +275,30 @@ position: relative;
 z-index: 0;
 width: 337px;
 height: 281px;
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const CardZipContainer = styled.div`
 width: 343px;
 height: 232px;
 margin-top: 30px;
-// padding: 20px 20px 5px 20px;
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const CardSmollContainer = styled.div`
@@ -149,6 +310,15 @@ export const CardSmollContainer = styled.div`
 gap: 3px;
 
 padding: 20px 20px 5px 20px;
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const SmollCard = styled.div`
@@ -159,12 +329,32 @@ height: 105px;
 
 box-shadow: 0 0 18px -5px rgba(0, 0, 0, 0.5), inset 0 1px 2px 0 #525154;
 background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 30%, rgba(255, 255, 255, 0.02) 100%);
+
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const EngineIcons = styled.img`
 width: 18px;
 height: 18px;
 margin: 12px;
+
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const BigCard = styled.div`
@@ -176,6 +366,16 @@ margin: 0 auto;
 
 box-shadow: 0 0 18px -5px rgba(0, 0, 0, 0.5), inset 0 1px 2px 0 #525154;
 background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 30%, rgba(255, 255, 255, 0.02) 100%);
+
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const CardTitel = styled.h5`
@@ -185,6 +385,16 @@ font-size: 9px;
 line-height: 120%;
 color: var(--white);
 margin: 5px 12px;
+
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const CardText = styled.p`
@@ -194,6 +404,16 @@ font-size: 9px;
 line-height: 125%;
 color: var(--gray-500);
 margin: 5px 12px;
+
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 

@@ -56,15 +56,17 @@ const slides = [
 
 const Partners: React.FC = () => {
   const { t } = useTranslation();
-  const isMobile = useMediaQuery({ query: '(max-width: 375px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 743px)' });
   const isTablet = useMediaQuery({
-    query: '(min-width: 375px) and (max-width: 1023px)',
+    query: '(min-width: 744px) and (max-width: 1023px)',
   });
   const isDesktop = useMediaQuery({ query: '(min-width: 1024px)' });
 
   const slidesPerView = isMobile ? 2 : isTablet ? 4 : isDesktop ? 7 : 7;
+  
   return (
     <SwiperContainer>
+   <Border/>
       <Swiper
         loop={true}
         slidesPerView={slidesPerView}
@@ -97,52 +99,55 @@ const Partners: React.FC = () => {
                 loading="lazy"
                 src={slide.imageUrl}
                 alt={`Slide ${slide.id}`}
-                // style={{ width: '200px', height: '190px', objectFit: 'cover' }}
               />
             </SwiperSlide>
           ))
         )}
       </Swiper>
-      <Swiper
-        loop={true}
-        slidesPerView={slidesPerView}
-        spaceBetween={20}
-        navigation={false}
-        autoplay={{
-          delay: 1,
-          disableOnInteraction: false,
-          reverseDirection: true,
-        }}
-        pagination={false}
-        grabCursor={true}
-        speed={4000}
-        modules={[Autoplay, Pagination]}
-        className="mySwiper"
-      >
-        {Array.from({ length: 2 }).map((_, i) =>
-          slides.map(slide => (
-            <SwiperSlide
-              key={`${slide.id}-${i}`}
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                height: '10vh',
-                fontSize: 36,
-                paddingBottom: 10,
-              }}
-            >
-              <Image
-                loading="lazy"
-                src={slide.imageUrl}
-                alt={`Slide ${slide.id}`}
-                // style={{ width: '200px', height: '190px', objectFit: 'cover' }}
-              />
-            </SwiperSlide>
-          ))
-        )}
-      </Swiper>
+
+      {/* Другий слайдер - відображається тільки на мобільних */}
+      {isMobile && (
+        <Swiper
+          loop={true}
+          slidesPerView={slidesPerView}
+          spaceBetween={20}
+          navigation={false}
+          autoplay={{
+            delay: 1,
+            disableOnInteraction: false,
+            reverseDirection: true,
+          }}
+          pagination={false}
+          grabCursor={true}
+          speed={4000}
+          modules={[Autoplay, Pagination]}
+          className="mySwiper"
+        >
+          {Array.from({ length: 2 }).map((_, i) =>
+            slides.map(slide => (
+              <SwiperSlide
+                key={`${slide.id}-${i}-reverse`}
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  height: '10vh',
+                  fontSize: 36,
+                  paddingBottom: 10,
+                }}
+              >
+                <Image
+                  loading="lazy"
+                  src={slide.imageUrl}
+                  alt={`Slide ${slide.id}`}
+                />
+              </SwiperSlide>
+            ))
+          )}
+        </Swiper>
+      )}
     </SwiperContainer>
   );
 };
+
 export default Partners;

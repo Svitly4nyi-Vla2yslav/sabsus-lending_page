@@ -21,6 +21,16 @@ const BackgroundImageContainer = styled.div`
     background: linear-gradient(0deg, #101010 70%, rgba(16, 16, 16, 0) 100%);
     pointer-events: none;
   }
+
+  @media screen and (min-width: 744px){
+    top: -6%;
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 const BackgroundHeroImage = styled.img`
@@ -28,6 +38,15 @@ const BackgroundHeroImage = styled.img`
   height: auto;
   object-fit: cover;
   display: block;
+  @media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 const BackgroundImage: React.FC = () => {

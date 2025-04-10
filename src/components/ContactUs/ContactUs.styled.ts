@@ -9,6 +9,16 @@ export const ContactUsWrapper = styled.section`
     flex-direction: column;
     justify-content: center;
     margin: 80px auto 0px auto;
+
+      @media screen and (min-width: 744px){
+width: 696px;
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const ContactUsText = styled.h3`
@@ -21,6 +31,23 @@ background-clip: text;
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 padding-bottom: 10px;
+  @media screen and (min-width: 744px){
+
+font-family: var(--font-family);
+font-weight: 500;
+font-size: 22px;
+text-align: center;
+background: linear-gradient(356deg, #fff 0%, #fe5b14 100%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+margin: 0 auto;
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const ContactUsTitle = styled.h2`
@@ -31,6 +58,22 @@ line-height: 115%;
 letter-spacing: -0.04em;
 color: var(--white);
 padding-bottom: 20px;
+
+  @media screen and (min-width: 744px){
+font-family: var(--second-family);
+font-weight: 700;
+font-size: 40px;
+line-height: 115%;
+letter-spacing: -0.03em;
+text-align: center;
+color: var(--white);
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const FormWrapper = styled.form`
@@ -48,7 +91,45 @@ background: var(--substrate);
     margin-bottom: 60px;
     padding: 16px;
      overflow: hidden;
+
+       @media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
+
+export const FormRadioGroupContainer = styled.div` 
+   @media screen and (min-width: 744px){
+display: flex;
+justify-content: space-between;
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
+`;
+
+export const NameContainer = styled.div`
+   @media screen and (min-width: 744px){
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap:12px;
+margin-bottom: 12px;
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
+`;
+
 
 export const FormTitle = styled.h3`
  font-family: var(--font-family);
@@ -56,10 +137,41 @@ font-weight: 500;
 font-size: 20px;
 color: var(--white);
   margin-bottom: 12px;
+
+    @media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const FormGroup = styled.div`
   margin-bottom: 8px;
+@media screen and (min-width: 744px){
+  margin-bottom: 0px;
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
+`;
+
+export const TextareaDiv = styled.div`
+    @media screen and (min-width: 744px){
+margin-bottom: 12px;
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const FormLabel = styled.label`
@@ -68,6 +180,16 @@ export const FormLabel = styled.label`
   font-size: 14px;
   color: var(--gray-500);
   margin-bottom: 8px;
+
+    @media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const FormInput = styled.input`
@@ -89,6 +211,16 @@ background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255,
     border-color: var(--primary);
     outline: none;
   }
+
+    @media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const FormSelect = styled.select`
@@ -106,10 +238,28 @@ export const FormSelect = styled.select`
     border-color: var(--primary);
     outline: none;
   }
+
+    @media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const OptionContainer = styled.div`
+  @media screen and (min-width: 744px){
 
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 
@@ -134,6 +284,16 @@ background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255,
     border-color: var(--primary);
     outline: none;
   }
+
+    @media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const FormRadioGroup = styled.div`
@@ -143,6 +303,17 @@ position: relative;
   margin-bottom: 20px;
   width: 100%;
       justify-content: space-between;
+
+        @media screen and (min-width: 744px){
+width: 46%;
+    justify-content: flex-end;
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const FormRadioLabel = styled.label`
@@ -153,6 +324,16 @@ font-weight: 400;
 font-size: 16px;
 line-height: 175%;
 text-align: center;
+
+  @media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const FormRadioInput = styled.input`
@@ -176,6 +357,16 @@ export const FormRadioInput = styled.input`
     /* Стилі для фокусу */
     box-shadow: 0 0 0 2px var(--primary);
   }
+
+    @media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const RadioCustom = styled.span`
@@ -192,6 +383,16 @@ height: 44px;
 
 box-shadow: 0 0 18px -5px rgba(0, 0, 0, 0.5), inset 0 1px 2px 0 #525154;
 background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 30%, rgba(255, 255, 255, 0.02) 100%);
+
+  @media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 
@@ -229,14 +430,31 @@ export const FormFileUpload = styled.div`
     font-family: var(--font-family);
     color: var(--gray-500);
   }
+
+    @media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const CloudIcon = styled.img`
   width: 28px;
   height: 28px;
   
- 
-  }
+  @media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const CloudWrapper = styled.div`
@@ -244,7 +462,17 @@ border-radius: 8px;
 padding: 8px 36px;
 box-shadow: 0 0 18px -5px rgba(0, 0, 0, 0.5), inset 0 1px 2px 0 #525154;
 background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 30%, rgba(255, 255, 255, 0.02) 100%);
-`
+
+  @media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
+`;
 
 export const FormSubmitButton = styled.button`
   width: 100%;
@@ -262,6 +490,16 @@ export const FormSubmitButton = styled.button`
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(254, 91, 20, 0.3);
   }
+
+    @media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 // !-------------------------------_________________
@@ -277,17 +515,47 @@ export const FilePreviewContainer = styled.div`
   align-items: center;
   gap: 12px;
   margin-bottom: 8px;
+
+    @media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const FileIcon = styled.div`
   width: 24px;
   height: 24px;
   flex-shrink: 0;
+
+    @media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const FileInfo = styled.div`
   flex-grow: 1;
   overflow: hidden;
+
+    @media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const FileName = styled.div`
@@ -298,6 +566,16 @@ export const FileName = styled.div`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+
+    @media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const FileSize = styled.div`
@@ -305,6 +583,16 @@ export const FileSize = styled.div`
   font-weight: 400;
   font-size: 10px;
   color: var(--gray-800);
+
+    @media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const FilePreviewLink = styled.a`
@@ -317,6 +605,16 @@ export const FilePreviewLink = styled.a`
   &:hover {
     text-decoration: underline;
   }
+
+    @media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const RemoveFileButton = styled.button`
@@ -329,4 +627,14 @@ export const RemoveFileButton = styled.button`
   &:hover {
     color: var(--primary);
   }
+
+    @media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;

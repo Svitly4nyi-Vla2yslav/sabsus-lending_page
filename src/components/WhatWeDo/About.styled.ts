@@ -591,7 +591,8 @@ export const ListIcon = styled.img`
 width: 4px;
 height: 4px;
 @media screen and (min-width: 744px){
-
+width: 10px;
+height: 10px;
 
 }
 
@@ -611,7 +612,11 @@ position: relative;
 bottom: 5px;
 left: 5px;
 @media screen and (min-width: 744px){
-
+font-family: var(--font-family);
+font-weight: 300;
+font-size: 7px;
+line-height: 180%;
+color: var(--gray-500);
 
 }
 
@@ -640,8 +645,11 @@ export const ProgressBarContainer = styled.div`
   border-radius: 3px;
   overflow: hidden;
   @media screen and (min-width: 744px){
-
-
+border-radius: 7px;
+padding: 0px 65px 0px 0px;
+width: 130px;
+height: 2px;
+ bottom: 10px;
 }
 
 @media screen and (min-width: 1440px){
@@ -659,8 +667,12 @@ export const ProgressBar = styled.div`
   animation: ${moveGradient} 1.5s infinite alternate ease-in-out;
 
 @media screen and (min-width: 744px){
-
-
+border-radius: 7px;
+padding: 0px 65px 0px 0px;
+width: 130px;
+height: 2px;
+  background: linear-gradient(90deg, #ed1816 0%, #f84215 63.35%, #fe5b14 100%);
+  animation: ${moveGradient} 1.5s infinite alternate ease-in-out;
 }
 
 @media screen and (min-width: 1440px){
@@ -846,7 +858,12 @@ border-radius: 2px;
 padding: 2px 8px 2px 7px;
 width: 34px;
 height: 16px;
-
+font-family: var(--font-family);
+font-weight: 300;
+font-size: 7px;
+line-height: 150%;
+text-align: center;
+color: var(--white);
 }
 
 @media screen and (min-width: 1440px){
@@ -880,7 +897,12 @@ border-radius: 2px;
 padding: 2px 8px 2px 7px;
 width: 100%;
 height: 16px;
-
+font-family: var(--font-family);
+font-weight: 300;
+font-size: 7px;
+line-height: 150%;
+text-align: center;
+color: var(--white);
 }
 
 @media screen and (min-width: 1440px){
@@ -897,7 +919,7 @@ height: 97px;
 @media screen and (min-width: 744px){
 width: 431px;
 height: 211px;
-        margin-top: 40px;
+        margin-top: 20px;
         width: 431px;
         height: 211px;
 }
@@ -920,7 +942,10 @@ box-shadow: 0 0 0 0 var(--white), 0 0 0 0px rgba(244, 244, 245, 0.1), 0 0 0 0 rg
 background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 30%, rgba(255, 255, 255, 0.02) 100%);
 
 @media screen and (min-width: 744px){
-
+border: 0.54px solid #444;
+border-radius: 6px;
+width: 209px;
+height: 239px;
 
 }
 
@@ -936,8 +961,13 @@ font-weight: 300;
 font-size: 3px;
 line-height: 150%;
 color: var(--white);
-@media screen and (min-width: 744px){
 
+@media screen and (min-width: 744px){
+font-family: var(--font-family);
+font-weight: 300;
+font-size: 8px;
+line-height: 150%;
+color: var(--white);
 
 }
 
@@ -967,6 +997,7 @@ font-weight: 300;
 font-size: 3px;
 line-height: 150%;
 color: var(--orange-500);
+
 @media screen and (min-width: 744px){
 
 
@@ -990,7 +1021,8 @@ display: flex;
     align-items: center;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 30%, rgba(255, 255, 255, 0.02) 100%);
 @media screen and (min-width: 744px){
-
+width: 208px;
+height: 36px;
 
 }
 
@@ -1005,7 +1037,8 @@ width: 95px;
 height: 90px;
 
 @media screen and (min-width: 744px){
-
+width: 208px;
+height: 196px;
 
 }
 
@@ -1023,8 +1056,8 @@ background: #242424;
  border: 0.5px solid var(--red-50);
 
  @media screen and (min-width: 744px){
-
-
+width: 208px;
+height: 62px;
 }
 
 @media screen and (min-width: 1440px){
@@ -1041,7 +1074,8 @@ height: 5px;
 display: flex;
 
 @media screen and (min-width: 744px){
-
+width: 186px;
+height: 11px;
 
 }
 
@@ -1055,7 +1089,8 @@ export const IconWarning = styled.img`
 width: 4px;
 height: 4px;
 @media screen and (min-width: 744px){
-
+width: 9px;
+height: 9px;
 
 }
 
@@ -1073,7 +1108,11 @@ line-height: 150%;
 color: var(--orange-500);
 
 @media screen and (min-width: 744px){
-
+font-family: var(--font-family);
+font-weight: 300;
+font-size: 7px;
+line-height: 150%;
+color: var(--orange-500);
 
 }
 
@@ -1091,7 +1130,7 @@ export const CompleteContainer = styled.div`
     width: 100%;
     justify-content: center;
  @media screen and (min-width: 744px){
-
+height: 29px;
 
 }
 
@@ -1102,8 +1141,7 @@ export const CompleteContainer = styled.div`
 `;
 
 export const DataContainer = styled.div`
-display: flex
-;
+display: flex;
     flex-direction: row;
     align-items: baseline;
     gap: 7px;
@@ -1111,8 +1149,9 @@ display: flex
     padding: 0;
 
     @media screen and (min-width: 744px){
-
-
+height: 29px;
+ gap: 10px;
+ align-items: center;
 }
 
 @media screen and (min-width: 1440px){
@@ -1126,15 +1165,7 @@ display: flex;
     flex-direction: row;
     align-items: baseline;
     gap: 4px;
-@media screen and (min-width: 744px){
 
-
-}
-
-@media screen and (min-width: 1440px){
-
-
-}
 `;
 
 
@@ -1143,7 +1174,8 @@ width: 2px;
 height: 3px;
 
 @media screen and (min-width: 744px){
-
+width: 4px;
+height: 8px;
 
 }
 
@@ -1163,7 +1195,8 @@ box-shadow: inset 0 0px 1px 0 #525154, 0 0 7px -2px rgba(0, 0, 0, 0.5);
 background: var(--black-350);
 
 @media screen and (min-width: 744px){
-
+width: 10px;
+height: 10px;
 
 }
 
@@ -1180,7 +1213,10 @@ font-size: 3px;
 color: var(--white);
 
 @media screen and (min-width: 744px){
-
+font-family: var(--font-family);
+font-weight: 300;
+font-size: 7px;
+color: var(--white);
 
 }
 
@@ -1199,7 +1235,10 @@ display: flex;
 gap: 2px;
 
 @media screen and (min-width: 744px){
-
+padding: 0px 0px 14px 0px;
+width: 34px;
+height: 29px;
+gap: 4px;
 
 }
 
@@ -1236,6 +1275,18 @@ display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+
+      @media screen and (min-width: 744px){
+border-radius: 3px;
+width: 15px;
+height: 15px;
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const WriteOrangeBox = styled.span`
@@ -1249,7 +1300,9 @@ export const WriteOrangeBox = styled.span`
   display: inline-block;
   text-align: center;
   @media screen and (min-width: 744px){
-
+border-radius: 3px;
+width: 15px;
+height: 15px;
 
 }
 
@@ -1266,7 +1319,8 @@ height: 3px;
 stroke-width: 0.25px;
 stroke: #ff5e5e;
 @media screen and (min-width: 744px){
-
+width: 8px;
+height: 8px;
 
 }
 
@@ -1283,7 +1337,8 @@ stroke-width: 0.25px;
 stroke:  #ff5e5e;
 margin: 1px;
 @media screen and (min-width: 744px){
-
+width: 8px;
+height: 8px;
 
 }
 
@@ -1300,8 +1355,14 @@ font-size: 3px;
 line-height: 150%;
 color: var(--gray-500);
 text-align: start;
-@media screen and (min-width: 744px){
 
+
+@media screen and (min-width: 744px){
+font-family: var(--font-family);
+font-weight: 300;
+font-size: 7px;
+line-height: 150%;
+color: var(--gray-500);
 
 }
 

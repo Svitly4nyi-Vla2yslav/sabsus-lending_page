@@ -7,6 +7,16 @@ export const WorkWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     margin: 80px auto;
+
+    @media screen and (min-width: 744px){
+width: 696px;
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const OurWorkText = styled.h3`
@@ -19,6 +29,22 @@ background-clip: text;
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 padding-bottom: 10px;
+
+@media screen and (min-width: 744px){
+font-family: var(--font-family);
+font-weight: 500;
+font-size: 22px;
+background: linear-gradient(168deg, #fff 0%, #fe5b14 100%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const OurWorkTitel = styled.h2`
@@ -29,6 +55,21 @@ line-height: 115%;
 letter-spacing: -0.04em;
 color: var(--white);
 padding-bottom: 20px;
+
+@media screen and (min-width: 744px){
+font-family: var(--second-family);
+font-weight: 700;
+font-size: 40px;
+line-height: 115%;
+letter-spacing: -0.03em;
+color: var(--white);
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const WorkCardWrapper = styled.div`
@@ -44,6 +85,16 @@ background: var(--substrate);
     z-index: 0;
     margin-bottom: 12px;
      overflow: hidden;
+
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 
@@ -56,6 +107,15 @@ line-height: 125%;
 color: var(--white);
 margin:  15px 20px;
 
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const WorkCardText = styled.p`
@@ -66,6 +126,15 @@ line-height: 137%;
 color: var(--gray-500);
 margin: 10px 20px;
 
+@media screen and (min-width: 744px){
+
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const WorkShadowContainer = styled.div`
@@ -91,14 +160,51 @@ export const WorkShadowContainer = styled.div`
   background: linear-gradient(0deg, #101010 0%, rgba(16, 16, 16, 0) 100%), linear-gradient(0deg, #101010 0%, rgba(16, 16, 16, 0) 100%), linear-gradient(0deg, #101010 0%, rgba(16, 16, 16, 0) 100%);
     pointer-events: none;
 }
+
+@media screen and (min-width: 744px){
+&::after {
+      content: "";
+    position: absolute;
+    bottom: -10%;
+    left: 0;
+    width: 100vh;
+    height: 20%;
+  background: linear-gradient(0deg, #101010 0%, rgba(16, 16, 16, 0) 100%), linear-gradient(0deg, #101010 0%, rgba(16, 16, 16, 0) 100%), linear-gradient(0deg, #101010 0%, rgba(16, 16, 16, 0) 100%);
+    pointer-events: none;
 }
-  
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}  
 `;
 
 
+export const ImagesRow = styled.div`
+
+width: 100%;
+height: 100%;
+@media screen and (min-width: 744px) {
+display: flex;
+position: relative;
+width: 100%;
+height: 100%;
+  gap: 10px;
+        width: 660px;
+        top: 25%;
+        left: 49%;
+        height: 340px;
+}
+
+@media screen and (min-width: 1440px){
+}
+`;
+
 export const IconContainerCard = styled.div`
      position: absolute;
-    bottom: 64px;
+    bottom: 76px;
     left: 13px;
   width: 79px;
   height: 184px;
@@ -107,6 +213,20 @@ export const IconContainerCard = styled.div`
   align-items: center;
   z-index: 0;
  margin-left:10px;
+
+ @media screen and (min-width: 744px){
+   position: relative;
+    top: 0;
+    left: auto;
+    width: 156px;
+    height: 341px;
+    overflow: hidden;
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const IconOne = styled.img`
@@ -114,11 +234,22 @@ position: relative;
 z-index: 0;
     width: 96px;
     height: 209px;
+
+@media screen and (min-width: 744px){
+ width: 100%;
+    height: 100%;
+   object-fit: contain;
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const IconContainerCard1 = styled.div`
      position: absolute;
-       top: 134px;
+       top: 172px;
     left: 123px;
     width: 96px;
     height: auto;
@@ -126,7 +257,21 @@ export const IconContainerCard1 = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 0;
- 
+
+ @media screen and (min-width: 744px){
+border-radius: 12px;
+ position: relative;
+   top: 0;
+    left: auto;
+    width: 156px;
+    height: 341px;
+    overflow: hidden;
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const IconSecond = styled.img`
@@ -134,6 +279,17 @@ position: relative;
 z-index: 0;
 width: 96px;
 height: auto;
+
+@media screen and (min-width: 744px){
+ width: 100%;
+    height: 100%;
+   object-fit: contain;
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const IconContainerCard2 = styled.div`
@@ -146,7 +302,21 @@ display: flex;
 justify-content: center;
 align-items: center;
   z-index: 0;
- 
+
+@media screen and (min-width: 744px){
+border-radius: 12px;
+ position: relative;
+   top: 0;
+    left: auto;
+    width: 156px;
+    height: 341px;
+    overflow: hidden;
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const IconThierd = styled.img`
@@ -154,6 +324,53 @@ position: relative;
 z-index: 0;
 width: 96px;
 height: auto;
+
+@media screen and (min-width: 744px){
+ width: 100%;
+    height: 100%;
+   object-fit: contain;
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
+`;
+
+export const IconContainerCard3 = styled.div`
+display: none;
+
+  @media screen and (min-width: 744px){
+ display: flex;
+    width: 156px;
+    height: 341px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+top: 0;
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
+`;
+
+export const IconFourth = styled.img`
+position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+    @media screen and (min-width: 744px){
+ width: 100%;
+    height: 100%;
+   object-fit: contain;
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const IconCreditServices = styled.div`
@@ -166,7 +383,17 @@ height: 281px;
   justify-content: center;
   align-items: center;
   z-index: 0;
- 
+ @media screen and (min-width: 744px){
+border-radius: 12px;
+width: 656px;
+height: 398px;
+top: 36%;
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const PhoneCreditServices = styled.img`
@@ -174,6 +401,18 @@ position: relative;
 z-index: 0;
 width: 303px;
     height: auto;
+
+@media screen and (min-width: 744px){
+border-radius: 12px;
+width: 656px;
+height: 398px;
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 
