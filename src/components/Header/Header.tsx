@@ -48,8 +48,8 @@ const Header: React.FC = () => {
 
   const handleScroll = (to: string) => {
     scroller.scrollTo(to, {
-      smooth: true,
-      duration: 2000,
+      smooth: 'easeInOutQuart',
+      duration: 100,
       offset: -90,
     });
     setIsOpen(false);
@@ -69,17 +69,17 @@ const Header: React.FC = () => {
           <Logo href="#header">
             <LogoIcon src={LogoSabsus} alt="logo-sabsus" />
           </Logo>
-       
+
           <ContainerBar>
-          {isDesktop && (
-            <MenuContainer>
-              {links.map((link, index) => (
-                <MenuLink key={index} onClick={() => handleScroll(link.href)}>
-                  {link.label}
-                </MenuLink>
-              ))}
-            </MenuContainer>
-          )}
+            {isDesktop && (
+              <MenuContainer>
+                {links.map((link, index) => (
+                  <MenuLink key={index} onClick={() => handleScroll(link.href)}>
+                    {link.label}
+                  </MenuLink>
+                ))}
+              </MenuContainer>
+            )}
             <LanguageSwitcher />
             <BurgerMenu />
           </ContainerBar>

@@ -41,6 +41,9 @@ const BurgerMenu = () => {
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : 'auto';
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
   }, [isOpen]);
 
   const links = [
@@ -52,8 +55,8 @@ const BurgerMenu = () => {
 
   const handleScroll = (to: string) => {
     scroller.scrollTo(to, {
-      smooth: true,
-      duration: 2000,
+      smooth: 'easeInOutQuart',
+      duration: 100,
       offset: -90,
     });
     setIsOpen(false);
