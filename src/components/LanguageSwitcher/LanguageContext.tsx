@@ -16,7 +16,10 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const { i18n } = useTranslation();
 
   const setLanguage = (lang: Language) => {
-    i18n.changeLanguage(lang);
+    i18n.changeLanguage(lang).then(() => {
+      // Перезавантажуємо сторінку після зміни мови
+      window.location.reload();
+    });
   };
 
   return (

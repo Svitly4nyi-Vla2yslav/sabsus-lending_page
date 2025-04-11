@@ -94,6 +94,14 @@ const LanguageSwitcher = () => {
 
   const toggleMenu = () => setIsOpen(prev => !prev);
 
+  const handleLanguageChange = (langCode: string) => {
+    i18n.changeLanguage(langCode).then(() => {
+      // Перезавантажуємо сторінку після зміни мови
+      window.location.reload();
+    });
+    setIsOpen(false);
+  };
+
   return (
     <Wrapper>
       <Button onClick={toggleMenu}>
@@ -102,7 +110,6 @@ const LanguageSwitcher = () => {
         <IconsArrow src={Arrow} alt="🔽" />
       </Button>
 
-      {/* Випадаючий список мов */}
       <AnimatePresence>
         {isOpen && (
           <Dropdown
@@ -114,10 +121,7 @@ const LanguageSwitcher = () => {
             {languages.map(lang => (
               <DropdownItem
                 key={lang.code}
-                onClick={() => {
-                  i18n.changeLanguage(lang.code);
-                  setIsOpen(false);
-                }}
+                onClick={() => handleLanguageChange(lang.code)}
               >
                 {lang.label}
                 <Icons src={lang.flag} />
