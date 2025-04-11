@@ -29,24 +29,30 @@ const FAQ: React.FC = () => {
   const { t } = useTranslation();
 
 
-  AOS.init({
-    // Основні налаштування:
-    duration: 1600,             // Коротша тривалість
-    offset: -320,               // Раніше спрацьовування
-    easing: 'ease-out-quad',   // Оптимальна функція плавності
-    once: false,                // Анімація тільки один раз
-    mirror: true,             // Без повтору при скролі назад
-    
-    // Важливі фікси:
-    disableMutationObserver: true, // Вимикає автоматичний перерахунок
-    debounceDelay: 50,         // Затримка для resize подій
-    throttleDelay: 99,         // Затримка для scroll подій
-    
-    // Адаптація:
-    disable: function() {
-      return window.innerWidth < 1024;
+  useEffect(() => {
+    // Ініціалізація AOS тільки на клієнтській стороні
+    if (typeof window !== 'undefined') {
+      import('aos').then((AOS) => {
+        AOS.init({
+          duration: 1600,
+          offset: 120, // Змініть це значення (спробуйте 120, 200, -100)
+          easing: 'ease-out-quad',
+          once: false,
+          mirror: true,
+          disableMutationObserver: true,
+          debounceDelay: 50,
+          throttleDelay: 99,
+          disable: function() {
+            return window.innerWidth < 1024;
+          }
+        });
+        
+        // Оновлення AOS після ініціалізації
+        AOS.refresh();
+      });
     }
-  });
+  }, []);
+
 
   const toggleAnswer = (index: number) => {
     setActiveIndex(prev => (prev === index ? null : index));
