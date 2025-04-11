@@ -138,10 +138,10 @@ align-items: flex-end;
 `;
 
 export const TextExperience = styled.p`
-font-family: 'Roboto Flex';
+font-family: var(--font-family);
 font-weight: 400;
-font-size: 15px;
-line-height: 187%;
+font-size: 16px;
+line-height: 175%;
 color: #f2f2f2;
  @media screen and (min-width: 744px){
 

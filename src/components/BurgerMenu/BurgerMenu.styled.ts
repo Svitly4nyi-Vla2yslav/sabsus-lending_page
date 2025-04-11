@@ -103,9 +103,12 @@ width: 300px;
 `;
 
 export const MenuLink = styled(motion.a)`
-  color: white;
-    font-family: 'Roboto Flex';
-  font-size: 24px;
+ font-family: var(--font-family);
+font-weight: 400;
+font-size: 24px;
+line-height: 135%;
+text-align: center;
+color: var(--white);
   margin: 12px 0;
   text-decoration: none;
   cursor: pointer;
