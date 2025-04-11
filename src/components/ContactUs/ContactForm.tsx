@@ -16,7 +16,7 @@ import {
 } from './ContactUs.styled';
 import { toast } from 'react-toastify';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { addDoc, collection } from 'firebase/firestore';
 import { db, storage } from '../../firabase';
 import {
@@ -32,6 +32,7 @@ import {
   ErrorInput,
   ErrorText,
   ErrorTextarea,
+  ErrorTextCheck,
 } from './CustomSelect';
 
 import Cloud from '../../assets/icons/cloud🌥.svg';
@@ -43,6 +44,9 @@ import IconStars from '../../assets/icons/Icon-stars.svg';
 
 import { useTranslation } from 'react-i18next';
 
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 interface FormErrors {
   firstName?: string;
   lastName?: string;
@@ -85,6 +89,32 @@ const ContactForm: React.FC = () => {
   const [errors, setErrors] = useState<FormErrors>({});
   const [isUploading, setIsUploading] = useState(false);
   const { t } = useTranslation();
+  const [fileError, setFileError] = useState<string | null>(null);
+
+ useEffect(() => {
+    AOS.init({
+      duration: 1800, // Скоротили тривалість анімації
+      offset: -320, // Анімація почнеться раніше (за 120px до появи елемента)
+      easing: 'ease-in-out', // Плавність анімації
+      once: false, // Анімація тільки один раз
+      mirror: true // Вимкнули повторну анімацію при скролі назад
+    });
+  }, []);
+
+  // const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'application/pdf'];
+
+  // const invalidTypeFiles = Array.from(e.target.files).filter(
+  //   file => !ALLOWED_TYPES.includes(file.type)
+  // );
+  
+  // if (invalidTypeFiles.length > 0) {
+  //   setFileError(
+  //     t('contactForm.errors.invalidFileType', {
+  //       types: ALLOWED_TYPES.map(t => t.split('/')[1]).join(', ')
+  //     })
+  //   );
+  //   return;
+  // }
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
@@ -135,15 +165,33 @@ const ContactForm: React.FC = () => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
-
+  const MAX_FILE_SIZE = 50 * 1024 * 1024; // 50 MB в байтах
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFileError(null); // Скидаємо попередні помилки
+    
     if (e.target.files && e.target.files.length > 0) {
+      const oversizedFiles = Array.from(e.target.files).filter(
+        file => file.size > MAX_FILE_SIZE
+      );
+  
+      if (oversizedFiles.length > 0) {
+        setFileError(
+          t('contactForm.errors.fileTooLarge', { 
+            fileName: oversizedFiles[0].name, 
+            maxSize: formatFileSize(MAX_FILE_SIZE) 
+          })
+        );
+        // Очищаємо input, щоб користувач міг вибрати файли знову
+        e.target.value = '';
+        return;
+      }
+  
       const filesArray = Array.from(e.target.files).map(file => ({
         name: file.name,
         size: file.size,
         type: file.type,
       }));
-
+  
       setFormData(prev => ({
         ...prev,
         files: e.target.files,
@@ -151,7 +199,17 @@ const ContactForm: React.FC = () => {
       }));
     }
   };
+  
+  // Додаємо допоміжну функцію для форматування розміру
+  const formatFileSize = (bytes: number): string => {
+    if (bytes < 1024) return `${bytes} B`;
+    if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
+    if (bytes < 1024 * 1024 * 1024) return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+    return `${(bytes / (1024 * 1024 * 1024)).toFixed(1)} GB`;
+  };
 
+
+  
   const removeFile = (index: number) => {
     const newPreviews = [...formData.filePreviews];
     newPreviews.splice(index, 1);
@@ -170,16 +228,17 @@ const ContactForm: React.FC = () => {
     try {
       for (let i = 0; i < files.length; i++) {
         const file = files[i];
-        if (file.size > 10 * 1024 * 1024) {
-          toast.error(
-            t('contactForm.errors.fileTooLarge', { fileName: file.name })
-          );
+
+        // Додаткова перевірка (на випадок, якщо хтось обійшов клієнтську валідацію)
+        if (file.size > MAX_FILE_SIZE) {
+          console.warn(`File ${file.name} is too large and was skipped`);
+          continue;
         }
 
         const storageRef = ref(storage, `uploads/${Date.now()}_${file.name}`);
         await uploadBytes(storageRef, file);
         const url = await getDownloadURL(storageRef);
-        urls[file.name] = url; // Зберігаємо URL за ім'ям файлу
+        urls[file.name] = url;
       }
       return urls;
     } catch (error) {
@@ -198,14 +257,28 @@ const ContactForm: React.FC = () => {
       setIsUploading(true);
 
       // Завантажуємо файли, якщо вони є
-      let fileUrls: string[] = [];
+      let fileUrls: Record<string, string> = {};
       if (formData.files) {
-        const fileUrls = await uploadFiles(formData.files);
+        fileUrls = await uploadFiles(formData.files);
+
+        // Якщо жоден файл не був завантажений (наприклад, всі були завеликі)
+        if (Object.keys(fileUrls).length === 0 && formData.files.length > 0) {
+          toast.error(t('contactForm.errors.noValidFiles'), {
+            position: 'top-center',
+            style: {
+              border: '1px solid #ff4d4f',
+              padding: '16px',
+              color: '#ff4d4f',
+              background: 'var(--substrate)',
+            },
+          });
+          return;
+        }
 
         // Оновлюємо filePreviews з URL
-        const updatedPreviews = formData.filePreviews.map((file, index) => ({
+        const updatedPreviews = formData.filePreviews.map(file => ({
           ...file,
-          url: fileUrls[index], // Додаємо URL до відповідного файлу
+          url: fileUrls[file.name], // Додаємо URL до відповідного файлу
         }));
 
         setFormData(prev => ({
@@ -222,7 +295,7 @@ const ContactForm: React.FC = () => {
         contactMethod: formData.contactMethod,
         contact: formData.contact,
         description: formData.description,
-        fileUrls,
+        fileUrls: Object.values(fileUrls), // Відправляємо масив URL
         createdAt: new Date(),
       });
 
@@ -286,7 +359,7 @@ const ContactForm: React.FC = () => {
     }
   };
   return (
-    <FormWrapper onSubmit={handleSubmit}>
+    <FormWrapper  data-aos="zoom-out" onSubmit={handleSubmit}>
       <FormRadioGroupContainer>
         <FormTitle>{t('contactForm.title')}</FormTitle>
         <FormRadioGroup>
@@ -322,7 +395,7 @@ const ContactForm: React.FC = () => {
             />
             <RadioCustom>{t('contactForm.budgetOptions.30kPlus')}</RadioCustom>
           </FormRadioLabel>
-          {errors.budget && <ErrorText>{errors.budget}</ErrorText>}
+          {errors.budget && <ErrorTextCheck>{errors.budget}</ErrorTextCheck>}
         </FormRadioGroup>
       </FormRadioGroupContainer>
       <NameContainer>
@@ -400,16 +473,17 @@ const ContactForm: React.FC = () => {
 
       <FormGroup>
         <TextareaDiv>
-        <ErrorTextarea
-          placeholder={t('contactForm.fields.description')}
-          name="description"
-          value={formData.description}
-          onChange={handleChange}
-          required
-          $hasError={!!errors.description}
-        />
-        {errors.description && <ErrorText>{errors.description}</ErrorText>}
-      </TextareaDiv></FormGroup>
+          <ErrorTextarea
+            placeholder={t('contactForm.fields.description')}
+            name="description"
+            value={formData.description}
+            onChange={handleChange}
+            required
+            $hasError={!!errors.description}
+          />
+          {errors.description && <ErrorText>{errors.description}</ErrorText>}
+        </TextareaDiv>
+      </FormGroup>
 
       <FormGroup>
         {formData.filePreviews.length > 0 ? (
@@ -449,7 +523,7 @@ const ContactForm: React.FC = () => {
             </CloudWrapper>
             <span>{t('contactForm.fields.fileUpload')}</span>
           </FormFileUpload>
-        )}
+        )} {fileError && <ErrorText>{fileError}</ErrorText>}
       </FormGroup>
 
       <FormGroup>

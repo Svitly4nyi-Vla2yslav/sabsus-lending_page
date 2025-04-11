@@ -53,7 +53,8 @@ background-clip: text;
 }
 
 @media screen and (min-width: 1440px){
-
+padding-top: 0;
+margin-top: 40px;
 
 }
 `;

@@ -132,7 +132,7 @@ const SelectOption = styled.div<{ $isSelected: boolean }>`
 
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-export const ErrorText = styled.span`
+export const ErrorTextCheck = styled.span`
   border: 1px solid var(--red-500);
   border-radius: 16px;
   padding: 9px 10px;
@@ -146,6 +146,49 @@ export const ErrorText = styled.span`
     0 0 0 0 rgba(0, 0, 0, 0), 0 6px 9px 0 rgba(0, 0, 0, 0.25);
   background: var(--substrate);
   z-index: 1;
+
+  @media screen and (min-width: 744px){
+ bottom: 0px;
+    text-align: center;
+    width: 100%;
+    right: 313px;
+
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
+
+ 
+`;
+
+export const ErrorText = styled.span`
+  border: 1px solid var(--red-500);
+  border-radius: 16px;
+  padding: 9px 10px;
+  height: 52px;
+  position: absolute;
+  bottom: 42px;
+  text-align: center;
+  width: 100%;
+  right: 0px;
+  box-shadow: 0 0 0 0 var(--white), 0 0 0 1px rgba(244, 244, 245, 0),
+    0 0 0 0 rgba(0, 0, 0, 0), 0 6px 9px 0 rgba(0, 0, 0, 0.25);
+  background: var(--substrate);
+  z-index: 1;
+
+
+  
+    @media screen and (min-width: 744px){
+position: static;
+  background: var(--substrate);
+}
+
+@media screen and (min-width: 1440px){
+
+
+}
 `;
 
 export const ErrorInput = styled(FormInput)<{ $hasError?: boolean }>`

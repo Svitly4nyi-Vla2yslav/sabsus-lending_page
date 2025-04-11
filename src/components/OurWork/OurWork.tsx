@@ -25,11 +25,24 @@ import { Element } from 'react-scroll';
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from 'react-responsive'; // Додано для медіа-запитів
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 const OurWork: React.FC = () => {
   const [projects, setProjects] = useState<Project[]>([]);
   const [caseStudy, setCaseStudy] = useState<any | null>(null);
   const { t } = useTranslation();
   const isDesktop = useMediaQuery({ query: '(min-width: 744px)' }); // Визначаємо великі екрани
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1800, // Скоротили тривалість анімації
+      offset: -320, // Анімація почнеться раніше (за 120px до появи елемента)
+      easing: 'ease-in-out', // Плавність анімації
+      once: false, // Анімація тільки один раз
+      mirror: true // Вимкнули повторну анімацію при скролі назад
+    });
+  }, []);
 
   useEffect(() => {
     const loadProjects = async () => {
@@ -57,11 +70,11 @@ const OurWork: React.FC = () => {
   return (
     <Element name="case">
       <WorkWrapper>
-        <OurWorkText>{t('ourWork.sectionTitle')}</OurWorkText>
-        <OurWorkTitel>{t('ourWork.mainHeading')}</OurWorkTitel>
+        <OurWorkText  data-aos="fade-right" >{t('ourWork.sectionTitle')}</OurWorkText>
+        <OurWorkTitel  data-aos="fade-right">{t('ourWork.mainHeading')}</OurWorkTitel>
 <WorkCardsWrapper>
         {projects.map(project => (
-          <WorkCardWrapper key={project.id}>
+          <WorkCardWrapper data-aos="zoom-in" key={project.id}>
             <WorkCardTitle>
               {project.title || t('ourWork.defaults.noTitle')}
             </WorkCardTitle>
@@ -77,7 +90,8 @@ const OurWork: React.FC = () => {
             {project.imageUrl && project.imageUrl.length === 1 && (
               <WorkShadowContainer>
                 <IconCreditServices>
-                  <PhoneCreditServices
+                  <PhoneCreditServices  data-aos="fade-up"
+     data-aos-duration="4000"
                     src={project.imageUrl[0]}
                     alt={t('ourWork.imageAlt')}
                     onError={e => {
@@ -99,6 +113,8 @@ const OurWork: React.FC = () => {
                   {project.imageUrl[0] && (
                     <IconContainerCard>
                       <IconOne
+                       data-aos="fade-up"
+     data-aos-duration="4000"
                         src={project.imageUrl[0]}
                         alt={t('ourWork.imageAlt')}
                       />
@@ -106,7 +122,8 @@ const OurWork: React.FC = () => {
                   )}
                   {project.imageUrl[1] && (
                     <IconContainerCard1>
-                      <IconSecond
+                      <IconSecond data-aos="fade-up"
+     data-aos-duration="4000"
                         src={project.imageUrl[1]}
                         alt={t('ourWork.imageAlt')}
                       />
@@ -114,7 +131,8 @@ const OurWork: React.FC = () => {
                   )}
                   {project.imageUrl[2] && (
                     <IconContainerCard2>
-                      <IconThierd
+                      <IconThierd data-aos="fade-up"
+     data-aos-duration="4000"
                         src={project.imageUrl[2]}
                         alt={t('ourWork.imageAlt')}
                       />
@@ -122,7 +140,8 @@ const OurWork: React.FC = () => {
                   )}
                   {isDesktop && project.imageUrl[3] && (
                     <IconContainerCard3>
-                      <IconFourth
+                      <IconFourth data-aos="fade-up"
+     data-aos-duration="4000"
                         src={project.imageUrl[3]}
                         alt={t('ourWork.imageAlt')}
                       />

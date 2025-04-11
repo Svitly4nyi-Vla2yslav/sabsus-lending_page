@@ -143,12 +143,30 @@ body::-webkit-scrollbar {
  
 
   img {
-    cursor: pointer;
+   cursor: default
     transition-duration: 300ms;
-    cursor: none;
   }
 
+.Toastify__toast-container {
+  z-index: 999999 !important;
+  position: fixed !important;
+}
 
+.Toastify__toast {
+  pointer-events: auto !important;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+#toast-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10000;
+}
 
   h1,
   h2,
@@ -164,6 +182,31 @@ body::-webkit-scrollbar {
     z-index: 0;
   }
 
+    input, textarea, select {
+    cursor: text; // 👈 логічно для полів вводу
+  }
+
+    label {
+    cursor: pointer; // 👈 якщо прив’язаний до input[type="checkbox"] або radio
+  }
+
+  svg:hover,
+  .icon:hover {
+    cursor: pointer; // 👈 коли користувач наводить на SVG-іконки
+  }
+
+  [disabled] {
+    cursor: not-allowed; // 👈 якщо елемент неактивний
+  }
+
+  .draggable {
+    cursor: grab; // 👈 наприклад, для перетягування
+  }
+
+  .draggable:active {
+    cursor: grabbing;
+  }
+
   ul,
   li {
     list-style: none;
@@ -175,7 +218,7 @@ body::-webkit-scrollbar {
     display: block;
     width: 100%;
     height: 100%;
-  cursor: none;
+  cursor: default
   }
 
   html {

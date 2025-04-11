@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   AboutCardContainer,
   AboutTitle,
@@ -93,16 +93,29 @@ import Phone3 from '../../assets/icons/about/phone3.svg';
 import Icon from '../../assets/icons/about/cardIcon.svg';
 import { useMediaQuery } from 'react-responsive';
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 const About: React.FC = () => {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800, // Скоротили тривалість анімації
+      offset: -520, // Анімація почнеться раніше (за 120px до появи елемента)
+      easing: 'ease-in-out', // Плавність анімації
+      once: true, // Анімація тільки один раз
+      mirror: false // Вимкнули повторну анімацію при скролі назад
+    });
+  }, []);
   const { t } = useTranslation();
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
   return (
     <>
       <AboutWrapper>
-        <TextAboutUs>{t('about.sectionTitle')}</TextAboutUs>
-        <AboutTitle>{t('about.mainHeading')}</AboutTitle>
+        <TextAboutUs  data-aos="fade-right">{t('about.sectionTitle')}</TextAboutUs>
+        <AboutTitle data-aos="fade-right">{t('about.mainHeading')}</AboutTitle>
         <AboutCardContainer>
-          <ComprehensiveContainer>
+          <ComprehensiveContainer  data-aos="fade-right">
             <IconContainer>
               <ComputerIcon src={Comp} alt={t('about.icons.computer')} />
             </IconContainer>
@@ -310,7 +323,7 @@ const About: React.FC = () => {
             </ShadowContainer>
           </ComprehensiveContainer>
           {isDesktop && (
-            <ComprehensiveContainer>
+            <ComprehensiveContainer  data-aos="fade-left">
               <IconContainer>
                 <ComputerIcon src={Icon} alt={t('card.icons.unicorn')} />
               </IconContainer>

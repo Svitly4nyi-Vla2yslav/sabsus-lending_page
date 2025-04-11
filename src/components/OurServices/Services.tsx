@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   BackgroundIconContainer,
   CardContainer,
@@ -37,7 +37,22 @@ import keyGradient from '../../assets/icons/services/key-gradient.svg';
 import { Element } from 'react-scroll';
 import { useTranslation } from 'react-i18next';
 
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 const Services: React.FC = () => {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800, // Скоротили тривалість анімації
+      offset: -520, // Анімація почнеться раніше (за 120px до появи елемента)
+      easing: 'ease-in-out', // Плавність анімації
+      once: true, // Анімація тільки один раз
+      mirror: false // Вимкнули повторну анімацію при скролі назад
+    });
+  }, []);
+
   const { t } = useTranslation();
 
   return (
@@ -47,7 +62,7 @@ const Services: React.FC = () => {
         <ServicesTitle>{t('services.mainHeading')}</ServicesTitle>
         <CardGridDeckstop>
           <CardsGrid>
-            <CardContainer>
+            <CardContainer  data-aos="fade-right">
               <IconContainer>
                 <ComputerIcon src={Comp} alt="🪔" />
               </IconContainer>
@@ -63,7 +78,7 @@ const Services: React.FC = () => {
                 </IconContainerCreditServices>
               </BackgroundIconContainer>
             </CardContainer>
-            <CardContainer>
+            <CardContainer  data-aos="flip-up">
               <IconContainer>
                 <ComputerIcon src={phone} alt="🪔" />
               </IconContainer>
@@ -81,7 +96,7 @@ const Services: React.FC = () => {
             </CardContainer>{' '}
           </CardsGrid>
 
-          <CardContainerBig>
+          <CardContainerBig   data-aos="fade-left">
             <IconContainer>
               <ComputerIcon src={key} alt="🪔" />
             </IconContainer>

@@ -64,7 +64,7 @@
         "phone": "Por favor ingresa un número de teléfono válido"
       },
       "description": "La descripción es obligatoria",
-      "fileTooLarge": "El archivo {fileName} es demasiado grande (máximo 10MB)",
+      "fileTooLarge": "El archivo es demasiado grande (máximo 50MB)",
       "fileNotUploaded": "El archivo no se ha subido todavía. Por favor envía el formulario primero.",
       "submitError": "Error al enviar el formulario. Por favor intenta nuevamente.",
       "serverError": "Error de configuración del servidor. Por favor contacta al soporte."

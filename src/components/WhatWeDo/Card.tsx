@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   ComprehensiveText,
   ComprehensiveTitle,
@@ -43,15 +43,27 @@ import Engine from '../../assets/icons/about/engineCard.svg';
 import SmollLamp from '../../assets/icons/about/smollLamp.svg';
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from 'react-responsive';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const Card: React.FC = () => {
+
+    useEffect(() => {
+      AOS.init({
+        duration: 800, // Скоротили тривалість анімації
+        offset: -520, // Анімація почнеться раніше (за 120px до появи елемента)
+        easing: 'ease-in-out', // Плавність анімації
+        once: true, // Анімація тільки один раз
+        mirror: false // Вимкнули повторну анімацію при скролі назад
+      });
+    }, []);
+
   const { t } = useTranslation();
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
   return (
     <CardContainer>
       <CardsGrid>
         {!isDesktop && (
-          <ComprehensiveContainer>
+          <ComprehensiveContainer  data-aos="zoom-in-up">
             <IconContainer>
               <ComputerIcon src={Icon} alt={t('card.icons.unicorn')} />
             </IconContainer>
@@ -79,7 +91,7 @@ const Card: React.FC = () => {
           </ComprehensiveContainer>
         )}
 
-        <ComprehensiveContainer>
+        <ComprehensiveContainer  data-aos="zoom-in-up">
           <IconContainer>
             <ComputerIcon src={Code} alt={t('card.icons.code')} />
           </IconContainer>
@@ -96,7 +108,7 @@ const Card: React.FC = () => {
           </BackgroundIconContainer>
         </ComprehensiveContainer>
 
-        <ComprehensiveContainer>
+        <ComprehensiveContainer  data-aos="zoom-in-up">
           <IconContainer>
             <ComputerIcon src={Lamp} alt={t('card.icons.lamp')} />
           </IconContainer>
@@ -113,7 +125,7 @@ const Card: React.FC = () => {
           </BackgroundIconContainer>
         </ComprehensiveContainer>
 
-        <ComprehensiveContainer>
+        <ComprehensiveContainer  data-aos="zoom-in-up">
           <IconContainer>
             <ComputerIcon src={Zip} alt={t('card.icons.zip')} />
           </IconContainer>
