@@ -145,6 +145,7 @@ body::-webkit-scrollbar {
   img {
     cursor: pointer;
     transition-duration: 300ms;
+    cursor: none;
   }
 
 
@@ -174,6 +175,7 @@ body::-webkit-scrollbar {
     display: block;
     width: 100%;
     height: 100%;
+  cursor: none;
   }
 
   html {
