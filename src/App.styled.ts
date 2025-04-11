@@ -207,6 +207,21 @@ body::-webkit-scrollbar {
     cursor: grabbing;
   }
 
+// ! AOS Fixes */
+// [data-aos] {
+//   /* Фікс для мобільних */
+//   @media (max-width: 767px) {
+//     transform: none !important;
+//     opacity: 1 !important;
+//     transition: none !important;
+//   }
+  
+//   /* Скидання стилів після анімації */
+//   &.aos-animate {
+//     transform: none !important;
+//     animation-fill-mode: forwards;
+//   }
+// }
   ul,
   li {
     list-style: none;
@@ -226,7 +241,7 @@ body::-webkit-scrollbar {
     scroll-behavior: smooth;
    
     }
- 
+
 `;
 
 

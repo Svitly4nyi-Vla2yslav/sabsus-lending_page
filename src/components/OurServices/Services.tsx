@@ -43,15 +43,24 @@ import 'aos/dist/aos.css';
 
 const Services: React.FC = () => {
 
-  useEffect(() => {
-    AOS.init({
-      duration: 800, // Скоротили тривалість анімації
-      offset: -520, // Анімація почнеться раніше (за 120px до появи елемента)
-      easing: 'ease-in-out', // Плавність анімації
-      once: true, // Анімація тільки один раз
-      mirror: false // Вимкнули повторну анімацію при скролі назад
-    });
-  }, []);
+  AOS.init({
+    // Основні налаштування:
+    duration: 1600,             // Коротша тривалість
+    offset: -320,               // Раніше спрацьовування
+    easing: 'ease-out-quad',   // Оптимальна функція плавності
+    once: false,                // Анімація тільки один раз
+    mirror: true,             // Без повтору при скролі назад
+    
+    // Важливі фікси:
+    disableMutationObserver: true, // Вимикає автоматичний перерахунок
+    debounceDelay: 50,         // Затримка для resize подій
+    throttleDelay: 99,         // Затримка для scroll подій
+    
+    // Адаптація:
+    disable: function() {
+      return window.innerWidth < 1024;
+    }
+  });
 
   const { t } = useTranslation();
 

@@ -27,7 +27,7 @@ const Hero: React.FC = ({}) => {
   const handleScroll = (to: string) => {
     scroller.scrollTo(to, {
       smooth: false,
-      duration: 12000,
+      duration: 2000,
       offset: -90,
     });
     setIsOpen(false);

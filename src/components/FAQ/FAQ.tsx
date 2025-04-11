@@ -29,15 +29,24 @@ const FAQ: React.FC = () => {
   const { t } = useTranslation();
 
 
-  useEffect(() => {
-    AOS.init({
-      duration: 1800, // Скоротили тривалість анімації
-      offset: -320, // Анімація почнеться раніше (за 120px до появи елемента)
-      easing: 'ease-in-out', // Плавність анімації
-      once: false, // Анімація тільки один раз
-      mirror: true // Вимкнули повторну анімацію при скролі назад
-    });
-  }, []);
+  AOS.init({
+    // Основні налаштування:
+    duration: 1600,             // Коротша тривалість
+    offset: -320,               // Раніше спрацьовування
+    easing: 'ease-out-quad',   // Оптимальна функція плавності
+    once: false,                // Анімація тільки один раз
+    mirror: true,             // Без повтору при скролі назад
+    
+    // Важливі фікси:
+    disableMutationObserver: true, // Вимикає автоматичний перерахунок
+    debounceDelay: 50,         // Затримка для resize подій
+    throttleDelay: 99,         // Затримка для scroll подій
+    
+    // Адаптація:
+    disable: function() {
+      return window.innerWidth < 1024;
+    }
+  });
 
   const toggleAnswer = (index: number) => {
     setActiveIndex(prev => (prev === index ? null : index));
