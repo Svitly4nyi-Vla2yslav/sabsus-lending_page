@@ -64,7 +64,7 @@
         "phone": "Please enter valid phone number"
       },
       "description": "Description is required",
-      "fileTooLarge": "File {fileName} is too large (max 10MB)",
+      "fileTooLarge": "File  is too large (max 50MB)",
       "fileNotUploaded": "File is not uploaded yet. Please submit the form first.",
       "submitError": "Error submitting form. Please try again.",
       "serverError": "Server configuration error. Please contact support."
