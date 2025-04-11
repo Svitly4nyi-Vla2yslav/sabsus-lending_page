@@ -34,24 +34,24 @@ const OurWork: React.FC = () => {
   const { t } = useTranslation();
   const isDesktop = useMediaQuery({ query: '(min-width: 744px)' }); // Визначаємо великі екрани
 
-  AOS.init({
-    // Основні налаштування:
-    duration: 1600,             // Коротша тривалість
-    offset: -320,               // Раніше спрацьовування
-    easing: 'ease-out-quad',   // Оптимальна функція плавності
-    once: false,                // Анімація тільки один раз
-    mirror: true,             // Без повтору при скролі назад
-    
-    // Важливі фікси:
-    disableMutationObserver: true, // Вимикає автоматичний перерахунок
-    debounceDelay: 50,         // Затримка для resize подій
-    throttleDelay: 99,         // Затримка для scroll подій
-    
-    // Адаптація:
-    disable: function() {
-      return window.innerWidth < 1024;
-    }
-  });
+  // AOS.init({
+  //   // Основні налаштування:
+  //   duration: 1600, // Коротша тривалість
+  //   offset: -320, // Раніше спрацьовування
+  //   easing: 'ease-out-quad', // Оптимальна функція плавності
+  //   once: false, // Анімація тільки один раз
+  //   mirror: true, // Без повтору при скролі назад
+
+  //   // Важливі фікси:
+  //   disableMutationObserver: true, // Вимикає автоматичний перерахунок
+  //   debounceDelay: 50, // Затримка для resize подій
+  //   throttleDelay: 99, // Затримка для scroll подій
+
+  //   // Адаптація:
+  //   disable: function () {
+  //     return window.innerWidth < 1024;
+  //   },
+  // });
 
   useEffect(() => {
     const loadProjects = async () => {
@@ -79,88 +79,92 @@ const OurWork: React.FC = () => {
   return (
     <Element name="case">
       <WorkWrapper>
-        <OurWorkText  data-aos="fade-right" >{t('ourWork.sectionTitle')}</OurWorkText>
-        <OurWorkTitel  data-aos="fade-right">{t('ourWork.mainHeading')}</OurWorkTitel>
-<WorkCardsWrapper>
-        {projects.map(project => (
-          <WorkCardWrapper data-aos="zoom-in" key={project.id}>
-            <WorkCardTitle>
-              {project.title || t('ourWork.defaults.noTitle')}
-            </WorkCardTitle>
-            {project.client && (
+        <OurWorkText data-aos="fade-right">
+          {t('ourWork.sectionTitle')}
+        </OurWorkText>
+        <OurWorkTitel data-aos="fade-right">
+          {t('ourWork.mainHeading')}
+        </OurWorkTitel>
+        <WorkCardsWrapper>
+          {projects.map(project => (
+            <WorkCardWrapper key={project.id}>
+              <WorkCardTitle>
+                {project.title || t('ourWork.defaults.noTitle')}
+              </WorkCardTitle>
+              {project.client && (
+                <WorkCardText>
+                  {t('ourWork.clientLabel')}: {project.client}
+                </WorkCardText>
+              )}
               <WorkCardText>
-                {t('ourWork.clientLabel')}: {project.client}
+                {project.description || t('ourWork.defaults.noDescription')}
               </WorkCardText>
-            )}
-            <WorkCardText>
-              {project.description || t('ourWork.defaults.noDescription')}
-            </WorkCardText>
 
-            {project.imageUrl && project.imageUrl.length === 1 && (
-              <WorkShadowContainer>
-                <IconCreditServices>
-                  <PhoneCreditServices  data-aos="fade-up"
-     data-aos-duration="4000"
-                    src={project.imageUrl[0]}
-                    alt={t('ourWork.imageAlt')}
-                    onError={e => {
-                      console.error(
-                        t('ourWork.errors.imageLoad', {
-                          url: project.imageUrl?.[0],
-                        })
-                      );
-                      (e.target as HTMLImageElement).style.display = 'none';
-                    }}
-                  />
-                </IconCreditServices>
-              </WorkShadowContainer>
-            )}
+              {project.imageUrl && project.imageUrl.length === 1 && (
+                <WorkShadowContainer>
+                  <IconCreditServices>
+                    <PhoneCreditServices
+                   
+                      src={project.imageUrl[0]}
+                      alt={t('ourWork.imageAlt')}
+                      onError={e => {
+                        console.error(
+                          t('ourWork.errors.imageLoad', {
+                            url: project.imageUrl?.[0],
+                          })
+                        );
+                        (e.target as HTMLImageElement).style.display = 'none';
+                      }}
+                    />
+                  </IconCreditServices>
+                </WorkShadowContainer>
+              )}
 
-            {project.imageUrl && project.imageUrl.length > 1 && (
-              <WorkShadowContainer>
-                <ImagesRow>
-                  {project.imageUrl[0] && (
-                    <IconContainerCard>
-                      <IconOne
-                       data-aos="fade-up"
-     data-aos-duration="4000"
-                        src={project.imageUrl[0]}
-                        alt={t('ourWork.imageAlt')}
-                      />
-                    </IconContainerCard>
-                  )}
-                  {project.imageUrl[1] && (
-                    <IconContainerCard1>
-                      <IconSecond data-aos="fade-up"
-     data-aos-duration="4000"
-                        src={project.imageUrl[1]}
-                        alt={t('ourWork.imageAlt')}
-                      />
-                    </IconContainerCard1>
-                  )}
-                  {project.imageUrl[2] && (
-                    <IconContainerCard2>
-                      <IconThierd data-aos="fade-up"
-     data-aos-duration="4000"
-                        src={project.imageUrl[2]}
-                        alt={t('ourWork.imageAlt')}
-                      />
-                    </IconContainerCard2>
-                  )}
-                  {isDesktop && project.imageUrl[3] && (
-                    <IconContainerCard3>
-                      <IconFourth data-aos="fade-up"
-     data-aos-duration="4000"
-                        src={project.imageUrl[3]}
-                        alt={t('ourWork.imageAlt')}
-                      />
-                    </IconContainerCard3>
-                  )}
-                </ImagesRow>
-              </WorkShadowContainer>
-            )}
-          </WorkCardWrapper>
-        ))}</WorkCardsWrapper>
+              {project.imageUrl && project.imageUrl.length > 1 && (
+                <WorkShadowContainer>
+                  <ImagesRow>
+                    {project.imageUrl[0] && (
+                      <IconContainerCard>
+                        <IconOne
+                       
+                          src={project.imageUrl[0]}
+                          alt={t('ourWork.imageAlt')}
+                        />
+                      </IconContainerCard>
+                    )}
+                    {project.imageUrl[1] && (
+                      <IconContainerCard1>
+                        <IconSecond
+                      
+                          src={project.imageUrl[1]}
+                          alt={t('ourWork.imageAlt')}
+                        />
+                      </IconContainerCard1>
+                    )}
+                    {project.imageUrl[2] && (
+                      <IconContainerCard2>
+                        <IconThierd
+                        
+                          src={project.imageUrl[2]}
+                          alt={t('ourWork.imageAlt')}
+                        />
+                      </IconContainerCard2>
+                    )}
+                    {isDesktop && project.imageUrl[3] && (
+                      <IconContainerCard3>
+                        <IconFourth
+                        
+                          src={project.imageUrl[3]}
+                          alt={t('ourWork.imageAlt')}
+                        />
+                      </IconContainerCard3>
+                    )}
+                  </ImagesRow>
+                </WorkShadowContainer>
+              )}
+            </WorkCardWrapper>
+          ))}
+        </WorkCardsWrapper>
 
         {caseStudy && (
           <WorkCardWrapper>
