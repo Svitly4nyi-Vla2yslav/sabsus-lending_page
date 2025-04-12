@@ -1,5 +1,6 @@
 {
-  "name": "sabsus-lending_page",
+  "name": "sabsus-lending-page",
+  "homepage": "https://sabsus-landing-page.netlify.app",
   "version": "1.0.0",
   "private": true,
   "type": "module",
