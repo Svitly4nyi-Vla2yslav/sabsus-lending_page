@@ -11,6 +11,7 @@ import {
 import locker from '../../assets/icons/tabler_lock-filled.svg';
 import { GradientWrapper } from '../StarrySky/GradientBackground';
 import { useTranslation } from 'react-i18next';
+import DOMPurify from 'dompurify';
 
 interface PoliciesContentProps {
   activePolicy: string | null;
@@ -20,7 +21,7 @@ export const PoliciesContent: React.FC<PoliciesContentProps> = ({
   activePolicy,
 }) => {
   const { t } = useTranslation();
-
+  const termsContent = DOMPurify.sanitize(t('terms.content'));
   useEffect(() => {
     if (activePolicy) {
       scroller.scrollTo(activePolicy, {
@@ -63,6 +64,7 @@ export const PoliciesContent: React.FC<PoliciesContentProps> = ({
                 <p key={i}>{paragraph}</p>
               ))}
           </PolicyText>
+          <div dangerouslySetInnerHTML={{ __html: termsContent }}/>
         </PolicySection>
       </Element>
 
