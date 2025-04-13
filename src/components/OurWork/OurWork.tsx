@@ -74,11 +74,11 @@ const OurWork: React.FC = () => {
         
         // Додамо логування для перевірки даних
         projectsData.forEach((project, index) => {
-          console.log(`Project ${index}:`, {
-            id: project.id,
-            title: project.title,
-            hasSingleImage: project.imageUrl?.length === 1
-          });
+          // console.log(`Project ${index}:`, {
+          //   id: project.id,
+          //   title: project.title,
+          //   hasSingleImage: project.imageUrl?.length === 1
+          // });
         });
         
         setProjects(projectsData);

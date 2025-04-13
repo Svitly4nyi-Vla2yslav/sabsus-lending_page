@@ -240,7 +240,7 @@ const About: React.FC = () => {
                       </ProjectsOverviewSpan>
                     </ProjectsOverviewSpanContainer>
                   </ProjectsOverviewTextContainer>
-                  <IconTabl src={Tabl} alt={t('table')} />
+                  <IconTabl src={Tabl} alt={t('about.icons.table')} />
                 </ProjectsOverviewContainer>
 
                 <MyToDoItemsContainer>

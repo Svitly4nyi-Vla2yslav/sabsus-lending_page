@@ -62,10 +62,6 @@ const normalizeProject = (data: any): Project => {
     client: data.client ? normalizeTranslation(data.client) : undefined
   };
   
-  // Додаткове логування для проблемного проекту
-  if (normalized.imageUrl.length === 1) {
-    console.log('Normalized single-image project:', normalized);
-  }
   
   return normalized;
 };
