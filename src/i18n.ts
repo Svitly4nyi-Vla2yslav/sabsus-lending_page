@@ -10,15 +10,17 @@ i18n
   .init({
     supportedLngs: ["en", "ru", "es"],
     fallbackLng: "en",
-    debug: false,
-    interpolation: { escapeValue: false },
+    debug: process.env.NODE_ENV === 'development',
+    interpolation: { 
+      escapeValue: false 
+    },
     backend: {
       loadPath: "/locales/{{lng}}/translation.json",
     },
     detection: {
       order: ["localStorage", "navigator"],
       caches: ["localStorage"],
-    },
+    }
   });
 
 export default i18n;

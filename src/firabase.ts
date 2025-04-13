@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, getDocs, doc, getDoc } from "firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { ProjectTranslation } from "./@types/types";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -18,17 +19,65 @@ export const storage = getStorage(app);
 
 export interface Project {
   id: string;
-  title: string;
-  description: string;
-  imageUrl?: string[]; // Тепер масив
-  client?: string;
+  title: ProjectTranslation;
+  description: ProjectTranslation;
+  imageUrl?: string[];
+  client?: ProjectTranslation;
 }
 
+
 export interface CaseStudy {
-  title: string;
-  content: string;
+  title: ProjectTranslation;
+  content: ProjectTranslation;
   imageUrl?: string;
 }
+
+export interface FirebaseProject {
+  id: string;
+  title: string | ProjectTranslation;
+  description: string | ProjectTranslation;
+  imageUrl?: string[];
+  client?: string | ProjectTranslation;
+}
+
+export interface FirebaseCaseStudy {
+  title: string | ProjectTranslation;
+  content: string | ProjectTranslation;
+  imageUrl?: string;
+}
+
+const normalizeTranslation = (value: string | ProjectTranslation): ProjectTranslation => {
+  if (typeof value === 'string') {
+    return { en: value, ru: value, es: value };
+  }
+  return value || { en: '', ru: '', es: '' };
+};
+
+const normalizeProject = (data: any): Project => {
+  const normalized = {
+    id: data.id,
+    title: normalizeTranslation(data.title),
+    description: normalizeTranslation(data.description),
+    imageUrl: data.imageUrl || [],
+    client: data.client ? normalizeTranslation(data.client) : undefined
+  };
+  
+  // Додаткове логування для проблемного проекту
+  if (normalized.imageUrl.length === 1) {
+    console.log('Normalized single-image project:', normalized);
+  }
+  
+  return normalized;
+};
+
+const normalizeCaseStudy = (data: any): CaseStudy | null => {
+  if (!data) return null;
+  return {
+    title: normalizeTranslation(data.title),
+    content: normalizeTranslation(data.content),
+    imageUrl: data.imageUrl
+  };
+};
 
 // ✅ Масова обробка зображень
 const fetchImageURLs = async (paths: string[] = []): Promise<string[]> => {
@@ -49,31 +98,29 @@ const fetchImageURLs = async (paths: string[] = []): Promise<string[]> => {
   );
 };
 
+const validateProject = (project: Project): boolean => {
+  return !!project.title && !!project.description;
+};
+
 // ✅ Отримуємо проєкти
 export const getProjects = async (): Promise<Project[]> => {
   try {
     const projectsCollection = collection(db, "projects");
-    const projectSnapshot = await getDocs(projectsCollection);
-
-    if (projectSnapshot.empty) {
-      console.warn("Firestore collection is empty!");
-      return [];
-    }
+    const snapshot = await getDocs(projectsCollection);
 
     const projects = await Promise.all(
-      projectSnapshot.docs.map(async (doc) => {
+      
+      snapshot.docs.map(async (doc) => {
+        
         const data = doc.data();
         const imageUrls = await fetchImageURLs(data.imageUrl || []);
-        return {
+        return normalizeProject({
+          ...data,
           id: doc.id,
-          title: data.title || "Untitled Project",
-          description: data.description || "",
-          imageUrl: imageUrls.filter(Boolean),
-          client: data.client || undefined,
-        };
+          imageUrl: imageUrls.filter(Boolean)
+        });
       })
     );
-
     return projects;
   } catch (error) {
     console.error("Error fetching projects:", error);
@@ -81,27 +128,13 @@ export const getProjects = async (): Promise<Project[]> => {
   }
 };
 
-// ✅ Отримуємо кейс-стаді
 export const getCaseStudy = async (): Promise<CaseStudy | null> => {
   try {
-    const docRef = doc(db, "caseStudies", "caseStudies");
+    const docRef = doc(db, "caseStudies", "main");
     const docSnap = await getDoc(docRef);
 
-    if (!docSnap.exists()) {
-      // console.warn("Case study not found!");
-      return null;
-    }
-
-    const data = docSnap.data();
-    const url = data.imageUrl
-      ? await fetchImageURLs([data.imageUrl])
-      : [];
-
-    return {
-      title: data.title || "",
-      content: data.content || "",
-      imageUrl: url[0],
-    };
+    if (!docSnap.exists()) return null;
+    return normalizeCaseStudy(docSnap.data());
   } catch (error) {
     console.error("Error fetching case study:", error);
     return null;
