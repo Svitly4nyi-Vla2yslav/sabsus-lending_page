@@ -2,53 +2,61 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    
+    <!-- SEO Basics -->
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://sabsus.com" />
+
+    <!-- PWA/iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="SABSUS">
+
+    <!-- Favicons (updated paths for Vite) -->
     <link rel="icon" type="image/svg+xml" href="/src/assets/icons/logo2.svg" />
-    <!-- <link rel="stylesheet" href="aos.css"> -->
-    <link rel="stylesheet" href="node_modules/modern-normalize/modern-normalize.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
-    <meta property="og:url" content="https://sabsus-landing-page.netlify.app/" />
+    <link rel="apple-touch-icon" href="/src/assets/icons/logo2.svg" />
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- Viewport & Theming -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
     <title>SABSUS — Modern IT solutions for your business</title>
+    <meta name="description" content="Modern IT solutions for your business including web & mobile development, design, and consulting." />
+    <meta name="keywords" content="SABSUS, IT solutions, software, web development, mobile apps" />
 
-  <!-- SEO Meta -->
-  <meta name="description" content="Modern IT solutions for your business" />
-  <meta name="keywords" content="SABSUS, IT solutions, software, web development, mobile apps" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sabsus.com" />
+    <meta property="og:title" content="SABSUS — Modern IT solutions for your business" />
+    <meta property="og:description" content="Modern IT solutions for your business including web & mobile development, design, and consulting." />
+    <meta property="og:image" content="https://sabsus.com/assets/images/logo2.png" />
+    <meta property="og:image:width" content="737" />
+    <meta property="og:image:height" content="457" />
+    <meta property="og:image:alt" content="SABSUS - Modern IT Solutions" />
+    <meta property="og:site_name" content="SABSUS" />
 
-  <!-- Open Graph for social sharing -->
-  <meta property="og:title" content="SABSUS — Modern IT solutions for your business" />
-  <meta property="og:description" content="Modern IT solutions for your business including web & mobile development, design, and consulting." />
-  <meta property="og:image" content="https://sabsus-landing-page.netlify.app/assets/images/logo2.png" />
-  <meta property="og:url" content="https://sabsus-landing-page.netlify.app/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image:width" content="737" />
-  <meta property="og:image:height" content="457" />
-  <meta property="og:image:alt" content="SABSUS - Modern IT Solutions" />
-  <meta property="og:site_name" content="SABSUS" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SABSUS — Modern IT solutions" />
+    <meta name="twitter:description" content="Modern IT solutions for your business" />
+    <meta name="twitter:image" content="https://sabsus.com/assets/images/logo2.png" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="SABSUS — Modern IT solutions" />
-  <meta name="twitter:description" content="Modern IT solutions for your business" />
-  <meta name="twitter:image" content="https://sabsus-landing-page.netlify.app/assets/images/logo2.png" />
+    <!-- Fonts (optimized for Vite) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="/src/assets/icons/logo2.svg" />
-  <link rel="apple-touch-icon"  href="/src/assets/icons/logo2.svg" />
-
-
-  <!-- Normalize & Fonts -->
-  <link rel="stylesheet" href="node_modules/modern-normalize/modern-normalize.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
+    <!-- Structured Data -->
+    <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "SABSUS",
-      "url": "https://sabsus-landing-page.netlify.app/",
-      "logo": "https://sabsus-landing-page.netlify.app/assets/images/logo2.png",
+      "url": "https://sabsus.com",
+      "logo": "https://sabsus.com/assets/images/logo2.png",
       "description": "Modern IT solutions for your business including web & mobile development, design, and consulting.",
       "contactPoint": {
         "@type": "ContactPoint",
@@ -58,14 +66,41 @@
       "sameAs": [
         "https://facebook.com/sabsus",
         "https://twitter.com/sabsus",
-        "https://linkedin.com/company/sabsus"
+        "https://linkedin.com/company/sabsus",
+        "https://instagram.com/sabsus",
+        "https://t.me/sabsusapp"
       ]
     }
-  </script>
-</head>
+    </script>
 
-<body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.tsx"></script>
-</body>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is SABSUS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SABSUS provides modern IT solutions for businesses including web and mobile development, design, and consulting services."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What services does SABSUS offer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Web development, mobile app development, UI/UX design, IT consulting, and business automation solutions."
+          }
+        }
+      ]
+    }
+    </script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
