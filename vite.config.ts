@@ -4,14 +4,14 @@ import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
   server: {
-    proxy: {
-      "/firebase": {
-        target: "https://firebasestorage.googleapis.com",
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/firebase/, ""),
-      },
-    },
+    // proxy: {
+    //   "/firebase": {
+    //     target: "https://firebasestorage.googleapis.com",
+    //     changeOrigin: true,
+    //     rewrite: (path) => path.replace(/^\/firebase/, ""),
+    //   },
+    // },
   },
-  base: '/.',
+  base: '/',
   plugins: [react(), VitePWA()],
 });
