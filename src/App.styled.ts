@@ -1,4 +1,3 @@
-import { css } from '@emotion/react';
 import 'modern-normalize/modern-normalize.css';
 import { createGlobalStyle } from "styled-components";
 import MulishBold from "./assets/fonts/Mulish-Bold.ttf"

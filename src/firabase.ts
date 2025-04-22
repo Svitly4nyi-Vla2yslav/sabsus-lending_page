@@ -17,6 +17,7 @@ export const db = getFirestore(app);
 export const storage = getStorage(app);
 console.log("Firebase app initialized:", app.name);
 console.log("Firestore instance:", db.app.name);
+console.log("Firebase Config:", firebaseConfig); 
 
 export interface Project {
   id: string;
