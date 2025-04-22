@@ -10,23 +10,12 @@ const firebaseConfig = {
   storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
   messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
   appId: import.meta.env.VITE_FIREBASE_APP_ID,
-  databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL,
 };
-if (!firebaseConfig.projectId) {
-  throw new Error("Firebase configuration error: projectId is missing");
-}
 
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 export const storage = getStorage(app);
 
-if (!firebaseConfig.projectId) {
-  throw new Error("Firebase configuration error: projectId is missing");
-}
-
-console.log("Firebase app initialized:", app.name);
-console.log("Firestore instance:", db.app.name);
-console.log("Firebase Config:", firebaseConfig); 
 
 export interface Project {
   id: string;
@@ -92,8 +81,7 @@ const fetchImageURLs = async (paths: string[] = []): Promise<string[]> => {
     paths.map(async (path) => {
       try {
         const correctedPath = path.startsWith("gs://")
-          // ? path.replace("gs://sabsusweb.appspot.com/", "")
-          ? path.replace(`gs://${firebaseConfig.storageBucket}/`, "")
+          ? path.replace("gs://sabsusweb.appspot.com/", "")
           : path;
         const imageRef = ref(storage, correctedPath);
         const url = await getDownloadURL(imageRef);
@@ -148,4 +136,3 @@ export const getCaseStudy = async (): Promise<CaseStudy | null> => {
     return null;
   }
 };
-
