@@ -97,11 +97,10 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const About: React.FC = () => {
-
   useEffect(() => {
     // Ініціалізація AOS тільки на клієнтській стороні
     if (typeof window !== 'undefined') {
-      import('aos').then((AOS) => {
+      import('aos').then(AOS => {
         AOS.init({
           duration: 1600,
           offset: 120, // Змініть це значення (спробуйте 120, 200, -100)
@@ -111,27 +110,28 @@ const About: React.FC = () => {
           disableMutationObserver: true,
           debounceDelay: 50,
           throttleDelay: 99,
-          disable: function() {
+          disable: function () {
             return window.innerWidth < 1024;
-          }
+          },
         });
-        
+
         // Оновлення AOS після ініціалізації
         AOS.refresh();
       });
     }
   }, []);
 
-
   const { t } = useTranslation();
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
   return (
     <>
       <AboutWrapper>
-        <TextAboutUs  data-aos="fade-right">{t('about.sectionTitle')}</TextAboutUs>
-        <AboutTitle data-aos="fade-right">{t('about.mainHeading')}</AboutTitle>
+        <div data-aos="fade-right">
+          <TextAboutUs>{t('about.sectionTitle')}</TextAboutUs>
+          <AboutTitle>{t('about.mainHeading')}</AboutTitle>
+        </div>
         <AboutCardContainer>
-          <ComprehensiveContainer  data-aos="fade-right">
+          <ComprehensiveContainer data-aos="fade-right">
             <IconContainer>
               <ComputerIcon src={Comp} alt={t('about.icons.computer')} />
             </IconContainer>
@@ -339,7 +339,7 @@ const About: React.FC = () => {
             </ShadowContainer>
           </ComprehensiveContainer>
           {isDesktop && (
-            <ComprehensiveContainer  data-aos="fade-left">
+            <ComprehensiveContainer data-aos="fade-left">
               <IconContainer>
                 <ComputerIcon src={Icon} alt={t('card.icons.unicorn')} />
               </IconContainer>
