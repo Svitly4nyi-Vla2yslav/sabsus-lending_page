@@ -76,18 +76,19 @@ const Partners: React.FC = () => {
       {/* Другий слайдер - відображається тільки на мобільних */}
       {isMobile && (
         <Swiper
-          loop={partners.length > slidesPerView}
+          loop={shouldLoop}
           slidesPerView={slidesPerView}
           spaceBetween={20}
           autoplay={{
-            delay: 1,
+            delay: 0, // Збільшено затримку для нормальної прокрутки
             disableOnInteraction: false,
-            reverseDirection: true,
-            waitForTransition: true,
+            waitForTransition: true, // Додано для плавності
+            pauseOnMouseEnter: true, // Додано для зупинки при наведенні
           }}
-          speed={4000}
+          speed={4000} // Зменшено швидкість для плавності
           modules={[Autoplay]}
           className="mySwiper"
+          style={{ width: '100%' }}
         >
           {partners.map(partner => (
             <SwiperSlide
