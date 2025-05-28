@@ -19,6 +19,7 @@ import {
   WorkWrapper,
   ImagesRow,
   WorkCardsWrapper,
+  ArrowLink,
 } from './OurWork.styled';
 
 import { Element } from 'react-scroll';
@@ -40,8 +41,6 @@ const OurWork: React.FC = () => {
     const lang = i18n.language;
     return lang === 'en' || lang === 'ru' || lang === 'es' ? lang : 'en';
   };
-
-  
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -71,7 +70,7 @@ const OurWork: React.FC = () => {
           getProjects(),
           getCaseStudy(),
         ]);
-        
+
         // Додамо логування для перевірки даних
         projectsData.forEach((project, index) => {
           // console.log(`Project ${index}:`, {
@@ -80,7 +79,7 @@ const OurWork: React.FC = () => {
           //   hasSingleImage: project.imageUrl?.length === 1
           // });
         });
-        
+
         setProjects(projectsData);
         setCaseStudy(caseStudyData);
       } catch (error) {
@@ -93,20 +92,23 @@ const OurWork: React.FC = () => {
   const currentLanguage = getCurrentLanguage();
 
   const getLocalizedText = (
-    translation: ProjectTranslation | undefined, 
+    translation: ProjectTranslation | undefined,
     fallbackKey: string
   ): string => {
     if (!translation) {
       console.warn('Translation object is undefined');
       return t(fallbackKey);
     }
-    
+
     const text = translation[currentLanguage];
     if (!text) {
-      console.warn(`Missing translation for language ${currentLanguage}`, translation);
+      console.warn(
+        `Missing translation for language ${currentLanguage}`,
+        translation
+      );
       return t(fallbackKey);
     }
-    
+
     return text;
   };
 
@@ -123,11 +125,18 @@ const OurWork: React.FC = () => {
         <WorkCardsWrapper>
           {projects.map(project => (
             <WorkCardWrapper key={project.id}>
-         <WorkCardTitle>
-  {project.title 
-    ? getLocalizedText(project.title, 'ourWork.defaults.noTitle')
-    : 'Title is missing'}
-</WorkCardTitle>
+              <WorkCardTitle>
+                {project.title
+                  ? getLocalizedText(project.title, 'ourWork.defaults.noTitle')
+                  : 'Title is missing'}
+                {project.link && (
+                  <ArrowLink
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  />
+                )}
+              </WorkCardTitle>
 
               {project.client && (
                 <WorkCardText>
@@ -137,7 +146,10 @@ const OurWork: React.FC = () => {
               )}
 
               <WorkCardText>
-                {getLocalizedText(project.description, 'ourWork.defaults.noDescription')}
+                {getLocalizedText(
+                  project.description,
+                  'ourWork.defaults.noDescription'
+                )}
               </WorkCardText>
               {project.imageUrl && project.imageUrl.length === 1 && (
                 <WorkShadowContainer
@@ -209,10 +221,16 @@ const OurWork: React.FC = () => {
         {caseStudy && (
           <WorkCardWrapper>
             <WorkCardTitle>
-              {getLocalizedText(caseStudy.title, 'ourWork.defaults.caseStudyTitle')}
+              {getLocalizedText(
+                caseStudy.title,
+                'ourWork.defaults.caseStudyTitle'
+              )}
             </WorkCardTitle>
             <WorkCardText>
-              {getLocalizedText(caseStudy.content, 'ourWork.defaults.noDescription')}
+              {getLocalizedText(
+                caseStudy.content,
+                'ourWork.defaults.noDescription'
+              )}
             </WorkCardText>
           </WorkCardWrapper>
         )}

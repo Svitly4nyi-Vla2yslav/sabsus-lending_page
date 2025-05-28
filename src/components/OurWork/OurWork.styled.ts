@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const WorkWrapper = styled.div`
  display: flex;
@@ -124,7 +124,8 @@ font-size: 18px;
 line-height: 125%;
 color: var(--white);
 margin:  15px 20px;
-
+    display: flex;
+    justify-content: space-between;
 @media screen and (min-width: 744px){
 
 
@@ -134,6 +135,44 @@ margin:  15px 20px;
 
 
 }
+`;
+const pulse = keyframes`
+  0%, 100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(2px);
+    opacity: 0.8;
+  }
+`;
+
+export const ArrowLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--white);
+  font-weight: 500;
+  font-size: 24px;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+  z-index: 10;
+
+  &::after {
+    content: '🡥';
+    display: inline-block;
+    margin-left: 0.2rem;
+    animation: ${pulse} 1.5s infinite ease-in-out;
+  }
+
+  &:hover {
+    color: #0051a3;
+
+    &::after {
+      transform: translateX(4px);
+    }
+  }
 `;
 
 export const WorkCardText = styled.p`

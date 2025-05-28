@@ -23,6 +23,7 @@ export interface Project {
   description: ProjectTranslation;
   imageUrl?: string[];
   client?: ProjectTranslation;
+  link?: string;
 }
 
 
@@ -57,6 +58,7 @@ const normalizeProject = (data: any): Project => {
   const normalized = {
     id: data.id,
     title: normalizeTranslation(data.title),
+    link: data.link,
     description: normalizeTranslation(data.description),
     imageUrl: data.imageUrl || [],
     client: data.client ? normalizeTranslation(data.client) : undefined
@@ -134,5 +136,35 @@ export const getCaseStudy = async (): Promise<CaseStudy | null> => {
   } catch (error) {
     console.error("Error fetching case study:", error);
     return null;
+  }
+};
+
+export interface Partner {
+  id: string;
+  imageUrl: string;
+  link?: string;
+}
+
+export const getPartners = async (): Promise<Partner[]> => {
+  try {
+    const collectionRef = collection(db, 'partnersBanner');
+    const snapshot = await getDocs(collectionRef);
+
+    const partners = await Promise.all(
+      snapshot.docs.map(async (doc) => {
+        const data = doc.data();
+        const url = await fetchImageURLs([data.imageUrl]);
+        return {
+          id: doc.id,
+          imageUrl: url[0],
+          link: data.link || '',
+        };
+      })
+    );
+
+    return partners;
+  } catch (error) {
+    console.error('Error fetching partners:', error);
+    return [];
   }
 };
