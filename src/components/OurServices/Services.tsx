@@ -72,7 +72,7 @@ const Services: React.FC = () => {
 
   return (
     <Element name="service">
-      <ServicesWrapper>
+      <ServicesWrapper id="service">
         <TextServices  data-aos="fade-right">{t('services.sectionTitle')}</TextServices>
         <ServicesTitle  data-aos="fade-right">{t('services.mainHeading')}</ServicesTitle>
         <CardGridDeckstop>
